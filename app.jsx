@@ -2,7 +2,7 @@
 const { useState, useEffect, useRef } = React;
 
 /* Helper: render a heading where the LAST `n` words are italic-accented.
-   Locale-safe â doesn't depend on punctuation being present in the source string. */
+   Locale-safe — doesn't depend on punctuation being present in the source string. */
 function SplitLast({ text, n = 1 }) {
   if (!text) return null;
   const parts = text.split(/\s+/).filter(Boolean);
@@ -12,7 +12,7 @@ function SplitLast({ text, n = 1 }) {
   return <>{front} <em>{back}</em></>;
 }
 
-// Image set â curated Unsplash photos for wellness/spa/water imagery.
+// Image set — curated Unsplash photos for wellness/spa/water imagery.
 // We pre-build URLs with reasonable sizing.
 const img = (id, w = 1200) =>
 `https://images.unsplash.com/${id}?w=${w}&q=80&auto=format&fit=crop`;
@@ -62,10 +62,10 @@ function smoothNav(e, href) {
    Replaces the space AFTER short prepositions/conjunctions with a
    non-breaking space so they never get stranded at a line end.
    Runs once over the whole TRANSLATIONS tree (covers desktop + mobile). */
-const NBSP = "Â ";
+const NBSP = " ";
 const SHORT_WORDS = {
-  ru: ["Ð°","Ð¸","Ð²","Ð²Ð¾","Ðº","ÐºÐ¾","Ð¾","Ð¾Ð±","Ð¾Ð±Ð¾","Ñ","ÑÐ¾","Ñ","Ð½Ð°","Ð·Ð°","Ð¿Ð¾","Ð´Ð¾","Ð¸Ð·","Ð¾Ñ","Ð½Ðµ","Ð½Ð¸","Ð¶Ðµ","Ð±Ñ","Ð»Ð¸","Ð¸Ð»Ð¸","Ð½Ð¾","Ð´Ð°","ÑÐ¾","ÑÑÐ¾","ÐºÐ°Ðº","Ð´Ð»Ñ","Ð±ÐµÐ·","Ð¿Ð¾Ð´","Ð½Ð°Ð´","Ð¿ÑÐ¸","Ð¿ÑÐ¾","ÑÑÐ¾","Ñ"],
-  lv: ["un","ar","uz","no","pie","par","pÄc","bez","lÄ«dz","caur","pa","ap","aiz","pret","gar","starp","kÄ","ka","ne","jo","vai","arÄ«","gan","to","un"],
+  ru: ["а","и","в","во","к","ко","о","об","обо","с","со","у","на","за","по","до","из","от","не","ни","же","бы","ли","или","но","да","то","что","как","для","без","под","над","при","про","это","я"],
+  lv: ["un","ar","uz","no","pie","par","pēc","bez","līdz","caur","pa","ap","aiz","pret","gar","starp","kā","ka","ne","jo","vai","arī","gan","to","un"],
   en: ["a","an","the","in","on","at","to","of","by","is","as","or","and","for","but","no","so","we","it","my","up","if","be","do"]
 };
 function glueShort(str, lang) {
@@ -74,7 +74,7 @@ function glueShort(str, lang) {
   const tokens = str.split(/(\s+)/);
   for (let i = 0; i < tokens.length - 2; i++) {
     if (/^\s+$/.test(tokens[i])) continue;
-    const clean = tokens[i].replace(/[Â«Â»"'(),.;:!?ââ-]/g, "").toLowerCase();
+    const clean = tokens[i].replace(/[«»"'(),.;:!?—–-]/g, "").toLowerCase();
     if (set.has(clean) && /^[ \t]+$/.test(tokens[i + 1])) {
       tokens[i + 1] = NBSP;
     }
@@ -138,7 +138,7 @@ function Header({ lang, setLang, t, scrolled, openMenu }) {
         <div className="inner">
           <a href="#top" className="logo" aria-label={`${t.brand.word1} ${t.brand.word2}`} onClick={(e) => smoothNav(e, "#top")}>
             <LogoMark />
-            <span className="name"><span className="lw">{t.brand.word1}</span><em>Â·</em><span className="rw">{t.brand.word2}</span></span>
+            <span className="name"><span className="lw">{t.brand.word1}</span><em>·</em><span className="rw">{t.brand.word2}</span></span>
           </a>
           <nav className="nav">
             <a href="#audience" onClick={(e) => smoothNav(e, "#audience")}>{t.nav.benefits}</a>
@@ -165,7 +165,6 @@ function Header({ lang, setLang, t, scrolled, openMenu }) {
             </button>
           </div>
         </div>
-      </div>
       </div>
     </header>);
 
@@ -320,7 +319,7 @@ function Services({ t }) {
           <article key={i} className={`svc-card reveal ${i % 2 === 1 ? "reverse" : ""}`}>
               <div className="svc-img" style={{ backgroundImage: `url(${imgs[i]})` }}></div>
               <div className="svc-body">
-                <div className="num">â 0{i + 1} / 0{t.services.items.length}</div>
+                <div className="num">— 0{i + 1} / 0{t.services.items.length}</div>
                 <h3>{s.name}</h3>
                 <p className="desc">{s.desc}</p>
                 <ul className="svc-features">
@@ -442,7 +441,7 @@ function Booking({ t, onOpenPrivacy }) {
           name: form.name,
           email: form.email,
           phone: form.phone,
-          _subject: "Jauns pieteikums â Ozona Vannas",
+          _subject: "Jauns pieteikums — Ozona Vannas",
           _captcha: "false"
         })
       });
@@ -466,7 +465,7 @@ function Booking({ t, onOpenPrivacy }) {
                 <div className="k">{t.footer.contacts}</div>
                 <div className="v">
                   <a href="mailto:hello@ozonavannas.lv">hello@ozonavannas.lv</a>
-                  <span aria-hidden="true"> Â· </span>
+                  <span aria-hidden="true"> · </span>
                   <a href="tel:+37129405327">+371 29 405 327</a>
                 </div>
               </div>
@@ -558,7 +557,7 @@ function Footer({ t }) {
           <div className="foot-col foot-brand">
             <a href="#top" className="logo">
               <LogoMark />
-              <span className="name"><span className="lw">{t.brand.word1}</span><em>Â·</em><span className="rw">{t.brand.word2}</span></span>
+              <span className="name"><span className="lw">{t.brand.word1}</span><em>·</em><span className="rw">{t.brand.word2}</span></span>
             </a>
             <p>{t.footer.tagline}</p>
             <div className="foot-social">
@@ -605,14 +604,14 @@ function Footer({ t }) {
             <h4>Studio</h4>
             <ul>
               <li><a href="#booking" onClick={openWhatsApp}>{t.bookBtn}</a></li>
-              <li><span style={{ color: "rgba(255,255,255,.7)" }}>Riga Â· Latvia</span></li>
+              <li><span style={{ color: "rgba(255,255,255,.7)" }}>Riga · Latvia</span></li>
             </ul>
           </div>
         </div>
         <p className="foot-disclaimer">{t.footer.disclaimer}</p>
         <div className="foot-bottom">
           <span>{t.footer.rights}</span>
-          <span>Made with care Â· Riga</span>
+          <span>Made with care · Riga</span>
         </div>
       </div>
     </footer>);
@@ -633,7 +632,7 @@ function MobileMenu({ open, close, t, lang, setLang }) {
       <div className="mob-menu-top">
         <span className="logo">
           <LogoMark />
-          <span className="name"><span className="lw">{t.brand.word1}</span><em>Â·</em><span className="rw">{t.brand.word2}</span></span>
+          <span className="name"><span className="lw">{t.brand.word1}</span><em>·</em><span className="rw">{t.brand.word2}</span></span>
         </span>
         <button className="mob-close" onClick={close} aria-label="Close">
           <span></span><span></span>
@@ -694,7 +693,7 @@ function PrivacyModal({ open, close, t }) {
         aria-modal="true"
         aria-label={p.title}
         onClick={(e) => e.stopPropagation()}>
-        <button className="privacy-close" onClick={close} aria-label="Close">Ã</button>
+        <button className="privacy-close" onClick={close} aria-label="Close">×</button>
         <h2 className="privacy-title">{p.title}</h2>
         <div className="privacy-body">
           {p.sections.map((s, i) =>
@@ -785,4 +784,3 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-
