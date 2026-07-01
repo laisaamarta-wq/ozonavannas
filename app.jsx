@@ -429,7 +429,7 @@ function Specialist({ t }) {
 /* ---------------- Booking ---------------- */
 function Booking({ t, onOpenPrivacy }) {
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "", consent: false });nt: false });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "", consent: false });
   async function onSubmit(e) {
     e.preventDefault();
     if (!form.consent) return;
@@ -450,7 +450,7 @@ function Booking({ t, onOpenPrivacy }) {
     } catch (_) {}
     setSent(true);
     setTimeout(() => setSent(false), 6000);
-    setForm({ name: "", email: "", phone: "", consent: false });
+    setForm({ name: "", email: "", phone: "", message: "", consent: false });
   }
   return (
     <section className="booking" id="booking">
