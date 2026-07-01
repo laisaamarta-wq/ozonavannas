@@ -1545,6 +1545,36 @@ section { padding: var(--section-pad) 0; position: relative; }
   text-transform: uppercase;
   font-feature-settings: "ss01", "zero";
 }
+.field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0 14px;
+  font-family: var(--sans);
+  font-size: 16px;
+  color: var(--ink-900);
+  outline: none;
+  transition: border-color .25s ease;
+  letter-spacing: -.005em;
+  resize: none;
+  min-height: 80px;
+  display: block;
+}
+.field textarea:focus {
+  border-bottom-color: var(--aqua-500);
+}
+.field textarea::placeholder { color: var(--ink-300); }
+.field textarea:focus ~ label,
+.field textarea:not(:placeholder-shown) ~ label {
+  top: -4px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0;
+  color: var(--aqua-700);
+  text-transform: uppercase;
+  font-feature-settings: "ss01", "zero";
+}
 .consent {
   display: flex;
   gap: 12px;
