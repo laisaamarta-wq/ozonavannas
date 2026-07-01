@@ -441,6 +441,7 @@ function Booking({ t, onOpenPrivacy }) {
           name: form.name,
           email: form.email,
           phone: form.phone,
+          _replyto: form.email,
           _subject: "Jauns pieteikums — Ozona Vannas",
           _captcha: "false"
         })
