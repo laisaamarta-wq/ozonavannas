@@ -429,7 +429,7 @@ function Specialist({ t }) {
 /* ---------------- Booking ---------------- */
 function Booking({ t, onOpenPrivacy }) {
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", consent: false });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "", consent: false });nt: false });
   async function onSubmit(e) {
     e.preventDefault();
     if (!form.consent) return;
@@ -442,6 +442,7 @@ function Booking({ t, onOpenPrivacy }) {
           email: form.email,
           phone: form.phone,
           _replyto: form.email,
+          message: form.message,
           _subject: "Jauns pieteikums — Ozona Vannas",
           _captcha: "false"
         })
@@ -511,6 +512,16 @@ function Booking({ t, onOpenPrivacy }) {
                 onChange={(e) => setForm({ ...form, phone: e.target.value })} />
               
               <label>{t.booking.phone}</label>
+            </div>
+            <div className="field">
+              <textarea
+                rows={3}
+                placeholder=" "
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                style={{ resize: "vertical", minHeight: 80 }}
+              />
+              <label>{t.booking.messagePlaceholder || "Jautājums vai komentārs"}</label>
             </div>
             <label className="consent">
               <input
