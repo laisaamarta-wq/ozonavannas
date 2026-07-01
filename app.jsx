@@ -270,7 +270,7 @@ function Audience({ t }) {
 /* ---------------- How it works ---------------- */
 function How({ t }) {
   return (
-    <section className="how" id="how'>
+    <section className="how" id="how">
       <div className="shell">
         <div className="how-grid">
           <aside className="how-aside reveal">
