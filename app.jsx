@@ -178,7 +178,7 @@ function Hero({ t }) {
       {/* ---- Mobile hero: image-led, result-first, single CTA ---- */}
       <div className="hero-m">
         <div className="hero-m-photo">
-          <img src={IMG.hero} alt="Ozona vanna Rīgā — wellness procedūra nervu sistēmai" loading="eager" />
+          <img src={IMG.hero} alt="Ozona vanna Rīgā — wellness procedūra nervu sistēmai" loading="eager" fetchPriority="high" />
           <span className="hero-m-photo-fade" aria-hidden="true"></span>
         </div>
         <div className="hero-m-body reveal in">
@@ -223,7 +223,7 @@ function Hero({ t }) {
         </div>
         <div className="hero-art reveal d2 in">
           <span className="hero-art-bar" aria-hidden="true"></span>
-          <img src={IMG.hero} alt="Ozona vannas Rīgā — dabiska ūdens terapija un enerģijas atjaunošana" loading="eager" />
+          <img src={IMG.hero} alt="Ozona vannas Rīgā — dabiska ūdens terapija un enerģijas atjaunošana" loading="eager" fetchPriority="high" />
           <div className="hero-tag">{t.hero.eyebrow}</div>
         </div>
       </div>
@@ -407,7 +407,7 @@ function Specialist({ t }) {
         <div className="spec-grid">
           <div className="spec-photo reveal">
             <div className="frame">
-              <img src="images/nikolai.jpg" alt={t.specialist.name} />
+              <img src="images/nikolai.jpg" alt={t.specialist.name} loading="lazy" />
             </div>
           </div>
           <div className="spec-body reveal d2">
