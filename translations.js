@@ -23,7 +23,7 @@ window.TRANSLATIONS = {
       disclaimer: "Šī ir labsajūtas procedūra, nevis medicīnisks pakalpojums.",
       caption: "Labsajūtas procedūras",
       m: {
-        lead: "Enerģijas un iekšējā līdzsvara atjaunošana",
+        lead: "Ozona vanna Rīgā — enerģijas un iekšējā līdzsvara atjaunošana",
         procedure: "Ozona vannas",
         desc: "Organisma iekšējo resursu atjaunošana caur dabiskiem adaptācijas mehānismiem.",
         points: ["Vairāk enerģijas", "Mazāk sasprindzinājuma", "Labāka adaptācija slodzēm"],
@@ -44,7 +44,7 @@ window.TRANSLATIONS = {
     },
     how: {
       eyebrow: "Process",
-      title: "Kā tas darbojas",
+      title: "Kā darbojas ozona vanna",
       lede: "Pieci posmi — no maiga sākotnējā stimula līdz dziļai atjaunošanās fāzei.",
       steps: [
         { n: "01", title: "Maiga oksidatīva iedarbība", text: "Ozonēts ūdens rada īslaicīgu fizioloģisku stimulu ādai un kapilāriem." },
@@ -56,7 +56,7 @@ window.TRANSLATIONS = {
     },
     services: {
       eyebrow: "Procedūras un cenas",
-      title: "Pakalpojumi — cenas",
+      title: "Ozona vannu pakalpojumi un cenas",
       lede: "Klusa telpa, silts ozonēts ūdens un personīga uzmanība katrai detaļai.",
       items: [
         {
@@ -89,7 +89,7 @@ window.TRANSLATIONS = {
     specialist: {
       eyebrow: "Speciālists",
       name: "Nikolajs Jakovļevs",
-      role: "Sertificēts masāžas un ozona vannu speciālists",
+      role: "Sertificēts masāžas un ozona vannu speciālists Rīgā",
       bio: "Darbā ievēro fizioloģiskās drošības principus, individuālu intensitātes pielāgošanu un uzmanīgu attieksmi pret klienta stāvokli.",
       values: [
         { title: "Individuāla pieeja", text: "Katra procedūra tiek pielāgota jūsu stāvoklim." },
@@ -114,7 +114,7 @@ window.TRANSLATIONS = {
       success: "Paldies — sazināsimies ar jums tuvākajā laikā.",
     },
     footer: {
-      tagline: "Labsajūtas procedūras",
+      tagline: "Ozona vannas Rīgā",
       address: "Stirnu iela 8, Rīga · 2. stāvs, 208. kab.",
       hours: "P–Pk · 10:00–19:00",
       nav: "Navigācija",
@@ -158,7 +158,7 @@ window.TRANSLATIONS = {
       disclaimer: "Оздоровительная процедура, не медицинская услуга.",
       caption: "Оздоровительные процедуры",
       m: {
-        lead: "Восстановление энергии и внутреннего баланса",
+        lead: "Озоновые ванны в Риге — восстановление энергии и внутреннего баланса",
         procedure: "Озоновые ванны",
         desc: "Восстановление внутренних ресурсов организма через естественные адаптационные механизмы.",
         points: ["Больше энергии", "Меньше напряжения", "Лучшая адаптация к нагрузкам"],
@@ -179,7 +179,7 @@ window.TRANSLATIONS = {
     },
     how: {
       eyebrow: "Процесс",
-      title: "Как это работает",
+      title: "Как работает озоновая ванна",
       lede: "Пять этапов — от мягкого первичного стимула до фазы глубокого восстановления.",
       steps: [
         { n: "01", title: "Мягкое окислительное воздействие", text: "Озонированная вода создаёт кратковременный физиологический стимул для кожи и капилляров." },
@@ -191,7 +191,7 @@ window.TRANSLATIONS = {
     },
     services: {
       eyebrow: "Процедуры и цены",
-      title: "Услуги и стоимость",
+      title: "Озоновые ванны — услуги и стоимость",
       lede: "Тихое пространство, тёплая озонированная вода \nи личное внимание к каждой детали.",
       items: [
         {
@@ -224,7 +224,7 @@ window.TRANSLATIONS = {
     specialist: {
       eyebrow: "Специалист",
       name: "Николай Яковлев",
-      role: "Сертифицированный специалист по массажу и озоновым ваннам",
+      role: "Сертифицированный специалист по массажу и озоновым ваннам в Риге",
       bio: "В работе придерживается принципов физиологической безопасности, индивидуального подбора интенсивности и внимательного отношения к состоянию клиента.",
       values: [
         { title: "Индивидуальный подход", text: "Каждая процедура подстраивается под ваше состояние." },
@@ -249,7 +249,7 @@ window.TRANSLATIONS = {
       success: "Спасибо — свяжемся с вами в ближайшее время.",
     },
     footer: {
-      tagline: "Оздоровительные процедуры",
+      tagline: "Озоновые ванны Рига",
       address: "Stirnu iela 8, Rīga · 2. этаж 208. каб.",
       hours: "Пн–Пт · 10:00–19:00",
       nav: "Навигация",
@@ -293,7 +293,7 @@ window.TRANSLATIONS = {
       disclaimer: "A wellness procedure — not a medical service.",
       caption: "Wellness procedures",
       m: {
-        lead: "Restored energy and inner balance",
+        lead: "Ozone baths in Riga — restored energy and inner balance",
         procedure: "Ozone baths",
         desc: "Restoring the body's inner resources through natural adaptation mechanisms.",
         points: ["More energy", "Less tension", "Better adaptation to strain"],
@@ -314,7 +314,7 @@ window.TRANSLATIONS = {
     },
     how: {
       eyebrow: "Process",
-      title: "How it works",
+      title: "How ozone baths work",
       lede: "Five phases — from a gentle initial stimulus to deep recovery.",
       steps: [
         { n: "01", title: "Gentle oxidative stimulus", text: "Ozonated water creates a brief physiological stimulus for the skin and capillaries." },
@@ -326,7 +326,7 @@ window.TRANSLATIONS = {
     },
     services: {
       eyebrow: "Sessions & pricing",
-      title: "Services — pricing",
+      title: "Ozone bath sessions — pricing",
       lede: "A private room, warm ozonated water and personal attention to every detail.",
       items: [
         {
@@ -359,7 +359,7 @@ window.TRANSLATIONS = {
     specialist: {
       eyebrow: "Specialist",
       name: "Nikolai Jakovlev",
-      role: "Certified massage and ozone bath specialist",
+      role: "Certified massage and ozone bath specialist in Riga",
       bio: "Works according to principles of physiological safety, individual calibration of intensity and attentive care for the client's state.",
       values: [
         { title: "Individual approach", text: "Each session is adjusted to your current state." },
@@ -384,7 +384,7 @@ window.TRANSLATIONS = {
       success: "Thank you — we will contact you shortly.",
     },
     footer: {
-      tagline: "Wellness procedures",
+      tagline: "Ozone baths Riga",
       address: "Stirnu iela 8, Rīga · 2nd floor, office 208",
       hours: "Mon–Fri · 10:00–19:00",
       nav: "Navigation",
