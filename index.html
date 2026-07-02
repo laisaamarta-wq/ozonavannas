@@ -169,6 +169,69 @@
       "name": "Ozona Vannas",
       "description": "Ozona vannas wellness procedūras Rīgā — nervu sistēmas atjaunošana, stresa mazināšana, enerģijas papildināšana",
       "inLanguage": ["lv", "ru", "en"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ozonavannas.lv/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Sākumlapa",
+          "item": "https://www.ozonavannas.lv/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.ozonavannas.lv/#service-ozone-bath",
+      "name": "Ozona vanna",
+      "alternateName": ["Озоновая ванна", "Ozone bath", "Ozono procedūra"],
+      "description": "Dabiska wellness procedūra ar ozonētu ūdeni nervu sistēmas atjaunošanai, stresa mazināšanai, tūskas mazināšanai un enerģijas papildināšanai Rīgā.",
+      "provider": { "@id": "https://www.ozonavannas.lv/#business" },
+      "areaServed": { "@type": "City", "name": "Rīga" },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Ozona vanna 20 min",
+          "price": "30",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Ozona vanna 30 min",
+          "price": "40",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        }
+      ],
+      "serviceType": ["Ozona terapija", "Hidroterapija", "Spa procedūra", "Wellness procedūra", "Detoksikācija", "Relaksācija"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.ozonavannas.lv/#service-ozone-massage",
+      "name": "Ozona vanna + masāža ar ozona eļļu",
+      "alternateName": ["Озоновая ванна с массажем", "Ozone bath with massage"],
+      "description": "Ozona vannas un masāžas kombinācija padziļinātai relaksācijai, limfodrenāžai un organisma atjaunošanai Rīgā. 45 min, 50 EUR.",
+      "provider": { "@id": "https://www.ozonavannas.lv/#business" },
+      "areaServed": { "@type": "City", "name": "Rīga" },
+      "offers": {
+        "@type": "Offer",
+        "name": "Ozona vanna + masāža 45 min",
+        "price": "50",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "AggregateRating",
+      "@id": "https://www.ozonavannas.lv/#rating",
+      "itemReviewed": { "@id": "https://www.ozonavannas.lv/#business" },
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "12"
     }
   ]
 }
