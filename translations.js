@@ -115,7 +115,7 @@ window.TRANSLATIONS = {
     },
     footer: {
       tagline: "Ozona vannas Rīgā",
-      address: "Stirnu iela 8, Rīga · 2. stāvs, 208. kab.",
+      address: "ĀRC VALEO, Stirnu iela 8, Rīga · 2. stāvs, 208. kab.",
       hours: "P–Pk · 10:00–19:00",
       nav: "Navigācija",
       contacts: "Kontakti",
@@ -128,7 +128,7 @@ window.TRANSLATIONS = {
       title: "Privātuma politika",
       linkPhrase: "Privātuma politikai",
       sections: [
-        { h: "Datu pārzinis", p: "Ozona vannas, Stirnu iela 8, 2. stāvs, 208. kab., Rīga, Latvija. E-pasts: hello@ozonavannas.lv" },
+        { h: "Datu pārzinis", p: "Ozona vannas, ĀRC VALEO, Stirnu iela 8, 2. stāvs, 208. kab., Rīga, Latvija. E-pasts: hello@ozonavannas.lv" },
         { h: "Kādi dati tiek vākti", p: "Vārds, e-pasta adrese, tālruņa numurs — tikai no kontaktformas." },
         { h: "Kāpēc", p: "Lai atbildētu uz jūsu jautājumiem un rezervētu procedūru." },
         { h: "Glabāšanas laiks", p: "Dati tiek glabāti līdz jūsu pieprasījuma izpildei vai līdz brīdim, kad lūdzat tos dzēst." },
@@ -250,7 +250,7 @@ window.TRANSLATIONS = {
     },
     footer: {
       tagline: "Озоновые ванны Рига",
-      address: "Stirnu iela 8, Rīga · 2. этаж 208. каб.",
+      address: "ĀRC VALEO, Stirnu iela 8, Rīga · 2. этаж 208. каб.",
       hours: "Пн–Пт · 10:00–19:00",
       nav: "Навигация",
       contacts: "Контакты",
@@ -263,7 +263,7 @@ window.TRANSLATIONS = {
       title: "Политика конфиденциальности",
       linkPhrase: "Политикой конфиденциальности",
       sections: [
-        { h: "Оператор данных", p: "Ozona vannas, Stirnu iela 8, 2. этаж, 208. каб., Рига, Латвия. E-mail: hello@ozonavannas.lv" },
+        { h: "Оператор данных", p: "Ozona vannas, ĀRC VALEO, Stirnu iela 8, 2. этаж, 208. каб., Рига, Латвия. E-mail: hello@ozonavannas.lv" },
         { h: "Какие данные собираются", p: "Имя, адрес электронной почты, номер телефона — только из контактной формы." },
         { h: "Зачем", p: "Чтобы ответить на ваши вопросы и забронировать процедуру." },
         { h: "Срок хранения", p: "Данные хранятся до выполнения вашего запроса или до момента, когда вы попросите их удалить." },
@@ -385,7 +385,7 @@ window.TRANSLATIONS = {
     },
     footer: {
       tagline: "Ozone baths Riga",
-      address: "Stirnu iela 8, Rīga · 2nd floor, office 208",
+      address: "ĀRC VALEO, Stirnu iela 8, Rīga · 2nd floor, office 208",
       hours: "Mon–Fri · 10:00–19:00",
       nav: "Navigation",
       contacts: "Contact",
@@ -398,7 +398,7 @@ window.TRANSLATIONS = {
       title: "Privacy Policy",
       linkPhrase: "Privacy Policy",
       sections: [
-        { h: "Data controller", p: "Ozona vannas, Stirnu iela 8, 2nd floor, office 208, Riga, Latvia. E-mail: hello@ozonavannas.lv" },
+        { h: "Data controller", p: "Ozona vannas, ĀRC VALEO, Stirnu iela 8, 2nd floor, office 208, Riga, Latvia. E-mail: hello@ozonavannas.lv" },
         { h: "What data is collected", p: "Name, e-mail address, phone number — only from the contact form." },
         { h: "Why", p: "To answer your questions and book your session." },
         { h: "Retention period", p: "Data is stored until your request is fulfilled or until you ask us to delete it." },
