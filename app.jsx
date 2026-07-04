@@ -38,7 +38,8 @@ const IMG = {
    "Pieteikties" buttons open WhatsApp chat in a new tab. */
 function openWhatsApp(e) {
   if (e) e.preventDefault();
-  window.open("https://wa.me/37129405327", "_blank");
+  const msg = encodeURIComponent("Labdien! Vēlos pieteikties ozona vannas procedūrai.");
+  window.open(`https://wa.me/37129405327?text=${msg}`, "_blank");
 }
 
 /* ---------------- Smooth in-page navigation ----------------
