@@ -44,7 +44,7 @@ window.TRANSLATIONS = {
     },
     how: {
       eyebrow: "Process",
-      title: "Kā darbojas ozona vanna",
+      title: "Kā tas darbojas",
       lede: "Pieci posmi — no maiga sākotnējā stimula līdz dziļai atjaunošanās fāzei.",
       steps: [
         { n: "01", title: "Maiga oksidatīva iedarbība", text: "Ozonēts ūdens rada īslaicīgu fizioloģisku stimulu ādai un kapilāriem." },
@@ -56,7 +56,7 @@ window.TRANSLATIONS = {
     },
     services: {
       eyebrow: "Procedūras un cenas",
-      title: "Ozona vannu pakalpojumi un cenas",
+      title: "Pakalpojumi — cenas",
       lede: "Klusa telpa, silts ozonēts ūdens un personīga uzmanība katrai detaļai.",
       items: [
         {
@@ -179,7 +179,7 @@ window.TRANSLATIONS = {
     },
     how: {
       eyebrow: "Процесс",
-      title: "Как работает озоновая ванна",
+      title: "Как это работает",
       lede: "Пять этапов — от мягкого первичного стимула до фазы глубокого восстановления.",
       steps: [
         { n: "01", title: "Мягкое окислительное воздействие", text: "Озонированная вода создаёт кратковременный физиологический стимул для кожи и капилляров." },
@@ -191,7 +191,7 @@ window.TRANSLATIONS = {
     },
     services: {
       eyebrow: "Процедуры и цены",
-      title: "Озоновые ванны — услуги и стоимость",
+      title: "Услуги и стоимость",
       lede: "Тихое пространство, тёплая озонированная вода \nи личное внимание к каждой детали.",
       items: [
         {
@@ -314,7 +314,7 @@ window.TRANSLATIONS = {
     },
     how: {
       eyebrow: "Process",
-      title: "How ozone baths work",
+      title: "How it works",
       lede: "Five phases — from a gentle initial stimulus to deep recovery.",
       steps: [
         { n: "01", title: "Gentle oxidative stimulus", text: "Ozonated water creates a brief physiological stimulus for the skin and capillaries." },
@@ -326,7 +326,7 @@ window.TRANSLATIONS = {
     },
     services: {
       eyebrow: "Sessions & pricing",
-      title: "Ozone bath sessions — pricing",
+      title: "Services — pricing",
       lede: "A private room, warm ozonated water and personal attention to every detail.",
       items: [
         {
