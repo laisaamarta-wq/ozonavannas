@@ -467,7 +467,7 @@ function Booking({ t, onOpenPrivacy }) {
               <div className="row">
                 <div className="k">{t.footer.contacts}</div>
                 <div className="v">
-                  <a href="mailto:hello@ozonavannas.lv">hello@ozonavannas.lv</a>
+                  <a href="mailto:ozonavannas@gmail.com">ozonavannas@gmail.com</a>
                   <span aria-hidden="true"> · </span>
                   <a href="tel:+37129405327">+371 29 405 327</a>
                 </div>
@@ -607,7 +607,7 @@ function Footer({ t }) {
           <div className="foot-col foot-contact">
             <h4>{t.footer.contacts}</h4>
             <ul>
-              <li><a href="mailto:hello@ozonavannas.lv">hello@ozonavannas.lv</a></li>
+              <li><a href="mailto:ozonavannas@gmail.com">ozonavannas@gmail.com</a></li>
               <li><a href="tel:+37129405327">+371 29 405 327</a></li>
               <li><span style={{ color: "rgba(255,255,255,.7)" }}>{t.footer.address}</span></li>
               <li><span style={{ color: "rgba(255,255,255,.7)" }}>{t.footer.hours}</span></li>
