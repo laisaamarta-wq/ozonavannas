@@ -6,7 +6,7 @@
   <title>{{ t.meta.title }}</title>
   <meta name="description" content="{{ t.meta.description }}">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#f7f5f0">
+  <meta name="theme-color" content="#f2f5f4">
   <meta name="google-site-verification" content="QZF57YXRMvdtStPwRfbLH__YhUkK2asxfuNc9nprvyA">
   <link rel="canonical" href="{{ site }}{{ t.meta.path }}">
 {% for l in langs %}  <link rel="alternate" hreflang="{{ l.code }}" href="{{ site }}{{ l.path }}">
@@ -25,7 +25,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/source-serif-4-normal-300-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-normal-300-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="/img/hero-720.webp" imagesrcset="/img/hero-720.webp 720w, /img/hero-1023.webp 1023w" imagesizes="(max-width: 900px) 100vw, 45vw">
+  <link rel="preload" as="image" href="/img/hero-720.webp" imagesrcset="/img/hero-720.webp 720w, /img/hero-1023.webp 1023w" imagesizes="(max-width: 900px) 80vw, 420px">
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/styles.css?v={{ version }}">
   <script type="application/ld+json">{{ jsonld | safe }}</script>
@@ -72,7 +72,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">{{ t.hero.eyebrow }}</p>
@@ -85,19 +84,21 @@
         <p class="meta-line">{{ t.hero.place }}</p>
         <p class="fine">{{ t.hero.disclaimer }}</p>
       </div>
-      <figure class="hero-media">
-        <picture>
-          <source type="image/webp" srcset="/img/hero-720.webp 720w, /img/hero-1023.webp 1023w" sizes="(max-width: 900px) 100vw, 45vw">
-          <img src="/img/hero-720.jpg" alt="{{ t.hero.img_alt }}" width="1023" height="1537" fetchpriority="high">
-        </picture>
-        <div class="bubbles" aria-hidden="true">{% for i in range(14) %}<i></i>{% endfor %}</div>
-        <figcaption class="hero-card">
+      <div class="hero-visual">
+        <svg class="ripples" viewBox="0 0 600 600" aria-hidden="true">{% for r in [150, 186, 222, 258, 294] %}<circle cx="300" cy="300" r="{{ r }}"/>{% endfor %}</svg>
+        <figure class="hero-media">
+          <picture>
+            <source type="image/webp" srcset="/img/hero-720.webp 720w, /img/hero-1023.webp 1023w" sizes="(max-width: 900px) 80vw, 420px">
+            <img src="/img/hero-720.jpg" alt="{{ t.hero.img_alt }}" width="1023" height="1537" fetchpriority="high">
+          </picture>
+        </figure>
+        <div class="hero-card">
           <strong>{{ t.hero.m.lead }}</strong>
           <ul>
 {% for pt in t.hero.m.points %}            <li>{{ pt }}</li>
 {% endfor %}          </ul>
-        </figcaption>
-      </figure>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -113,43 +114,38 @@
   <!-- AUDIENCE -->
   <section class="section" id="kam">
     <div class="wrap">
-      <header class="section-head section-head-split">
+      <header class="section-head">
         <div>
           <p class="eyebrow">{{ t.audience.eyebrow }}</p>
           <h2 class="h2">{{ t.audience.title | safe }}</h2>
         </div>
         <p class="lede">{{ t.audience.lede }}</p>
       </header>
-      <ol class="cards-3">
-{% for c in t.audience.cards %}        <li class="card reveal">
-          <div class="card-top"><span class="card-n">{{ c.tag }}</span><span class="card-glyph" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <ul class="aud">
+{% for c in t.audience.cards %}        <li>
+          <svg class="ripple-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="11"/></svg>
           <h3>{{ c.title }}</h3>
           <p>{{ c.text }}</p>
         </li>
-{% endfor %}      </ol>
+{% endfor %}      </ul>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="section section-deep how" id="procedura">
-    <div class="wrap how-grid">
-      <div class="how-aside">
-        <p class="eyebrow">{{ t.how.eyebrow }}</p>
-        <h2 class="h2">{{ t.how.title | safe }}</h2>
+  <section class="section section-deep" id="procedura">
+    <div class="wrap">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow">{{ t.how.eyebrow }}</p>
+          <h2 class="h2">{{ t.how.title | safe }}</h2>
+        </div>
         <p class="lede">{{ t.how.lede }}</p>
-        <figure class="how-media">
-          <picture>
-            <source type="image/webp" srcset="/img/hero-water-900.webp 900w, /img/hero-water-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 40vw">
-            <img src="/img/hero-water-900.jpg" alt="{{ t.how.img_alt }}" width="1536" height="1024" loading="lazy" decoding="async">
-          </picture>
-          <div class="bubbles bubbles-soft" aria-hidden="true">{% for i in range(8) %}<i></i>{% endfor %}</div>
-        </figure>
-      </div>
-      <ol class="steps" data-steps>
-        <span class="steps-rail" aria-hidden="true"><span></span></span>
-{% for s in t.how.steps %}        <li class="reveal">
+      </header>
+      <ol class="steps">
+{% for s in t.how.steps %}        <li>
           <span class="steps-n">{{ s.n }}</span>
-          <div><h3>{{ s.title }}</h3><p>{{ s.text }}</p></div>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.text }}</p>
         </li>
 {% endfor %}      </ol>
     </div>
@@ -158,7 +154,7 @@
   <!-- SERVICES & PRICES -->
   <section class="section" id="cenas">
     <div class="wrap">
-      <header class="section-head section-head-split">
+      <header class="section-head">
         <div>
           <p class="eyebrow">{{ t.services.eyebrow }}</p>
           <h2 class="h2">{{ t.services.title | safe }}</h2>
@@ -166,13 +162,12 @@
         <p class="lede">{{ t.services.lede }}</p>
       </header>
       <div class="svc-list">
-{% for s in t.services['items'] %}        <article class="svc reveal">
-          <figure class="svc-media">
+{% for s in t.services['items'] %}        <article class="svc">
+          <figure class="svc-thumb">
             <picture>
-              <source type="image/webp" srcset="/img/{{ s.img }}-900.webp 900w, /img/{{ s.img }}-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 50vw">
-              <img src="/img/{{ s.img }}-900.jpg" alt="{{ s.img_alt }}" width="1536" height="1024" loading="lazy" decoding="async">
+              <source type="image/webp" srcset="/img/{{ s.img }}-thumb.webp">
+              <img src="/img/{{ s.img }}-thumb.jpg" alt="{{ s.img_alt }}" width="480" height="600" loading="lazy" decoding="async">
             </picture>
-            <span class="svc-num">0{{ loop.index }} / 0{{ loop.length }}</span>
           </figure>
           <div class="svc-body">
             <h3>{{ s.name }}</h3>
@@ -180,12 +175,12 @@
             <ul class="svc-features">
 {% for f in s.features %}              <li>{{ f }}</li>
 {% endfor %}            </ul>
-            <div class="svc-foot">
-              <ul class="svc-opts">
-{% for o in s.opts %}                <li><span>{{ o.t }}</span><strong>{{ o.p }}</strong></li>
-{% endfor %}              </ul>
-              <a class="btn" href="{{ wa(t.wa[s.wa]) }}" target="_blank" rel="noopener" data-track="wa_price_{{ s.wa }}">{{ s.cta }}</a>
-            </div>
+          </div>
+          <div class="svc-aside">
+            <ul class="svc-opts">
+{% for o in s.opts %}              <li><span>{{ o.t }}</span><strong>{{ o.p }}</strong></li>
+{% endfor %}            </ul>
+            <a class="btn btn-block" href="{{ wa(t.wa[s.wa]) }}" target="_blank" rel="noopener" data-track="wa_price_{{ s.wa }}">{{ s.cta }}</a>
           </div>
         </article>
 {% endfor %}      </div>
@@ -194,20 +189,21 @@
 
   <!-- SPECIALIST -->
   <section class="section section-tint" id="specialists">
-    <div class="wrap spec-grid">
+    <div class="wrap spec">
       <figure class="spec-photo">
+        <svg class="ripples ripples-sm" viewBox="0 0 600 600" aria-hidden="true">{% for r in [200, 236, 272] %}<circle cx="300" cy="300" r="{{ r }}"/>{% endfor %}</svg>
         <picture>
-          <source type="image/webp" srcset="/img/nikolajs-900.webp 900w, /img/nikolajs-1189.webp 1189w" sizes="(max-width: 900px) 90vw, 40vw">
-          <img src="/img/nikolajs-900.jpg" alt="{{ t.specialist.img_alt }}" width="1189" height="1323" loading="lazy" decoding="async">
+          <source type="image/webp" srcset="/img/nikolajs-560.webp">
+          <img src="/img/nikolajs-560.jpg" alt="{{ t.specialist.img_alt }}" width="560" height="700" loading="lazy" decoding="async">
         </picture>
       </figure>
-      <div>
+      <div class="spec-body">
         <p class="eyebrow">{{ t.specialist.eyebrow }}</p>
         <h2 class="h2">{{ t.specialist.name }}</h2>
         <p class="role">{{ t.specialist.role }}</p>
         <p class="bio">{{ t.specialist.bio }}</p>
         <ul class="values">
-{% for v in t.specialist['values'] %}          <li><span class="values-dot" aria-hidden="true"></span><h3>{{ v.title }}</h3><p>{{ v.text }}</p></li>
+{% for v in t.specialist['values'] %}          <li><h3>{{ v.title }}</h3><p>{{ v.text }}</p></li>
 {% endfor %}        </ul>
       </div>
     </div>
@@ -219,7 +215,7 @@
       <div class="faq-head">
         <p class="eyebrow">{{ t.faq.eyebrow }}</p>
         <h2 class="h2">{{ t.faq.title | safe }}</h2>
-        <a class="link link-wa" href="{{ wa(t.wa.default) }}" target="_blank" rel="noopener" data-track="wa_faq">{{ icon_wa | safe }}{{ t.booking.wa_cta }}</a>
+        <a class="link-wa" href="{{ wa(t.wa.default) }}" target="_blank" rel="noopener" data-track="wa_faq">{{ icon_wa | safe }}{{ t.booking.wa_cta }}</a>
       </div>
       <div class="faq">
 {% for f in t.faq['items'] %}        <details{% if loop.first %} open{% endif %}>
@@ -231,8 +227,7 @@
   </section>
 
   <!-- BOOKING -->
-  <section class="section section-deep booking" id="pieraksts">
-    <div class="bubbles bubbles-wide" aria-hidden="true">{% for i in range(10) %}<i></i>{% endfor %}</div>
+  <section class="section section-deep" id="pieraksts">
     <div class="wrap book-grid">
       <div>
         <p class="eyebrow">{{ t.booking.eyebrow }}</p>
@@ -250,10 +245,12 @@
       </div>
       <form class="form" data-form data-subject="{{ t.booking.email_subject }}" data-sending="{{ t.booking.sending }}" data-error="{{ t.booking.error }}" novalidate>
         <p class="form-or">{{ t.booking.or }}</p>
-        <label class="field"><span>{{ t.booking.name }}</span><input name="name" type="text" autocomplete="name" required minlength="2"></label>
-        <label class="field"><span>{{ t.booking.phone }}</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="^[+\d][\d\s\-()]{6,20}$" placeholder="+371 2X XXX XXX"></label>
+        <div class="form-row">
+          <label class="field"><span>{{ t.booking.name }}</span><input name="name" type="text" autocomplete="name" required minlength="2"></label>
+          <label class="field"><span>{{ t.booking.phone }}</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="^[+\d][\d\s\-()]{6,20}$" placeholder="+371 2X XXX XXX"></label>
+        </div>
         <label class="field"><span>{{ t.booking.when }}</span><input name="when" type="text"></label>
-        <label class="field"><span>{{ t.booking.message }}</span><textarea name="message" rows="3"></textarea></label>
+        <label class="field"><span>{{ t.booking.message }}</span><textarea name="message" rows="2"></textarea></label>
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label class="consent"><input type="checkbox" name="consent" required><span>{{ t.booking.consent_pre }}<button type="button" class="link-btn" data-privacy-open>{{ t.booking.consent_link }}</button>{{ t.booking.consent_post }}</span></label>
         <button class="btn btn-light btn-block" type="submit">{{ t.booking.submit }}</button>
