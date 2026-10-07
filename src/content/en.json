@@ -114,7 +114,9 @@
         "text": "After activation, the body enters deep relaxation, restoration and a rebalancing of systems."
       }
     ],
-    "img_alt": "Ozonated water in an ozone bath"
+    "img_alt": "Ozonated water in an ozone bath",
+    "axis_up": "activation",
+    "axis_down": "recovery"
   },
   "services": {
     "eyebrow": "Sessions & pricing",

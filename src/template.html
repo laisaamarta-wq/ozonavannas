@@ -6,7 +6,7 @@
   <title>{{ t.meta.title }}</title>
   <meta name="description" content="{{ t.meta.description }}">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#eef4f3">
+  <meta name="theme-color" content="#eef5f2">
   <meta name="google-site-verification" content="QZF57YXRMvdtStPwRfbLH__YhUkK2asxfuNc9nprvyA">
   <link rel="canonical" href="{{ site }}{{ t.meta.path }}">
 {% for l in langs %}  <link rel="alternate" hreflang="{{ l.code }}" href="{{ site }}{{ l.path }}">
@@ -23,6 +23,7 @@
   <meta property="og:locale" content="{{ t.meta.locale }}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/unbounded-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/geologica-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 {% if t.meta.lang == 'ru' %}  <link rel="preload" href="/fonts/geologica-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 {% endif %}  <link rel="preload" as="image" href="/img/hero-1280.webp" imagesrcset="/img/hero-m-864.webp 864w, /img/hero-1280.webp 1280w, /img/hero-2000.webp 2000w" imagesizes="100vw">
@@ -86,7 +87,7 @@
       <p class="kicker" data-rise>{{ t.hero.eyebrow }}</p>
       <h1 class="display" aria-label="{{ t.brand.word1 }} {{ t.brand.word2 }}">
         <span class="display-line" aria-hidden="true">{% for ch in t.brand.word1 %}<span class="ch">{{ ch }}</span>{% endfor %}</span>
-        <span class="display-line display-line-2" aria-hidden="true">{% for ch in t.brand.word2 %}<span class="ch">{{ ch }}</span>{% endfor %}</span>
+        <span class="display-line display-line-2" aria-hidden="true">{% for ch in t.brand.word2 %}<span class="ch">{{ ch }}</span>{% endfor %}<svg class="ring-badge" viewBox="0 0 120 120"><defs><path id="ring-path" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#ring-path">{{ t.brand.word1 }} {{ t.brand.word2 }} · Stirnu iela 8 · Rīga · </textPath></text><g class="ring-core"><circle cx="60" cy="60" r="22"/><circle cx="60" cy="60" r="14"/><circle cx="60" cy="60" r="6"/></g></svg></span>
       </h1>
       <p class="hero-sub" data-rise>{{ t.hero.sub }}</p>
       <div class="cta-row" data-rise>
@@ -126,10 +127,8 @@
       </div>
       <div class="states-lens">
         <figure class="lens" data-lens>
-          <picture>
-            <source type="image/webp" srcset="/img/hand-600.webp 600w, /img/hand-960.webp 960w" sizes="(max-width: 900px) 70vw, 460px">
-            <img src="/img/hand-600.webp" alt="" width="960" height="1280" loading="lazy" decoding="async">
-          </picture>
+{% for c in t.audience.cards %}          <img class="lens-img{% if loop.first %} is-on{% endif %}" data-lens-img="{{ loop.index0 }}" src="/img/state-{{ loop.index }}-480.webp" srcset="/img/state-{{ loop.index }}-480.webp 480w, /img/state-{{ loop.index }}-720.webp 720w" sizes="(max-width: 900px) 70vw, 500px" alt="" width="720" height="720" loading="lazy" decoding="async">
+{% endfor %}
           <canvas class="bubbles" data-bubbles="lens" aria-hidden="true"></canvas>
           <svg class="lens-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49" pathLength="6" data-lens-ring/></svg>
         </figure>
@@ -158,7 +157,23 @@
         <p class="lede">{{ t.how.lede }}</p>
       </div>
       <div class="curve-plot" aria-hidden="true">
+        <div class="curve-bands" data-curve-bands>
+{% for s in t.how.steps %}          <div class="curve-band" data-band="{{ loop.index0 }}"><span>{{ s.n }}</span><b>{{ s.title }}</b></div>
+{% endfor %}        </div>
+        <span class="curve-axis curve-axis-up">↑ {{ t.how.axis_up }}</span>
+        <span class="curve-axis curve-axis-down">↓ {{ t.how.axis_down }}</span>
+        <div class="curve-canvas">
         <svg viewBox="0 0 1000 300" preserveAspectRatio="none" data-curve-svg>
+          <defs>
+            <linearGradient id="curve-fill" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="300" data-curve-grad>
+              <stop offset="0" stop-color="#8fe8e0" stop-opacity=".42"/>
+              <stop offset=".66" stop-color="#8fe8e0" stop-opacity=".04"/>
+              <stop offset=".66" stop-color="#0a2a27" stop-opacity=".0"/>
+              <stop offset="1" stop-color="#062320" stop-opacity=".55"/>
+            </linearGradient>
+            <clipPath id="curve-clip"><rect x="0" y="0" width="0" height="300" data-curve-clip/></clipPath>
+          </defs>
+          <path class="curve-area" data-curve-area clip-path="url(#curve-clip)" d=""/>
           <line class="curve-base" x1="0" y1="200" x2="1000" y2="200"/>
           <path class="curve-ghost" d="M14,200 C80,200 140,188 200,176 C270,162 330,128 400,110 C460,95 505,86 550,74 C600,60 640,38 680,36 C730,34 760,120 820,190 C870,240 930,250 986,248"/>
           <path class="curve-line" data-curve-path d="M14,200 C80,200 140,188 200,176 C270,162 330,128 400,110 C460,95 505,86 550,74 C600,60 640,38 680,36 C730,34 760,120 820,190 C870,240 930,250 986,248"/>
@@ -167,7 +182,9 @@
 {% for s in t.how.steps %}          <span class="curve-mark" data-mark="{{ loop.index0 }}" data-n="{{ s.n }}"></span>
 {% endfor %}        </div>
         <span class="curve-dot" data-curve-dot><i></i></span>
+        </div>
       </div>
+      <p class="wrap curve-note">{{ t.faq['items'][0].a }}</p>
       <ol class="wrap curve-steps" data-curve-steps>
 {% for s in t.how.steps %}        <li class="curve-step{% if loop.first %} is-on{% endif %}" data-step="{{ loop.index0 }}">
           <span class="curve-step-n">{{ s.n }}<small>/0{{ loop.length }}</small></span>
@@ -259,8 +276,8 @@
   <section class="booking" id="pieraksts">
     <figure class="booking-photo" aria-hidden="true">
       <picture>
-        <source type="image/webp" srcset="/img/after-600.webp 600w, /img/after-960.webp 960w" sizes="(max-width: 900px) 100vw, 45vw">
-        <img src="/img/after-600.webp" alt="" width="960" height="1280" loading="lazy" decoding="async">
+        <source type="image/webp" srcset="/img/tea-600.webp 600w, /img/tea-960.webp 960w" sizes="(max-width: 900px) 100vw, 45vw">
+        <img src="/img/tea-600.webp" alt="" width="960" height="1280" loading="lazy" decoding="async">
       </picture>
     </figure>
     <div class="booking-body">
@@ -268,8 +285,8 @@
       <h2 class="h2">{{ t.booking.title | replace('<em>', '') | replace('</em>', '') }}</h2>
       <p class="lede">{{ t.booking.lede }}</p>
       <div class="cta-row">
-        <a class="btn btn-light" href="{{ wa(t.wa.default) }}" target="_blank" rel="noopener" data-track="wa_booking">{{ icon_wa | safe }}{{ t.booking.wa_cta }}</a>
-        <a class="btn btn-line" href="tel:+37129405327" data-track="call">{{ t.booking.call }} +371 29 405 327</a>
+        <a class="btn" href="{{ wa(t.wa.default) }}" target="_blank" rel="noopener" data-track="wa_booking">{{ icon_wa | safe }}{{ t.booking.wa_cta }}</a>
+        <a class="btn btn-glass" href="tel:+37129405327" data-track="call">{{ t.booking.call }} +371 29 405 327</a>
       </div>
       <form class="form" data-form data-subject="{{ t.booking.email_subject }}" data-sending="{{ t.booking.sending }}" data-error="{{ t.booking.error }}" novalidate>
         <p class="form-or">{{ t.booking.or }}</p>
@@ -281,7 +298,7 @@
         <label class="field"><textarea name="message" rows="2" placeholder=" "></textarea><span>{{ t.booking.message }}</span></label>
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label class="consent"><input type="checkbox" name="consent" required><span>{{ t.booking.consent_pre }}<button type="button" class="link-btn" data-privacy-open>{{ t.booking.consent_link }}</button>{{ t.booking.consent_post }}</span></label>
-        <button class="btn btn-light btn-block" type="submit">{{ t.booking.submit }}</button>
+        <button class="btn btn-block" type="submit">{{ t.booking.submit }}</button>
         <p class="form-status" role="status" aria-live="polite" data-success="{{ t.booking.success }}"></p>
       </form>
       <dl class="book-meta">

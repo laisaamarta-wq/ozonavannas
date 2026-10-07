@@ -281,7 +281,7 @@
       texts.forEach(function (t, k) { t.classList.toggle("is-on", k === i); });
       if (ring) ring.style.strokeDashoffset = String(-i);
       if (lb) { lb.rate = reduce ? 0 : rates[i]; lb.burst(reduce ? 0 : 18); }
-      if (lens) { lens.classList.remove("is-pulse"); void lens.offsetWidth; lens.classList.add("is-pulse"); setTimeout(function () { lens.classList.remove("is-pulse"); }, 900); }
+      $$("[data-lens-img]", states).forEach(function (im, k) { im.classList.toggle("is-on", k === i); });
       if (focus) btns[i].focus();
     }
     btns.forEach(function (b, i) {
@@ -304,6 +304,8 @@
   if (curve) {
     var path = $("[data-curve-path]", curve), svg = $("[data-curve-svg]", curve);
     var dot = $("[data-curve-dot]", curve), marks = $$("[data-mark]", curve), steps = $$("[data-step]", curve);
+    var bands = $$("[data-band]", curve), area = $("[data-curve-area]", curve), clip = $("[data-curve-clip]", curve), grad = $("[data-curve-grad]", curve);
+    var markX = [];
     var cimg = $("[data-curve-img]", curve);
     var cb = Bubbles($('[data-bubbles="curve"]', curve), { rate: reduce ? 0 : 12, speed: .6, alpha: .45 });
     var F = [.08, .33, .5, .66, .93];
@@ -318,9 +320,21 @@
       var base = $(".curve-base", svg); base.setAttribute("x2", W); base.setAttribute("y1", 200 / 300 * H); base.setAttribute("y2", 200 / 300 * H);
       L = path.getTotalLength();
       path.style.strokeDasharray = L + " " + L;
+      var baseY = (200 / 300 * H).toFixed(1);
+      area.setAttribute("d", d + " L" + (986 / 1000 * W).toFixed(1) + "," + baseY + " L" + (14 / 1000 * W).toFixed(1) + "," + baseY + " Z");
+      grad.setAttribute("y2", H);
+      clip.setAttribute("height", H);
+      markX = [];
       marks.forEach(function (m, i) {
         var pt = path.getPointAtLength(F[i] * L);
         m.style.left = pt.x + "px"; m.style.top = pt.y + "px";
+        markX.push(pt.x);
+      });
+      // phase bands: from halfway to the previous mark to halfway to the next one
+      bands.forEach(function (b, i) {
+        var l = i === 0 ? 0 : (markX[i - 1] + markX[i]) / 2;
+        var r = i === bands.length - 1 ? W : (markX[i] + markX[i + 1]) / 2;
+        b.style.left = l + "px"; b.style.width = (r - l) + "px";
       });
       return H;
     }
@@ -331,12 +345,14 @@
       path.style.strokeDashoffset = String(L * (1 - p));
       var pt = path.getPointAtLength(p * L);
       dot.style.transform = "translate(" + pt.x + "px," + pt.y + "px)";
+      clip.setAttribute("width", pt.x);
       var idx = 0;
       F.forEach(function (f, i) { if (p >= f - .06) idx = i; });
       marks.forEach(function (m, i) { m.classList.toggle("is-past", p >= F[i] - .06); });
       if (idx !== active) {
         active = idx;
         steps.forEach(function (st, i) { st.classList.toggle("is-on", i === idx); });
+        bands.forEach(function (b, i) { b.classList.toggle("is-on", i === idx); b.classList.toggle("is-past", i <= idx); });
       }
       var intensity = clamp((200 - pt.y / plotH * 300) / 164, -.35, 1);   // 1 at the peak, negative in deep recovery
       cb.rate = reduce ? 0 : 6 + Math.max(0, intensity) * 46;
@@ -430,7 +446,7 @@
       tx = e.clientX; ty = e.clientY; cur.classList.add("is-on");
       var t = e.target;
       cur.classList.toggle("is-link", !!(t.closest && t.closest("a,button,summary,label")));
-      cur.classList.toggle("is-dark", !!(t.closest && t.closest(".curve,.booking,.site-footer")));
+      cur.classList.toggle("is-dark", !!(t.closest && t.closest(".curve")));
     });
     document.addEventListener("pointerleave", function () { cur.classList.remove("is-on"); });
     (function loop() {

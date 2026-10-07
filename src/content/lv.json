@@ -114,7 +114,9 @@
         "text": "Pēc aktivācijas sākas dziļas relaksācijas, atjaunošanās un sistēmu līdzsvara procesi."
       }
     ],
-    "img_alt": "Ozonēts ūdens ozona vannā"
+    "img_alt": "Ozonēts ūdens ozona vannā",
+    "axis_up": "aktivācija",
+    "axis_down": "atjaunošanās"
   },
   "services": {
     "eyebrow": "Procedūras un cenas",
