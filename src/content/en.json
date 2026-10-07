@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "lang": "en",
+    "locale": "en_GB",
+    "path": "/en/",
+    "title": "Ozone Bath in Riga | Ozone baths and massage | Ozonavannas.lv",
+    "description": "Ozone baths in Riga – deep relaxation, body restoration and wellbeing. Choose an ozone bath or an ozone bath with massage. Booking in Riga.",
+    "og_image_alt": "Ozone bath in Riga"
+  },
+  "skip": "Skip to content",
+  "brand": {
+    "word1": "Ozone",
+    "word2": "baths"
+  },
+  "nav": {
+    "benefits": "Who it's for",
+    "how": "How it works",
+    "services": "Pricing",
+    "faq": "FAQ",
+    "about": "About the sessions",
+    "book": "Book a session",
+    "menu": "Menu"
+  },
+  "wa": {
+    "default": "Hello! I would like to book an ozone bath.",
+    "bath": "Hello! I would like to book an ozone bath (20 or 30 min).",
+    "massage": "Hello! I would like to book an ozone bath + massage with ozone oil (45 min)."
+  },
+  "hero": {
+    "eyebrow": "Wellness procedures",
+    "title": "Ozone <em>baths</em>",
+    "sub": "Restoring the nervous system and the body's inner resources through natural adaptation mechanisms. More energy, focus and resilience to everyday strain.",
+    "cta": "Book a session",
+    "cta_secondary": "View sessions",
+    "disclaimer": "A wellness procedure — not a medical service.",
+    "place": "Stirnu iela 8, Rīga · 2nd floor, office 203 · Mon–Fri 10:00–19:00",
+    "img_alt": "Ozone bath in Riga",
+    "m": {
+      "lead": "Restored energy and inner balance",
+      "procedure": "Ozone baths",
+      "desc": "Restoring the body's inner resources through natural adaptation mechanisms.",
+      "points": [
+        "More energy",
+        "Less tension",
+        "Better adaptation to strain"
+      ]
+    }
+  },
+  "audience": {
+    "eyebrow": "Who it's for",
+    "title": "Who are ozone <em>baths for?</em>",
+    "lede": "Ozone baths are recommended for increased fatigue, stress, swelling and reduced adaptive resources of the body, as well as during recovery periods after physical load.",
+    "cards": [
+      {
+        "tag": "01",
+        "title": "Chronic fatigue, a «depleted» state",
+        "text": "Ozone baths help to restore strength and energy."
+      },
+      {
+        "tag": "02",
+        "title": "Swelling, fluid retention",
+        "text": "Help to reduce swelling and release excess fluid."
+      },
+      {
+        "tag": "03",
+        "title": "Slow recovery after physical load",
+        "text": "Relieves fatigue and tension after physical activity."
+      },
+      {
+        "tag": "04",
+        "title": "Stress, tension, anxious background",
+        "text": "The baths help to lower the level of tension and anxiety."
+      },
+      {
+        "tag": "05",
+        "title": "Mental fog, reduced concentration",
+        "text": "Support better concentration and clarity of mind."
+      },
+      {
+        "tag": "06",
+        "title": "Urban life, toxins, overload",
+        "text": "Feel a rush of strength, clarity of mind and deep recovery."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "Process",
+    "title": "How it <em>works</em>",
+    "lede": "Five phases — from a gentle initial stimulus to deep recovery.",
+    "steps": [
+      {
+        "n": "01",
+        "title": "Gentle oxidative stimulus",
+        "text": "Ozonated water creates a brief physiological stimulus for the skin and capillaries."
+      },
+      {
+        "n": "02",
+        "title": "Receptor and nervous system activation",
+        "text": "The peripheral nervous system and autonomic regulation engage."
+      },
+      {
+        "n": "03",
+        "title": "Eustress — beneficial stress",
+        "text": "The body receives a controlled signal toward adaptation, not toward defence or a panic response."
+      },
+      {
+        "n": "04",
+        "title": "Brief sympathetic activation",
+        "text": "A moderate release of catecholamines (hormones and neurotransmitters) supports clarity, tone and concentration."
+      },
+      {
+        "n": "05",
+        "title": "Recovery phase",
+        "text": "After activation, the body enters deep relaxation, restoration and a rebalancing of systems."
+      }
+    ],
+    "img_alt": "Ozonated water in an ozone bath",
+    "axis_up": "activation",
+    "axis_down": "recovery"
+  },
+  "services": {
+    "eyebrow": "Sessions & pricing",
+    "title": "Services — <em>pricing</em>",
+    "lede": "A private room, warm ozonated water and personal attention to every detail.",
+    "items": [
+      {
+        "name": "Ozone bath",
+        "desc": "A gentle and pleasant effect on the body that helps to restore tone and reduce swelling. After the procedure you will feel improved wellbeing and support for the nervous system, which will make your day more comfortable.",
+        "features": [
+          "restoration of tone",
+          "reduction of swelling",
+          "improved wellbeing",
+          "support for the nervous system",
+          "gentle systemic effect"
+        ],
+        "opts": [
+          {
+            "t": "20 min",
+            "p": "30 €"
+          },
+          {
+            "t": "30 min",
+            "p": "40 €"
+          }
+        ],
+        "cta": "Book",
+        "wa": "bath",
+        "img": "bath",
+        "img_alt": "Ozone bath"
+      },
+      {
+        "name": "Ozone bath + massage with ozone oil",
+        "desc": "The combination of an ozone bath and a massage with ozone oil provides deeper relaxation and accelerated recovery. The procedure helps to release physical tightness and brings a sense of renewal, so that you feel more energetic and lighter.",
+        "features": [
+          "the bath prepares the nervous system and vessels",
+          "massage enhances lymphatic drainage and relaxation",
+          "ozone oil works locally with the tissues",
+          "a pronounced «renewal» effect"
+        ],
+        "opts": [
+          {
+            "t": "45 min",
+            "p": "50 €"
+          }
+        ],
+        "cta": "Book",
+        "wa": "massage",
+        "img": "massage",
+        "img_alt": "Massage with ozone oil"
+      }
+    ]
+  },
+  "specialist": {
+    "eyebrow": "Specialist",
+    "name": "Nikolai Jakovlev",
+    "role": "Certified massage and ozone bath specialist",
+    "bio": "Works according to principles of physiological safety, individual calibration of intensity and attentive care for the client's state.",
+    "values": [
+      {
+        "title": "Individual approach",
+        "text": "Each session is adjusted to your current state."
+      },
+      {
+        "title": "Physiological safety",
+        "text": "Moderate intensity, controlled effect."
+      },
+      {
+        "title": "Private space",
+        "text": "A quiet, calm setting without rush."
+      }
+    ],
+    "img_alt": "Nikolai Jakovlev"
+  },
+  "faq": {
+    "eyebrow": "Frequently asked questions",
+    "title": "Frequently asked <em>questions</em>",
+    "items": [
+      {
+        "q": "Does it stimulate or relax?",
+        "a": "First — a gentle activation, then a phase of deep recovery. The procedure works in both directions: it tones, and then it relaxes."
+      },
+      {
+        "q": "Will the nervous system be «overloaded»?",
+        "a": "No. The stimulus is moderate and controlled — it is a eustress that fits within the body's natural adaptation response."
+      },
+      {
+        "q": "How many sessions do I need?",
+        "a": "The first effect is felt after a single session. For a lasting result, a short course is usually recommended."
+      },
+      {
+        "q": "Are there any contraindications?",
+        "a": "Yes, there are individual limits. Please share them in advance — the specialist will adapt the session."
+      },
+      {
+        "q": "Can it be combined with training / massage / therapy?",
+        "a": "Yes. An ozone bath combines well with physical activity, massage and supportive therapy."
+      }
+    ]
+  },
+  "booking": {
+    "eyebrow": "Booking",
+    "title": "Ready to feel how your body switches into <em>recovery mode?</em>",
+    "lede": "If you still have questions, fill in the form and we will get in touch with you.",
+    "wa_cta": "Message on WhatsApp",
+    "call": "Call",
+    "or": "Or leave a request",
+    "name": "Your name",
+    "phone": "Phone",
+    "when": "Preferred day or time",
+    "message": "Question or comment",
+    "consent_pre": "By submitting this form you agree to the ",
+    "consent_link": "Privacy Policy",
+    "consent_post": ".",
+    "submit": "Send",
+    "sending": "Sending…",
+    "success": "Thank you — we will contact you shortly.",
+    "error": "Sending failed. Please message us on WhatsApp or call.",
+    "contacts": "Contact",
+    "address_label": "Address",
+    "hours_label": "Hours",
+    "address": "Stirnu iela 8, Rīga · 2nd floor, office 203",
+    "address_note": "In the ĀRC VALEO building",
+    "hours": "Mon–Fri · 10:00–19:00",
+    "email_subject": "New request (EN) — Ozona vannas"
+  },
+  "footer": {
+    "tagline": "Wellness procedures",
+    "disclaimer": "This wellness procedure is not a medical service and is not intended for the diagnosis, treatment, or prevention of diseases.",
+    "rights": "All rights reserved | 2026",
+    "privacy": "Privacy Policy"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": [
+      {
+        "h": "Data controller",
+        "p": "Ozona vannas, Stirnu iela 8, 2nd floor, room 203, Riga, Latvia. E-mail: ozonavannas@gmail.com"
+      },
+      {
+        "h": "What data we collect",
+        "p": "Name, phone, preferred time and message — only from the request form."
+      },
+      {
+        "h": "Why",
+        "p": "To answer your question and book your session."
+      },
+      {
+        "h": "How",
+        "p": "We use the FormSubmit service to forward the form to our e-mail."
+      },
+      {
+        "h": "Retention",
+        "p": "Data is kept until your request is fulfilled or until you ask us to delete it."
+      },
+      {
+        "h": "Your rights",
+        "p": "You have the right to access, correct or delete your data. Write to ozonavannas@gmail.com"
+      }
+    ],
+    "note": "We do not sell your data or use it for advertising.",
+    "close": "Close"
+  },
+  "sticky": "Book a session"
+}

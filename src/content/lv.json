@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "lang": "lv",
+    "locale": "lv_LV",
+    "path": "/",
+    "title": "Ozona Vanna Rīgā | Ozona vannas un masāža | Ozonavannas.lv",
+    "description": "Ozona vannas Rīgā – dziļa relaksācija, ķermeņa atjaunošana un labsajūta. Izvēlies ozona vannu vai ozona vannu ar masāžu. Pieraksts Rīgā.",
+    "og_image_alt": "Ozona vanna Rīgā"
+  },
+  "skip": "Pāriet uz saturu",
+  "brand": {
+    "word1": "Ozona",
+    "word2": "vannas"
+  },
+  "nav": {
+    "benefits": "Kam piemērots",
+    "how": "Kā tas darbojas",
+    "services": "Cena",
+    "faq": "Jautājumi",
+    "about": "Par procedūrām",
+    "book": "Pieteikties",
+    "menu": "Izvēlne"
+  },
+  "wa": {
+    "default": "Labdien! Vēlos pierakstīties uz ozona vannu.",
+    "bath": "Labdien! Vēlos pierakstīties uz ozona vannu (20 vai 30 min).",
+    "massage": "Labdien! Vēlos pierakstīties uz ozona vannu + masāžu ar ozona eļļu (45 min)."
+  },
+  "hero": {
+    "eyebrow": "Labsajūtas procedūras",
+    "title": "Ozona <em>vannas</em>",
+    "sub": "Nervu sistēmas un organisma iekšējo resursu atjaunošana caur dabiskiem adaptācijas mehānismiem. Vairāk enerģijas, savāktības un noturības pret ikdienas slodzēm.",
+    "cta": "Pieteikties",
+    "cta_secondary": "Skatīt procedūras",
+    "disclaimer": "Šī ir labsajūtas procedūra, nevis medicīnisks pakalpojums.",
+    "place": "Stirnu iela 8, Rīga · 2. stāvs, 203. kab. · P–Pk 10:00–19:00",
+    "img_alt": "Ozona vanna Rīgā",
+    "m": {
+      "lead": "Enerģijas un iekšējā līdzsvara atjaunošana",
+      "procedure": "Ozona vannas",
+      "desc": "Organisma iekšējo resursu atjaunošana caur dabiskiem adaptācijas mehānismiem.",
+      "points": [
+        "Vairāk enerģijas",
+        "Mazāk sasprindzinājuma",
+        "Labāka adaptācija slodzēm"
+      ]
+    }
+  },
+  "audience": {
+    "eyebrow": "Kam piemērots",
+    "title": "Kam piemērotas <em>ozona vannas?</em>",
+    "lede": "Ozona vannas iesaka paaugstinātas noguruma sajūtas, stresa, tūskas un samazinātu organisma adaptācijas resursu gadījumā, kā arī atjaunošanās periodā pēc slodzēm.",
+    "cards": [
+      {
+        "tag": "01",
+        "title": "Hronisks nogurums, «izlādēts» stāvoklis",
+        "text": "Ozona vannas palīdz atjaunot spēkus un enerģiju."
+      },
+      {
+        "tag": "02",
+        "title": "Tūska, šķidruma aizture",
+        "text": "Veicina tūsku mazināšanos un lieka šķidruma izvadīšanu."
+      },
+      {
+        "tag": "03",
+        "title": "Lēna atjaunošanās pēc slodzēm",
+        "text": "Mazina nogurumu un sasprindzinājumu pēc fiziskām slodzēm."
+      },
+      {
+        "tag": "04",
+        "title": "Stress, sasprindzinājums, trauksmes fons",
+        "text": "Vannas palīdz mazināt sasprindzinājuma un trauksmes līmeni."
+      },
+      {
+        "tag": "05",
+        "title": "Mentāls miglājs, samazināta koncentrācija",
+        "text": "Veicina labāku koncentrāciju un prāta skaidrību."
+      },
+      {
+        "tag": "06",
+        "title": "Pilsētas dzīvesveids, toksīni, pārslodze",
+        "text": "Sajūtiet spēku pieplūdumu, prāta skaidrību un dziļu atjaunošanos."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "Process",
+    "title": "Kā tas <em>darbojas</em>",
+    "lede": "Pieci posmi — no maiga sākotnējā stimula līdz dziļai atjaunošanās fāzei.",
+    "steps": [
+      {
+        "n": "01",
+        "title": "Maiga oksidatīva iedarbība",
+        "text": "Ozonēts ūdens rada īslaicīgu fizioloģisku stimulu ādai un kapilāriem."
+      },
+      {
+        "n": "02",
+        "title": "Receptoru un nervu sistēmas aktivācija",
+        "text": "Iesaistās perifērā nervu sistēma un veģetatīvā regulācija."
+      },
+      {
+        "n": "03",
+        "title": "Eustress — labvēlīgs stress",
+        "text": "Organisms saņem kontrolētu signālu adaptācijai, nevis aizsardzībai vai panikas reakcijai."
+      },
+      {
+        "n": "04",
+        "title": "Īsa simpātiskās sistēmas aktivācija",
+        "text": "Mērens kateholamīnu (hormonu un neirotransmiteru) izdalījums veicina prāta skaidrību, tonusu un koncentrāciju."
+      },
+      {
+        "n": "05",
+        "title": "Atjaunošanās fāze",
+        "text": "Pēc aktivācijas sākas dziļas relaksācijas, atjaunošanās un sistēmu līdzsvara procesi."
+      }
+    ],
+    "img_alt": "Ozonēts ūdens ozona vannā",
+    "axis_up": "aktivācija",
+    "axis_down": "atjaunošanās"
+  },
+  "services": {
+    "eyebrow": "Procedūras un cenas",
+    "title": "Pakalpojumi — <em>cenas</em>",
+    "lede": "Klusa telpa, silts ozonēts ūdens un personīga uzmanība katrai detaļai.",
+    "items": [
+      {
+        "name": "Ozona vanna",
+        "desc": "Maiga un patīkama iedarbība uz organismu, kas palīdz atjaunot tonusu un mazināt tūsku. Pēc procedūras jutīsiet labākas pašsajūtas uzlabojumu un nervu sistēmas atbalstu, kas padarīs jūsu dienu komfortablāku.",
+        "features": [
+          "tonusa atjaunošana",
+          "tūsku mazināšanās",
+          "labāka pašsajūta",
+          "atbalsts nervu sistēmai",
+          "maiga sistēmiska iedarbība"
+        ],
+        "opts": [
+          {
+            "t": "20 min",
+            "p": "30 €"
+          },
+          {
+            "t": "30 min",
+            "p": "40 €"
+          }
+        ],
+        "cta": "Pieteikties",
+        "wa": "bath",
+        "img": "bath",
+        "img_alt": "Ozona vanna"
+      },
+      {
+        "name": "Ozona vanna + masāža ar ozona eļļu",
+        "desc": "Ozona vannas un masāžas ar ozona eļļu apvienojums nodrošina dziļāku atslābināšanos un paātrinātu atjaunošanos. Procedūra palīdz noņemt ķermeņa sasprindzinājumu un sniedz atjaunotības sajūtu, pateicoties kam jutīsiet sevi enerģiskāku un vieglāku.",
+        "features": [
+          "vanna sagatavo nervu sistēmu un asinsvadus",
+          "masāža pastiprina limfodrenāžu un atslābināšanos",
+          "ozona eļļa darbojas lokāli ar audiem",
+          "izteikts «atjaunošanās» efekts"
+        ],
+        "opts": [
+          {
+            "t": "45 min",
+            "p": "50 €"
+          }
+        ],
+        "cta": "Pieteikties",
+        "wa": "massage",
+        "img": "massage",
+        "img_alt": "Masāža ar ozona eļļu"
+      }
+    ]
+  },
+  "specialist": {
+    "eyebrow": "Speciālists",
+    "name": "Nikolajs Jakovļevs",
+    "role": "Sertificēts masāžas un ozona vannu speciālists",
+    "bio": "Darbā ievēro fizioloģiskās drošības principus, individuālu intensitātes pielāgošanu un uzmanīgu attieksmi pret klienta stāvokli.",
+    "values": [
+      {
+        "title": "Individuāla pieeja",
+        "text": "Katra procedūra tiek pielāgota jūsu stāvoklim."
+      },
+      {
+        "title": "Fizioloģiska drošība",
+        "text": "Mērena intensitāte, kontrolēta iedarbība."
+      },
+      {
+        "title": "Privāta telpa",
+        "text": "Klusa, mierīga atmosfēra bez steigas."
+      }
+    ],
+    "img_alt": "Nikolajs Jakovļevs"
+  },
+  "faq": {
+    "eyebrow": "Bieži uzdotie jautājumi",
+    "title": "Bieži uzdotie <em>jautājumi</em>",
+    "items": [
+      {
+        "q": "Vai tas stimulē vai atslābina?",
+        "a": "Vispirms — maiga aktivācija, pēc tam dziļa atjaunošanās fāze. Procedūra darbojas abos virzienos: tonizē un pēc tam atslābina."
+      },
+      {
+        "q": "Vai būs nervu sistēmas «pārslodze»?",
+        "a": "Nē. Stimuls ir mērens un kontrolēts — tas ir eustress, kas iekļaujas dabiskā adaptācijas reakcijā."
+      },
+      {
+        "q": "Cik procedūru ir nepieciešams?",
+        "a": "Pirmais efekts jūtams jau pēc viena seansa. Noturīgam rezultātam parasti ieteicams īss kurss."
+      },
+      {
+        "q": "Vai ir kontrindikācijas?",
+        "a": "Jā, ir individuāli ierobežojumi. Lūdzu, par tiem pastāstiet iepriekš — speciālists pielāgos procedūru."
+      },
+      {
+        "q": "Vai var apvienot ar treniņiem / masāžu / terapiju?",
+        "a": "Jā. Ozona vanna labi sader ar fizisko slodzi, masāžu un atbalstošo terapiju."
+      }
+    ]
+  },
+  "booking": {
+    "eyebrow": "Pieraksts",
+    "title": "Vai esat gatavi sajust, kā ķermenis ieslēdz <em>atjaunošanās režīmu?</em>",
+    "lede": "Ja jums ir radušies jautājumi, aizpildiet formu un mēs ar jums sazināsimies.",
+    "wa_cta": "Rakstīt WhatsApp",
+    "call": "Zvanīt",
+    "or": "Vai atstājiet pieteikumu",
+    "name": "Jūsu vārds",
+    "phone": "Tālrunis",
+    "when": "Vēlamā diena vai laiks",
+    "message": "Jautājums vai komentārs",
+    "consent_pre": "Nosūtot šo formu, jūs piekrītat ",
+    "consent_link": "Privātuma politikai",
+    "consent_post": ".",
+    "submit": "Nosūtīt",
+    "sending": "Sūta…",
+    "success": "Paldies — sazināsimies ar jums tuvākajā laikā.",
+    "error": "Neizdevās nosūtīt. Lūdzu, uzrakstiet mums WhatsApp vai zvaniet.",
+    "contacts": "Kontakti",
+    "address_label": "Adrese",
+    "hours_label": "Darba laiks",
+    "address": "Stirnu iela 8, Rīga · 2. stāvs, 203. kab.",
+    "address_note": "ĀRC VALEO ēkā",
+    "hours": "P–Pk · 10:00–19:00",
+    "email_subject": "Jauns pieteikums — Ozona vannas"
+  },
+  "footer": {
+    "tagline": "Labsajūtas procedūras",
+    "disclaimer": "Šī ir labsajūtas procedūra, nevis medicīnisks pakalpojums, un tā nav paredzēta slimību diagnosticēšanai, ārstēšanai vai profilaksei.",
+    "rights": "Visas tiesības aizsargātas | 2026",
+    "privacy": "Privātuma politika"
+  },
+  "privacy": {
+    "title": "Privātuma politika",
+    "sections": [
+      {
+        "h": "Datu pārzinis",
+        "p": "Ozona vannas, Stirnu iela 8, 2. stāvs, 203. kab., Rīga, Latvija. E-pasts: ozonavannas@gmail.com"
+      },
+      {
+        "h": "Kādi dati tiek vākti",
+        "p": "Vārds, tālrunis, vēlamais laiks un ziņa — tikai no pieteikuma formas."
+      },
+      {
+        "h": "Kāpēc",
+        "p": "Lai atbildētu uz jūsu jautājumu un pierakstītu jūs uz procedūru."
+      },
+      {
+        "h": "Kā",
+        "p": "Formas nosūtīšanai izmantojam pakalpojumu FormSubmit, kas pārsūta pieteikumu uz mūsu e-pastu."
+      },
+      {
+        "h": "Glabāšanas laiks",
+        "p": "Dati tiek glabāti līdz pieteikuma izpildei vai līdz brīdim, kad lūdzat tos dzēst."
+      },
+      {
+        "h": "Jūsu tiesības",
+        "p": "Jums ir tiesības piekļūt saviem datiem, tos labot vai dzēst. Rakstiet uz ozonavannas@gmail.com"
+      }
+    ],
+    "note": "Datus nepārdodam un neizmantojam reklāmai.",
+    "close": "Aizvērt"
+  },
+  "sticky": "Pieteikties"
+}

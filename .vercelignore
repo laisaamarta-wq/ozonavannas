@@ -1,0 +1,6 @@
+src/
+build.py
+preview_build.py
+images/
+uploads/
+*.md

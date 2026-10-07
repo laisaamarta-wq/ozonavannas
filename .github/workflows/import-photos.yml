@@ -1,0 +1,30 @@
+# One-time import of generated photos (round 2) into images/gen/.
+name: Import generated photos
+on:
+  push:
+    branches: [redesign/calm-recovery]
+    paths: ['.github/workflows/import-photos.yml']
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p images/gen
+          get() { curl -fsSL --retry 3 "https://d8j0ntlcm91z4.cloudfront.net/user_3C15E03naKYn0k12cqxNShlIybX/$1.png" -o "images/gen/$2"; }
+          get hf_20261007_093332_fe32c89a-1cf1-4f55-95d1-2975b2ab89cc r0.png
+          get hf_20261007_093331_26052e64-d608-45e5-b582-5efee54c01c0 r1.png
+          get hf_20261007_093332_7512dc8b-14d7-48d6-abee-2f797e6fcf06 r2.png
+          get hf_20261007_093331_f6b3e83a-da72-4f28-8ac3-8bc95c1411e3 r3.png
+          get hf_20261007_093332_f4c6f6c6-4bd6-49ab-b409-a78273ba6372 r4.png
+          get hf_20261007_093331_76fb07e5-0e82-4684-8900-3a404712d1f0 r5.png
+          get hf_20261007_093333_9904ba6a-d0e6-4c58-975f-938555f3ef6e r6.png
+          get hf_20261007_093332_f52aeba8-ea5b-47f7-8785-b695498bb357 r7.png
+          get hf_20261007_093333_562cb8af-3de8-4ddf-8578-c751b9887b88 r8.png
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/gen
+          git commit -m "Import generated photos (round 2)"
+          git push
