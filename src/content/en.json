@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "lang": "en",
+    "locale": "en_GB",
+    "path": "/en/",
+    "title": "Ozone bath in Riga — a recovery session | Ozona vannas",
+    "description": "A warm bath with ozonated water and massage in Riga, Stirnu iela 8. A recovery session after training and long working days. From €30.",
+    "og_image_alt": "Ozone bath in Riga — the specialist checks the water"
+  },
+  "skip": "Skip to content",
+  "nav": {
+    "procedure": "The session",
+    "course": "Course",
+    "prices": "Prices",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "book": "Book",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "wa": {
+    "default": "Hello! I would like to book an ozone bath.",
+    "first": "Hello! I would like to book my first session (45 min with massage).",
+    "bath": "Hello! I would like to book an ozone bath (20 or 30 min).",
+    "course": "Hello! I would like to know more about the 10-session course.",
+    "gift": "Hello! I would like to order a gift card."
+  },
+  "hero": {
+    "eyebrow": "Ozone bath in Riga · Stirnu iela 8",
+    "title": "Recovery your <em>body can feel</em>",
+    "sub": "A warm bath with ozonated water and massage — 20 to 45 minutes for your body to recover after training, long working days and days on your feet.",
+    "cta_primary": "Book on WhatsApp",
+    "cta_secondary": "See prices",
+    "meta_line": "From €30 · Mon–Fri 10:00–19:00 · Stirnu iela 8, room 203",
+    "disclaimer": "A wellness procedure, not a medical service.",
+    "badge_title": "One specialist",
+    "badge_text": "A private session, no rush",
+    "img_alt": "The specialist checks the water temperature of the ozone bath"
+  },
+  "facts": [
+    {
+      "n": "20–45",
+      "l": "minutes per session"
+    },
+    {
+      "n": "1",
+      "l": "specialist — a private session"
+    },
+    {
+      "n": "10",
+      "l": "sessions in a course, 2–3 a week"
+    }
+  ],
+  "situations": {
+    "eyebrow": "When people come",
+    "title": "When strain builds up <em>faster than it fades</em>",
+    "lede": "An ozone bath is not a once-a-year treat. It is a session for the recovery you need every week.",
+    "items": [
+      {
+        "title": "After training",
+        "text": "Running, the gym or padel — you plan the load. Here you can plan the recovery too."
+      },
+      {
+        "title": "After a day on your feet",
+        "text": "A shift in a shop, salon or clinic. Warmth and massage that leave the body feeling lighter."
+      },
+      {
+        "title": "After a week at the desk",
+        "text": "Calls, screens, tight shoulders. 30 minutes when your body has nothing to do."
+      },
+      {
+        "title": "In the dark months",
+        "text": "When Riga gets dark in the afternoon — warmth, light and 30 minutes for yourself twice a week."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "How the session goes",
+    "title": "Five steps, <em>no surprises</em>",
+    "lede": "You know what happens at every moment — and you can always say if something isn't comfortable.",
+    "steps": [
+      {
+        "n": "01",
+        "title": "A short talk",
+        "text": "We ask how you feel and whether you have any health limitations. If the session isn't right for you, we will tell you honestly."
+      },
+      {
+        "n": "02",
+        "title": "Choosing the length",
+        "text": "Together we choose 20 or 30 minutes and a water temperature that feels pleasant to you."
+      },
+      {
+        "n": "03",
+        "title": "The ozone bath",
+        "text": "Ozone is added to the warm water, so it fizzes like mineral water. You feel a light tingle of bubbles on your skin."
+      },
+      {
+        "n": "04",
+        "title": "Massage — optional",
+        "text": "After the bath — a massage with ozonated oil. Warmth and massage help the muscles relax."
+      },
+      {
+        "n": "05",
+        "title": "No rush",
+        "text": "There is no need to hurry afterwards. During a course you note how you feel on your Recovery card."
+      }
+    ],
+    "img_alt": "Ozone bath with ozonated water",
+    "caption": "The water fizzes like mineral water — this is what an ozone bath looks like."
+  },
+  "feel": {
+    "eyebrow": "What you may feel",
+    "title": "Sensations, not <em>promises</em>",
+    "lede": "We don't promise miracles and we don't treat anything. Here is how you may feel during the session and after it. Everyone feels it differently.",
+    "items": [
+      {
+        "when": "During the session",
+        "text": "Warmth and a light tingle of bubbles. The body grows heavy and relaxed."
+      },
+      {
+        "when": "Right after",
+        "text": "Often — a lighter body and a calmer head."
+      },
+      {
+        "when": "During a course",
+        "text": "Recovery becomes a habit, and you see how you feel on your Recovery card."
+      }
+    ],
+    "note": "A wellness procedure, not a medical service. It does not replace a doctor's advice or treatment."
+  },
+  "course": {
+    "eyebrow": "Course",
+    "title": "10 sessions. <em>Your recovery plan.</em>",
+    "lede": "One session is an introduction. Regular recovery is a course: 2–3 times a week for 4–5 weeks, with one specialist.",
+    "points": [
+      "You get fixed days and times",
+      "The price of your first session counts towards the course if you buy it within 14 days",
+      "A Recovery card — you rate your own progress"
+    ],
+    "cta": "Ask about the course",
+    "card_title": "Recovery card",
+    "card_sub": "Before sessions 1, 5 and 10 you rate yourself from 1 to 10:",
+    "rows": [
+      "Energy",
+      "Sleep",
+      "Muscle tension",
+      "Lightness in the body",
+      "Overall wellbeing"
+    ],
+    "cols": [
+      "1st",
+      "5th",
+      "10th"
+    ],
+    "card_note": "Nobody promises you numbers — you write them in yourself."
+  },
+  "prices": {
+    "eyebrow": "Prices",
+    "title": "Clear prices, <em>no promotions</em>",
+    "lede": "For your first visit we suggest the 45-minute session with massage — it shows best how the full session feels.",
+    "per": "per session",
+    "items": [
+      {
+        "name": "Ozone bath",
+        "desc": "A warm bath with ozonated water. A short recovery at lunchtime or after work.",
+        "opts": [
+          {
+            "t": "20 min",
+            "p": "€30"
+          },
+          {
+            "t": "30 min",
+            "p": "€40"
+          }
+        ],
+        "cta": "Book",
+        "wa": "bath"
+      },
+      {
+        "name": "Ozone bath + massage",
+        "tag": "For your first visit",
+        "desc": "The bath and a massage with ozonated oil — the full session, for the body to relax after strain.",
+        "opts": [
+          {
+            "t": "45 min",
+            "p": "€50"
+          }
+        ],
+        "cta": "Book",
+        "wa": "first"
+      },
+      {
+        "name": "Course: 10 sessions",
+        "desc": "2–3 times a week for 4–5 weeks, fixed times and a Recovery card.",
+        "opts": [
+          {
+            "t": "10 × 30 min",
+            "p": "€360"
+          },
+          {
+            "t": "10 × 45 min with massage",
+            "p": "€450"
+          }
+        ],
+        "foot": "€36 / €45 per session",
+        "cta": "Ask about the course",
+        "wa": "course"
+      }
+    ],
+    "gift_title": "Gift card",
+    "gift_text": "Give recovery: a first session (€50) or a course. A digital version within 5 minutes on WhatsApp, valid for 3 months.",
+    "gift_cta": "Order a gift card",
+    "founders_title": "For our first 50 clients",
+    "founders_text": "We opened recently. If you buy a course as one of our first 50 clients, your course price stays the same for 12 months. In return, we only ask for an honest review after the course."
+  },
+  "specialist": {
+    "eyebrow": "Specialist",
+    "name": "Nikolajs Jakovļevs",
+    "role": "Certified massage and ozone bath specialist",
+    "text": "We opened recently, so every client gets personal attention. Nikolajs runs every session himself: he talks with you first, chooses the right length and makes sure you are comfortable.",
+    "values": [
+      {
+        "title": "Individual approach",
+        "text": "Length and temperature are set by how you feel."
+      },
+      {
+        "title": "One specialist",
+        "text": "No conveyor belt, no changing staff."
+      },
+      {
+        "title": "Private session",
+        "text": "Just you and the specialist, with no rush."
+      }
+    ],
+    "img_alt": "Nikolajs Jakovļevs, massage and ozone bath specialist"
+  },
+  "before": {
+    "eyebrow": "Before your first visit",
+    "title": "The session is not for everyone",
+    "text": "When booking, tell us about your health — for example pregnancy, chronic conditions, recent surgery or how you feel that day. If the session isn't right for you, we will say so. If in doubt, please talk to a doctor first."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Common <em>questions</em>",
+    "items": [
+      {
+        "q": "What is an ozone bath?",
+        "a": "A wellness procedure: you lie in warm water to which ozone is added, so the water fizzes like mineral water. The session is run by a certified specialist."
+      },
+      {
+        "q": "What should I choose for my first visit?",
+        "a": "We suggest the 45-minute session — the bath with massage. If you are short on time, start with a 20- or 30-minute bath."
+      },
+      {
+        "q": "How often should I come?",
+        "a": "For regular recovery we suggest a course: 10 sessions, 2–3 times a week, for about 4–5 weeks."
+      },
+      {
+        "q": "Can I combine it with training?",
+        "a": "Yes. Tell the specialist about your training load and he will adjust the length of the session."
+      },
+      {
+        "q": "Is it a medical service?",
+        "a": "No. It is a wellness procedure and does not replace a doctor's advice, diagnosis or treatment."
+      },
+      {
+        "q": "How do I find you?",
+        "a": "Stirnu iela 8, 2nd floor, room 203 (in the ĀRC VALEO building), Riga."
+      }
+    ]
+  },
+  "booking": {
+    "eyebrow": "Booking",
+    "title": "Book your <em>first session</em>",
+    "lede": "Fastest on WhatsApp: tell us which day suits you and we will offer the nearest free times. Or leave a request and we will call you back.",
+    "wa_cta": "Message on WhatsApp",
+    "call": "Call",
+    "or": "Or leave a request",
+    "name": "Name",
+    "phone": "Phone",
+    "when": "Preferred day or time",
+    "message": "Question or comment",
+    "consent_pre": "By sending the form you agree to the ",
+    "consent_link": "Privacy Policy",
+    "consent_post": ".",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "success": "Thank you! We will contact you during working hours.",
+    "error": "Sending failed. Please message us on WhatsApp or call.",
+    "contacts": "Contact",
+    "address_label": "Address",
+    "hours_label": "Hours",
+    "address": "Stirnu iela 8, 2nd floor, room 203, Riga",
+    "address_note": "In the ĀRC VALEO building",
+    "hours": "Mon–Fri 10:00–19:00",
+    "email_subject": "New request (EN) — Ozona vannas"
+  },
+  "footer": {
+    "tagline": "Ozone bath — a recovery session in Riga",
+    "disclaimer": "A wellness procedure, not a medical service. It is not intended to diagnose, treat or prevent any disease.",
+    "rights": "© 2026 Ozona vannas",
+    "privacy": "Privacy Policy"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": [
+      {
+        "h": "Data controller",
+        "p": "Ozona vannas, Stirnu iela 8, 2nd floor, room 203, Riga, Latvia. E-mail: ozonavannas@gmail.com"
+      },
+      {
+        "h": "What data we collect",
+        "p": "Name, phone, preferred time and message — only from the request form."
+      },
+      {
+        "h": "Why",
+        "p": "To answer your question and book your session."
+      },
+      {
+        "h": "How",
+        "p": "We use the FormSubmit service to forward the form to our e-mail."
+      },
+      {
+        "h": "Retention",
+        "p": "Data is kept until your request is fulfilled or until you ask us to delete it."
+      },
+      {
+        "h": "Your rights",
+        "p": "You have the right to access, correct or delete your data. Write to ozonavannas@gmail.com"
+      }
+    ],
+    "note": "We do not sell your data or use it for advertising.",
+    "close": "Close"
+  },
+  "sticky": "Book"
+}

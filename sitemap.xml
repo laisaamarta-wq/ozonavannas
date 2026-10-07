@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.ozonavannas.lv/</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-07</lastmod>
     <xhtml:link rel="alternate" hreflang="lv" href="https://www.ozonavannas.lv/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ozonavannas.lv/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ozonavannas.lv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ozonavannas.lv/ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ozonavannas.lv/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ozonavannas.lv/"/>
+  </url>
+  <url>
+    <loc>https://www.ozonavannas.lv/ru/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://www.ozonavannas.lv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ozonavannas.lv/ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ozonavannas.lv/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ozonavannas.lv/"/>
+  </url>
+  <url>
+    <loc>https://www.ozonavannas.lv/en/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://www.ozonavannas.lv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ozonavannas.lv/ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ozonavannas.lv/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ozonavannas.lv/"/>
   </url>
 </urlset>
