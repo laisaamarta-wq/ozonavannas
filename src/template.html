@@ -25,7 +25,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/source-serif-4-normal-300-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-normal-300-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="/img/hero-water-900.webp" imagesrcset="/img/hero-water-900.webp 900w, /img/hero-water-1536.webp 1536w" imagesizes="(max-width: 900px) 100vw, 50vw">
+  <link rel="preload" as="image" href="/img/hero-720.webp" imagesrcset="/img/hero-720.webp 720w, /img/hero-1023.webp 1023w" imagesizes="(max-width: 900px) 100vw, 45vw">
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/styles.css?v={{ version }}">
   <script type="application/ld+json">{{ jsonld | safe }}</script>
@@ -40,11 +40,11 @@
       <span class="logo-word">Ozona<span>·</span>vannas</span>
     </a>
     <nav class="nav" aria-label="{{ t.nav.menu }}">
-      <a href="#procedura">{{ t.nav.procedure }}</a>
-      <a href="#kurss">{{ t.nav.course }}</a>
-      <a href="#cenas">{{ t.nav.prices }}</a>
+      <a href="#kam">{{ t.nav.benefits }}</a>
+      <a href="#procedura">{{ t.nav.how }}</a>
+      <a href="#cenas">{{ t.nav.services }}</a>
       <a href="#jautajumi">{{ t.nav.faq }}</a>
-      <a href="#pieraksts">{{ t.nav.contact }}</a>
+      <a href="#specialists">{{ t.nav.about }}</a>
     </nav>
     <div class="header-right">
       <div class="lang" aria-label="Language">
@@ -56,11 +56,11 @@
   </div>
   <div class="mobile-menu" id="mobile-menu" hidden data-menu>
     <nav class="wrap">
-      <a href="#procedura">{{ t.nav.procedure }}</a>
-      <a href="#kurss">{{ t.nav.course }}</a>
-      <a href="#cenas">{{ t.nav.prices }}</a>
+      <a href="#kam">{{ t.nav.benefits }}</a>
+      <a href="#procedura">{{ t.nav.how }}</a>
+      <a href="#cenas">{{ t.nav.services }}</a>
       <a href="#jautajumi">{{ t.nav.faq }}</a>
-      <a href="#pieraksts">{{ t.nav.contact }}</a>
+      <a href="#specialists">{{ t.nav.about }}</a>
       <div class="lang lang-mobile">
 {% for l in langs %}        <a href="{{ l.path }}" hreflang="{{ l.code }}"{% if l.code == t.meta.lang %} aria-current="page"{% endif %}>{{ l.code | upper }}</a>
 {% endfor %}      </div>
@@ -72,156 +72,123 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">{{ t.hero.eyebrow }}</p>
         <h1 class="display">{{ t.hero.title | safe }}</h1>
         <p class="lede">{{ t.hero.sub }}</p>
         <div class="cta-row">
-          <a class="btn" href="{{ wa(t.wa.first) }}" target="_blank" rel="noopener" data-track="wa_hero">{{ icon_wa | safe }}{{ t.hero.cta_primary }}</a>
+          <a class="btn" href="{{ wa(t.wa.default) }}" target="_blank" rel="noopener" data-track="wa_hero">{{ icon_wa | safe }}{{ t.hero.cta }}</a>
           <a class="btn btn-ghost" href="#cenas">{{ t.hero.cta_secondary }}</a>
         </div>
-        <p class="meta-line">{{ t.hero.meta_line }}</p>
+        <p class="meta-line">{{ t.hero.place }}</p>
         <p class="fine">{{ t.hero.disclaimer }}</p>
       </div>
       <figure class="hero-media">
         <picture>
-          <source type="image/webp" srcset="/img/hero-water-900.webp 900w, /img/hero-water-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 50vw">
-          <img src="/img/hero-water-900.jpg" alt="{{ t.hero.img_alt }}" width="1536" height="1024" fetchpriority="high">
+          <source type="image/webp" srcset="/img/hero-720.webp 720w, /img/hero-1023.webp 1023w" sizes="(max-width: 900px) 100vw, 45vw">
+          <img src="/img/hero-720.jpg" alt="{{ t.hero.img_alt }}" width="1023" height="1537" fetchpriority="high">
         </picture>
         <div class="bubbles" aria-hidden="true">{% for i in range(14) %}<i></i>{% endfor %}</div>
-        <figcaption class="badge">
-          <strong>{{ t.hero.badge_title }}</strong>
-          <span>{{ t.hero.badge_text }}</span>
+        <figcaption class="hero-card">
+          <strong>{{ t.hero.m.lead }}</strong>
+          <ul>
+{% for pt in t.hero.m.points %}            <li>{{ pt }}</li>
+{% endfor %}          </ul>
         </figcaption>
       </figure>
     </div>
-    <div class="wrap">
-      <ul class="facts">
-{% for f in t.facts %}        <li><span class="facts-n">{{ f.n }}</span><span class="facts-l">{{ f.l }}</span></li>
-{% endfor %}      </ul>
-    </div>
   </section>
 
-  <!-- SITUATIONS -->
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+{% for r in range(2) %}      <div class="marquee-group">
+{% for k in range(3) %}{% for pt in t.hero.m.points %}        <span>{{ pt }}</span><i></i>
+{% endfor %}{% endfor %}      </div>
+{% endfor %}    </div>
+  </div>
+
+  <!-- AUDIENCE -->
   <section class="section" id="kam">
     <div class="wrap">
-      <header class="section-head">
-        <p class="eyebrow">{{ t.situations.eyebrow }}</p>
-        <h2 class="h2">{{ t.situations.title | safe }}</h2>
-        <p class="lede">{{ t.situations.lede }}</p>
+      <header class="section-head section-head-split">
+        <div>
+          <p class="eyebrow">{{ t.audience.eyebrow }}</p>
+          <h2 class="h2">{{ t.audience.title | safe }}</h2>
+        </div>
+        <p class="lede">{{ t.audience.lede }}</p>
       </header>
-      <ol class="cards-4">
-{% for s in t.situations['items'] %}        <li class="card reveal">
-          <span class="card-n">0{{ loop.index }}</span>
-          <h3>{{ s.title }}</h3>
-          <p>{{ s.text }}</p>
+      <ol class="cards-3">
+{% for c in t.audience.cards %}        <li class="card reveal">
+          <div class="card-top"><span class="card-n">{{ c.tag }}</span><span class="card-glyph" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <h3>{{ c.title }}</h3>
+          <p>{{ c.text }}</p>
         </li>
 {% endfor %}      </ol>
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section class="section section-tint" id="procedura">
-    <div class="wrap process-grid">
-      <div class="process-media">
-        <figure>
+  <!-- HOW IT WORKS -->
+  <section class="section section-deep how" id="procedura">
+    <div class="wrap how-grid">
+      <div class="how-aside">
+        <p class="eyebrow">{{ t.how.eyebrow }}</p>
+        <h2 class="h2">{{ t.how.title | safe }}</h2>
+        <p class="lede">{{ t.how.lede }}</p>
+        <figure class="how-media">
           <picture>
-            <source type="image/webp" srcset="/img/bath-900.webp 900w, /img/bath-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 45vw">
-            <img src="/img/bath-900.jpg" alt="{{ t.process.img_alt }}" width="1536" height="1024" loading="lazy" decoding="async">
+            <source type="image/webp" srcset="/img/hero-water-900.webp 900w, /img/hero-water-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 40vw">
+            <img src="/img/hero-water-900.jpg" alt="{{ t.how.img_alt }}" width="1536" height="1024" loading="lazy" decoding="async">
           </picture>
-          <figcaption>{{ t.process.caption }}</figcaption>
+          <div class="bubbles bubbles-soft" aria-hidden="true">{% for i in range(8) %}<i></i>{% endfor %}</div>
         </figure>
       </div>
-      <div>
-        <header class="section-head section-head-left">
-          <p class="eyebrow">{{ t.process.eyebrow }}</p>
-          <h2 class="h2">{{ t.process.title | safe }}</h2>
-          <p class="lede">{{ t.process.lede }}</p>
-        </header>
-        <ol class="steps">
-{% for s in t.process.steps %}          <li class="reveal">
-            <span class="steps-n">{{ s.n }}</span>
-            <div><h3>{{ s.title }}</h3><p>{{ s.text }}</p></div>
-          </li>
-{% endfor %}        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEEL -->
-  <section class="section">
-    <div class="wrap">
-      <header class="section-head">
-        <p class="eyebrow">{{ t.feel.eyebrow }}</p>
-        <h2 class="h2">{{ t.feel.title | safe }}</h2>
-        <p class="lede">{{ t.feel.lede }}</p>
-      </header>
-      <ol class="timeline">
-{% for f in t.feel['items'] %}        <li class="reveal"><span class="timeline-dot" aria-hidden="true"></span><h3>{{ f.when }}</h3><p>{{ f.text }}</p></li>
+      <ol class="steps" data-steps>
+        <span class="steps-rail" aria-hidden="true"><span></span></span>
+{% for s in t.how.steps %}        <li class="reveal">
+          <span class="steps-n">{{ s.n }}</span>
+          <div><h3>{{ s.title }}</h3><p>{{ s.text }}</p></div>
+        </li>
 {% endfor %}      </ol>
-      <p class="fine center">{{ t.feel.note }}</p>
     </div>
   </section>
 
-  <!-- COURSE -->
-  <section class="section section-deep" id="kurss">
-    <div class="wrap course-grid">
-      <div>
-        <p class="eyebrow">{{ t.course.eyebrow }}</p>
-        <h2 class="h2">{{ t.course.title | safe }}</h2>
-        <p class="lede">{{ t.course.lede }}</p>
-        <ul class="ticks">
-{% for p in t.course.points %}          <li>{{ p }}</li>
-{% endfor %}        </ul>
-        <a class="btn btn-light" href="{{ wa(t.wa.course) }}" target="_blank" rel="noopener" data-track="wa_course">{{ t.course.cta }}</a>
-      </div>
-      <div class="karte reveal" role="img" aria-label="{{ t.course.card_title }}: {{ t.course.rows | join(', ') }}">
-        <div class="karte-head">
-          <span class="logo-mark" aria-hidden="true"></span>
-          <strong>{{ t.course.card_title }}</strong>
-        </div>
-        <p class="karte-sub">{{ t.course.card_sub }}</p>
-        <div class="karte-grid">
-          <span></span>{% for c in t.course.cols %}<span class="karte-col">{{ c }}</span>{% endfor %}
-{% for r in t.course.rows %}          <span class="karte-row">{{ r }}</span>{% for c in t.course.cols %}<span class="karte-cell"></span>{% endfor %}
-{% endfor %}        </div>
-        <p class="karte-note">{{ t.course.card_note }}</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICES -->
+  <!-- SERVICES & PRICES -->
   <section class="section" id="cenas">
     <div class="wrap">
-      <header class="section-head">
-        <p class="eyebrow">{{ t.prices.eyebrow }}</p>
-        <h2 class="h2">{{ t.prices.title | safe }}</h2>
-        <p class="lede">{{ t.prices.lede }}</p>
+      <header class="section-head section-head-split">
+        <div>
+          <p class="eyebrow">{{ t.services.eyebrow }}</p>
+          <h2 class="h2">{{ t.services.title | safe }}</h2>
+        </div>
+        <p class="lede">{{ t.services.lede }}</p>
       </header>
-      <div class="prices">
-{% for p in t.prices['items'] %}        <article class="price reveal{% if p.tag %} price-main{% endif %}">
-          {% if p.tag %}<span class="tag">{{ p.tag }}</span>{% endif %}
-          <h3>{{ p.name }}</h3>
-          <p class="price-desc">{{ p.desc }}</p>
-          <ul class="price-opts">
-{% for o in p.opts %}            <li><span>{{ o.t }}</span><strong>{{ o.p }}</strong></li>
-{% endfor %}          </ul>
-          {% if p.foot %}<p class="fine">{{ p.foot }}</p>{% endif %}
-          <a class="btn{% if not p.tag %} btn-ghost{% endif %} btn-block" href="{{ wa(t.wa[p.wa]) }}" target="_blank" rel="noopener" data-track="wa_price_{{ p.wa }}">{{ p.cta }}</a>
+      <div class="svc-list">
+{% for s in t.services['items'] %}        <article class="svc reveal">
+          <figure class="svc-media">
+            <picture>
+              <source type="image/webp" srcset="/img/{{ s.img }}-900.webp 900w, /img/{{ s.img }}-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 50vw">
+              <img src="/img/{{ s.img }}-900.jpg" alt="{{ s.img_alt }}" width="1536" height="1024" loading="lazy" decoding="async">
+            </picture>
+            <span class="svc-num">0{{ loop.index }} / 0{{ loop.length }}</span>
+          </figure>
+          <div class="svc-body">
+            <h3>{{ s.name }}</h3>
+            <p class="svc-desc">{{ s.desc }}</p>
+            <ul class="svc-features">
+{% for f in s.features %}              <li>{{ f }}</li>
+{% endfor %}            </ul>
+            <div class="svc-foot">
+              <ul class="svc-opts">
+{% for o in s.opts %}                <li><span>{{ o.t }}</span><strong>{{ o.p }}</strong></li>
+{% endfor %}              </ul>
+              <a class="btn" href="{{ wa(t.wa[s.wa]) }}" target="_blank" rel="noopener" data-track="wa_price_{{ s.wa }}">{{ s.cta }}</a>
+            </div>
+          </div>
         </article>
 {% endfor %}      </div>
-      <div class="price-extras">
-        <div class="extra reveal">
-          <h3>{{ t.prices.gift_title }}</h3>
-          <p>{{ t.prices.gift_text }}</p>
-          <a class="link" href="{{ wa(t.wa.gift) }}" target="_blank" rel="noopener" data-track="wa_gift">{{ t.prices.gift_cta }} →</a>
-        </div>
-        <div class="extra extra-soft reveal">
-          <h3>{{ t.prices.founders_title }}</h3>
-          <p>{{ t.prices.founders_text }}</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -238,25 +205,21 @@
         <p class="eyebrow">{{ t.specialist.eyebrow }}</p>
         <h2 class="h2">{{ t.specialist.name }}</h2>
         <p class="role">{{ t.specialist.role }}</p>
-        <p class="lede">{{ t.specialist.text }}</p>
+        <p class="bio">{{ t.specialist.bio }}</p>
         <ul class="values">
-{% for v in t.specialist['values'] %}          <li><h3>{{ v.title }}</h3><p>{{ v.text }}</p></li>
+{% for v in t.specialist['values'] %}          <li><span class="values-dot" aria-hidden="true"></span><h3>{{ v.title }}</h3><p>{{ v.text }}</p></li>
 {% endfor %}        </ul>
       </div>
     </div>
   </section>
 
-  <!-- BEFORE + FAQ -->
+  <!-- FAQ -->
   <section class="section" id="jautajumi">
     <div class="wrap faq-grid">
-      <div>
+      <div class="faq-head">
         <p class="eyebrow">{{ t.faq.eyebrow }}</p>
         <h2 class="h2">{{ t.faq.title | safe }}</h2>
-        <aside class="notice">
-          <p class="eyebrow">{{ t.before.eyebrow }}</p>
-          <h3>{{ t.before.title }}</h3>
-          <p>{{ t.before.text }}</p>
-        </aside>
+        <a class="link link-wa" href="{{ wa(t.wa.default) }}" target="_blank" rel="noopener" data-track="wa_faq">{{ icon_wa | safe }}{{ t.booking.wa_cta }}</a>
       </div>
       <div class="faq">
 {% for f in t.faq['items'] %}        <details{% if loop.first %} open{% endif %}>
@@ -268,14 +231,15 @@
   </section>
 
   <!-- BOOKING -->
-  <section class="section section-deep" id="pieraksts">
+  <section class="section section-deep booking" id="pieraksts">
+    <div class="bubbles bubbles-wide" aria-hidden="true">{% for i in range(10) %}<i></i>{% endfor %}</div>
     <div class="wrap book-grid">
       <div>
         <p class="eyebrow">{{ t.booking.eyebrow }}</p>
         <h2 class="h2">{{ t.booking.title | safe }}</h2>
         <p class="lede">{{ t.booking.lede }}</p>
         <div class="cta-row">
-          <a class="btn btn-light" href="{{ wa(t.wa.first) }}" target="_blank" rel="noopener" data-track="wa_booking">{{ icon_wa | safe }}{{ t.booking.wa_cta }}</a>
+          <a class="btn btn-light" href="{{ wa(t.wa.default) }}" target="_blank" rel="noopener" data-track="wa_booking">{{ icon_wa | safe }}{{ t.booking.wa_cta }}</a>
           <a class="btn btn-ghost-light" href="tel:+37129405327" data-track="call">{{ t.booking.call }} +371 29 405 327</a>
         </div>
         <dl class="book-meta">
@@ -287,7 +251,7 @@
       <form class="form" data-form data-subject="{{ t.booking.email_subject }}" data-sending="{{ t.booking.sending }}" data-error="{{ t.booking.error }}" novalidate>
         <p class="form-or">{{ t.booking.or }}</p>
         <label class="field"><span>{{ t.booking.name }}</span><input name="name" type="text" autocomplete="name" required minlength="2"></label>
-        <label class="field"><span>{{ t.booking.phone }}</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="^[+\d][\d\s\-()]{6,20}$"></label>
+        <label class="field"><span>{{ t.booking.phone }}</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="^[+\d][\d\s\-()]{6,20}$" placeholder="+371 2X XXX XXX"></label>
         <label class="field"><span>{{ t.booking.when }}</span><input name="when" type="text"></label>
         <label class="field"><span>{{ t.booking.message }}</span><textarea name="message" rows="3"></textarea></label>
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -318,7 +282,7 @@
   </div>
 </footer>
 
-<a class="sticky-cta" href="{{ wa(t.wa.first) }}" target="_blank" rel="noopener" data-track="wa_sticky">{{ icon_wa | safe }}{{ t.sticky }}</a>
+<a class="sticky-cta" href="{{ wa(t.wa.default) }}" target="_blank" rel="noopener" data-track="wa_sticky">{{ icon_wa | safe }}{{ t.sticky }}</a>
 
 <dialog class="privacy" data-privacy>
   <form method="dialog">

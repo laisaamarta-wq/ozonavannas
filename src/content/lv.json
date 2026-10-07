@@ -3,166 +3,134 @@
     "lang": "lv",
     "locale": "lv_LV",
     "path": "/",
-    "title": "Ozona vanna Rīgā — atjaunošanās procedūra | Ozona vannas",
-    "description": "Silta vanna ar ozonētu ūdeni un masāža Rīgā, Stirnu ielā 8. Atjaunošanās procedūra pēc treniņiem un garām darba dienām. No 30 €.",
-    "og_image_alt": "Ozona vanna Rīgā — speciālists pārbauda ūdeni"
+    "title": "Ozona Vanna Rīgā | Ozona vannas un masāža | Ozonavannas.lv",
+    "description": "Ozona vannas Rīgā – dziļa relaksācija, ķermeņa atjaunošana un labsajūta. Izvēlies ozona vannu vai ozona vannu ar masāžu. Pieraksts Rīgā.",
+    "og_image_alt": "Ozona vanna Rīgā"
   },
   "skip": "Pāriet uz saturu",
+  "brand": {
+    "word1": "Ozona",
+    "word2": "vannas"
+  },
   "nav": {
-    "procedure": "Procedūra",
-    "course": "Kurss",
-    "prices": "Cenas",
+    "benefits": "Kam piemērots",
+    "how": "Kā tas darbojas",
+    "services": "Cena",
     "faq": "Jautājumi",
-    "contact": "Kontakti",
-    "book": "Pierakstīties",
-    "menu": "Izvēlne",
-    "close": "Aizvērt"
+    "about": "Par procedūrām",
+    "book": "Pieteikties",
+    "menu": "Izvēlne"
   },
   "wa": {
     "default": "Labdien! Vēlos pierakstīties uz ozona vannu.",
-    "first": "Labdien! Vēlos pierakstīties uz pirmo procedūru (45 min ar masāžu).",
     "bath": "Labdien! Vēlos pierakstīties uz ozona vannu (20 vai 30 min).",
-    "course": "Labdien! Vēlos uzzināt par kursu (10 procedūras).",
-    "gift": "Labdien! Vēlos pasūtīt dāvanu karti."
+    "massage": "Labdien! Vēlos pierakstīties uz ozona vannu + masāžu ar ozona eļļu (45 min)."
   },
   "hero": {
-    "eyebrow": "Ozona vanna Rīgā · Stirnu iela 8",
-    "title": "Atjaunošanās, ko <em>jūt ķermenis</em>",
-    "sub": "Silta vanna ar ozonētu ūdeni un masāža — 20 līdz 45 minūtes, lai ķermenis atgūtos pēc treniņiem, garām darba dienām un dienām kājās.",
-    "cta_primary": "Pierakstīties WhatsApp",
-    "cta_secondary": "Skatīt cenas",
-    "meta_line": "No 30 € · P–Pk 10:00–19:00 · Stirnu iela 8, 203. kab.",
-    "disclaimer": "Labsajūtas procedūra, nevis medicīnisks pakalpojums.",
-    "badge_title": "Viens speciālists",
-    "badge_text": "Privāts seanss bez steigas",
-    "img_alt": "Speciālists pārbauda ūdens temperatūru ozona vannā"
-  },
-  "facts": [
-    {
-      "n": "20–45",
-      "l": "minūtes ilga procedūra"
-    },
-    {
-      "n": "1",
-      "l": "speciālists — privāts seanss"
-    },
-    {
-      "n": "10",
-      "l": "procedūras kursā, 2–3 reizes nedēļā"
+    "eyebrow": "Labsajūtas procedūras",
+    "title": "Ozona <em>vannas</em>",
+    "sub": "Nervu sistēmas un organisma iekšējo resursu atjaunošana caur dabiskiem adaptācijas mehānismiem. Vairāk enerģijas, savāktības un noturības pret ikdienas slodzēm.",
+    "cta": "Pieteikties",
+    "cta_secondary": "Skatīt procedūras",
+    "disclaimer": "Šī ir labsajūtas procedūra, nevis medicīnisks pakalpojums.",
+    "place": "Stirnu iela 8, Rīga · 2. stāvs, 203. kab. · P–Pk 10:00–19:00",
+    "img_alt": "Ozona vanna Rīgā",
+    "m": {
+      "lead": "Enerģijas un iekšējā līdzsvara atjaunošana",
+      "procedure": "Ozona vannas",
+      "desc": "Organisma iekšējo resursu atjaunošana caur dabiskiem adaptācijas mehānismiem.",
+      "points": [
+        "Vairāk enerģijas",
+        "Mazāk sasprindzinājuma",
+        "Labāka adaptācija slodzēm"
+      ]
     }
-  ],
-  "situations": {
-    "eyebrow": "Kad pie mums nāk",
-    "title": "Kad slodze uzkrājas <em>ātrāk, nekā aiziet</em>",
-    "lede": "Ozona vanna nav relaksācija «reizi gadā». Tā ir procedūra atjaunošanās brīžiem, kas atkārtojas katru nedēļu.",
-    "items": [
+  },
+  "audience": {
+    "eyebrow": "Kam piemērots",
+    "title": "Kam piemērotas <em>ozona vannas?</em>",
+    "lede": "Ozona vannas iesaka paaugstinātas noguruma sajūtas, stresa, tūskas un samazinātu organisma adaptācijas resursu gadījumā, kā arī atjaunošanās periodā pēc slodzēm.",
+    "cards": [
       {
-        "title": "Pēc treniņiem",
-        "text": "Skrējiens, zāle vai padels — slodzi tu plāno. Šeit var ieplānot arī atjaunošanos."
+        "tag": "01",
+        "title": "Hronisks nogurums, «izlādēts» stāvoklis",
+        "text": "Ozona vannas palīdz atjaunot spēkus un enerģiju."
       },
       {
-        "title": "Pēc dienas kājās",
-        "text": "Maiņa veikalā, salonā vai klīnikā. Siltums un masāža, pēc kuras ķermenis jūtas vieglāks."
+        "tag": "02",
+        "title": "Tūska, šķidruma aizture",
+        "text": "Veicina tūsku mazināšanos un lieka šķidruma izvadīšanu."
       },
       {
-        "title": "Pēc nedēļas pie datora",
-        "text": "Sapulces, ekrāns, saspringti pleci. 30 minūtes, kad ķermenim nekas nav jādara."
+        "tag": "03",
+        "title": "Lēna atjaunošanās pēc slodzēm",
+        "text": "Mazina nogurumu un sasprindzinājumu pēc fiziskām slodzēm."
       },
       {
-        "title": "Tumšajos mēnešos",
-        "text": "Kad Rīgā satumst jau pēcpusdienā — siltums, gaisma un 30 minūtes sev divreiz nedēļā."
+        "tag": "04",
+        "title": "Stress, sasprindzinājums, trauksmes fons",
+        "text": "Vannas palīdz mazināt sasprindzinājuma un trauksmes līmeni."
+      },
+      {
+        "tag": "05",
+        "title": "Mentāls miglājs, samazināta koncentrācija",
+        "text": "Veicina labāku koncentrāciju un prāta skaidrību."
+      },
+      {
+        "tag": "06",
+        "title": "Pilsētas dzīvesveids, toksīni, pārslodze",
+        "text": "Sajūtiet spēku pieplūdumu, prāta skaidrību un dziļu atjaunošanos."
       }
     ]
   },
-  "process": {
-    "eyebrow": "Kā notiek procedūra",
-    "title": "Piecas daļas, <em>bez pārsteigumiem</em>",
-    "lede": "Jūs zināt, kas notiks katrā brīdī, — un vienmēr varat pateikt, ja kaut kas nav ērti.",
+  "how": {
+    "eyebrow": "Process",
+    "title": "Kā tas <em>darbojas</em>",
+    "lede": "Pieci posmi — no maiga sākotnējā stimula līdz dziļai atjaunošanās fāzei.",
     "steps": [
       {
         "n": "01",
-        "title": "Saruna",
-        "text": "Pajautājam, kā jūtaties un vai ir veselības ierobežojumi. Ja procedūra jums nav piemērota, pateiksim to godīgi."
+        "title": "Maiga oksidatīva iedarbība",
+        "text": "Ozonēts ūdens rada īslaicīgu fizioloģisku stimulu ādai un kapilāriem."
       },
       {
         "n": "02",
-        "title": "Ilguma izvēle",
-        "text": "Kopā izvēlamies 20 vai 30 minūtes un ūdens temperatūru, kas jums ir patīkama."
+        "title": "Receptoru un nervu sistēmas aktivācija",
+        "text": "Iesaistās perifērā nervu sistēma un veģetatīvā regulācija."
       },
       {
         "n": "03",
-        "title": "Ozona vanna",
-        "text": "Siltajā ūdenī tiek pievadīts ozons, tāpēc ūdens šņāc kā minerālūdens. Uz ādas jūtamas vieglas burbuļu tirpas."
+        "title": "Eustress — labvēlīgs stress",
+        "text": "Organisms saņem kontrolētu signālu adaptācijai, nevis aizsardzībai vai panikas reakcijai."
       },
       {
         "n": "04",
-        "title": "Masāža — pēc izvēles",
-        "text": "Pēc vannas — masāža ar ozona eļļu. Siltums un masāža palīdz muskuļiem atslābt."
+        "title": "Īsa simpātiskās sistēmas aktivācija",
+        "text": "Mērens kateholamīnu (hormonu un neirotransmiteru) izdalījums veicina prāta skaidrību, tonusu un koncentrāciju."
       },
       {
         "n": "05",
-        "title": "Bez steigas",
-        "text": "Pēc procedūras nav jāsteidzas. Kursa laikā savas sajūtas atzīmējat Atjaunošanās kartē."
+        "title": "Atjaunošanās fāze",
+        "text": "Pēc aktivācijas sākas dziļas relaksācijas, atjaunošanās un sistēmu līdzsvara procesi."
       }
     ],
-    "img_alt": "Ozona vanna ar ozonētu ūdeni",
-    "caption": "Ūdens šņāc kā minerālūdens — tā izskatās ozona vanna."
+    "img_alt": "Ozonēts ūdens ozona vannā"
   },
-  "feel": {
-    "eyebrow": "Ko jūs varat sajust",
-    "title": "Sajūtas, nevis <em>solījumi</em>",
-    "lede": "Mēs nesolām brīnumus un neārstējam. Lūk, kā var justies procedūras laikā un pēc tās. Sajūtas katram ir individuālas.",
-    "items": [
-      {
-        "when": "Procedūras laikā",
-        "text": "Siltums un vieglas burbuļu tirpas uz ādas. Ķermenis kļūst smags un atslābis."
-      },
-      {
-        "when": "Uzreiz pēc",
-        "text": "Bieži — vieglums ķermenī un mierīgāka galva."
-      },
-      {
-        "when": "Kursa laikā",
-        "text": "Atjaunošanās kļūst par ieradumu, un savas sajūtas jūs redzat Atjaunošanās kartē."
-      }
-    ],
-    "note": "Labsajūtas procedūra, nevis medicīnisks pakalpojums. Tā neaizstāj ārsta konsultāciju vai ārstēšanu."
-  },
-  "course": {
-    "eyebrow": "Kurss",
-    "title": "10 procedūras. <em>Jūsu atjaunošanās plāns.</em>",
-    "lede": "Viena procedūra ir iepazīšanās. Regulāra atjaunošanās ir kurss: 2–3 reizes nedēļā, 4–5 nedēļas, pie viena speciālista.",
-    "points": [
-      "Jums tiek piešķirtas pastāvīgas dienas un laiks",
-      "Pirmās procedūras cena tiek ieskaitīta kursā, ja to iegādājaties 14 dienu laikā",
-      "Atjaunošanās karte — savu dinamiku novērtējat paši"
-    ],
-    "cta": "Uzzināt par kursu",
-    "card_title": "Atjaunošanās karte",
-    "card_sub": "Pirms 1., 5. un 10. procedūras jūs paši novērtējat no 1 līdz 10:",
-    "rows": [
-      "Enerģija",
-      "Miegs",
-      "Spriedze muskuļos",
-      "Vieglums ķermenī",
-      "Pašsajūta"
-    ],
-    "cols": [
-      "1.",
-      "5.",
-      "10."
-    ],
-    "card_note": "Neviens jums nesola skaitļus — jūs tos ierakstāt paši."
-  },
-  "prices": {
-    "eyebrow": "Cenas",
-    "title": "Skaidras cenas, <em>bez akcijām</em>",
-    "lede": "Pirmajai reizei iesakām 45 minūšu procedūru ar masāžu — tā labāk parāda, kā jūtas pilna procedūra.",
-    "per": "par procedūru",
+  "services": {
+    "eyebrow": "Procedūras un cenas",
+    "title": "Pakalpojumi — <em>cenas</em>",
+    "lede": "Klusa telpa, silts ozonēts ūdens un personīga uzmanība katrai detaļai.",
     "items": [
       {
         "name": "Ozona vanna",
-        "desc": "Silta vanna ar ozonētu ūdeni. Īsa atjaunošanās pusdienu pārtraukumā vai pēc darba.",
+        "desc": "Maiga un patīkama iedarbība uz organismu, kas palīdz atjaunot tonusu un mazināt tūsku. Pēc procedūras jutīsiet labākas pašsajūtas uzlabojumu un nervu sistēmas atbalstu, kas padarīs jūsu dienu komfortablāku.",
+        "features": [
+          "tonusa atjaunošana",
+          "tūsku mazināšanās",
+          "labāka pašsajūta",
+          "atbalsts nervu sistēmai",
+          "maiga sistēmiska iedarbība"
+        ],
         "opts": [
           {
             "t": "20 min",
@@ -173,132 +141,110 @@
             "p": "40 €"
           }
         ],
-        "cta": "Pierakstīties",
-        "wa": "bath"
+        "cta": "Pieteikties",
+        "wa": "bath",
+        "img": "bath",
+        "img_alt": "Ozona vanna"
       },
       {
-        "name": "Ozona vanna + masāža",
-        "tag": "Pirmajai reizei",
-        "desc": "Vanna un masāža ar ozona eļļu — pilna procedūra, lai ķermenis atslābtu pēc slodzes.",
+        "name": "Ozona vanna + masāža ar ozona eļļu",
+        "desc": "Ozona vannas un masāžas ar ozona eļļu apvienojums nodrošina dziļāku atslābināšanos un paātrinātu atjaunošanos. Procedūra palīdz noņemt ķermeņa sasprindzinājumu un sniedz atjaunotības sajūtu, pateicoties kam jutīsiet sevi enerģiskāku un vieglāku.",
+        "features": [
+          "vanna sagatavo nervu sistēmu un asinsvadus",
+          "masāža pastiprina limfodrenāžu un atslābināšanos",
+          "ozona eļļa darbojas lokāli ar audiem",
+          "izteikts «atjaunošanās» efekts"
+        ],
         "opts": [
           {
             "t": "45 min",
             "p": "50 €"
           }
         ],
-        "cta": "Pierakstīties",
-        "wa": "first"
-      },
-      {
-        "name": "Kurss: 10 procedūras",
-        "desc": "2–3 reizes nedēļā, 4–5 nedēļas, pastāvīgs laiks un Atjaunošanās karte.",
-        "opts": [
-          {
-            "t": "10 × 30 min",
-            "p": "360 €"
-          },
-          {
-            "t": "10 × 45 min ar masāžu",
-            "p": "450 €"
-          }
-        ],
-        "foot": "36 € / 45 € par procedūru",
-        "cta": "Uzzināt par kursu",
-        "wa": "course"
+        "cta": "Pieteikties",
+        "wa": "massage",
+        "img": "massage",
+        "img_alt": "Masāža ar ozona eļļu"
       }
-    ],
-    "gift_title": "Dāvanu karte",
-    "gift_text": "Uzdāviniet atjaunošanos: pirmo procedūru (50 €) vai kursu. E-versija 5 minūšu laikā WhatsApp, derīga 3 mēnešus.",
-    "gift_cta": "Pasūtīt dāvanu karti",
-    "founders_title": "Pirmajiem 50 klientiem",
-    "founders_text": "Kabinets atvērts nesen. Ja iegādājaties kursu starp pirmajiem 50 klientiem, kursa cena jums paliek nemainīga 12 mēnešus. Pretī lūdzam tikai godīgu atsauksmi pēc kursa."
+    ]
   },
   "specialist": {
     "eyebrow": "Speciālists",
     "name": "Nikolajs Jakovļevs",
     "role": "Sertificēts masāžas un ozona vannu speciālists",
-    "text": "Kabinetu atvērām nesen — tāpēc katram klientam ir personiska uzmanība. Nikolajs pats veic katru procedūru: aprunājas pirms tās, izvēlas piemērotu ilgumu un seko, lai jums būtu ērti.",
+    "bio": "Darbā ievēro fizioloģiskās drošības principus, individuālu intensitātes pielāgošanu un uzmanīgu attieksmi pret klienta stāvokli.",
     "values": [
       {
         "title": "Individuāla pieeja",
-        "text": "Ilgums un temperatūra — pēc jūsu pašsajūtas."
+        "text": "Katra procedūra tiek pielāgota jūsu stāvoklim."
       },
       {
-        "title": "Viens speciālists",
-        "text": "Bez konveijera un mainīgiem meistariem."
+        "title": "Fizioloģiska drošība",
+        "text": "Mērena intensitāte, kontrolēta iedarbība."
       },
       {
-        "title": "Privāts seanss",
-        "text": "Tikai jūs un speciālists, bez steigas."
+        "title": "Privāta telpa",
+        "text": "Klusa, mierīga atmosfēra bez steigas."
       }
     ],
-    "img_alt": "Nikolajs Jakovļevs, masāžas un ozona vannu speciālists"
-  },
-  "before": {
-    "eyebrow": "Pirms pirmās reizes",
-    "title": "Procedūra nav piemērota visiem",
-    "text": "Pierakstoties pastāstiet par savu veselību — piemēram, grūtniecību, hroniskām slimībām, nesenām operācijām vai pašsajūtu šajā dienā. Ja procedūra jums nav piemērota, mēs to pateiksim. Ja šaubāties, vispirms konsultējieties ar ārstu."
+    "img_alt": "Nikolajs Jakovļevs"
   },
   "faq": {
-    "eyebrow": "Jautājumi",
-    "title": "Bieži <em>jautā</em>",
+    "eyebrow": "Bieži uzdotie jautājumi",
+    "title": "Bieži uzdotie <em>jautājumi</em>",
     "items": [
       {
-        "q": "Kas ir ozona vanna?",
-        "a": "Labsajūtas procedūra: jūs atrodaties siltā ūdenī, kurā tiek pievadīts ozons, tāpēc ūdens šņāc kā minerālūdens. Procedūru veic sertificēts speciālists."
+        "q": "Vai tas stimulē vai atslābina?",
+        "a": "Vispirms — maiga aktivācija, pēc tam dziļa atjaunošanās fāze. Procedūra darbojas abos virzienos: tonizē un pēc tam atslābina."
       },
       {
-        "q": "Ko izvēlēties pirmajai reizei?",
-        "a": "Iesakām 45 minūšu procedūru — vannu ar masāžu. Ja laika ir maz, sāciet ar 20 vai 30 minūšu vannu."
+        "q": "Vai būs nervu sistēmas «pārslodze»?",
+        "a": "Nē. Stimuls ir mērens un kontrolēts — tas ir eustress, kas iekļaujas dabiskā adaptācijas reakcijā."
       },
       {
-        "q": "Cik bieži nākt?",
-        "a": "Regulārai atjaunošanās pieredzei iesakām kursu: 10 procedūras, 2–3 reizes nedēļā, apmēram 4–5 nedēļas."
+        "q": "Cik procedūru ir nepieciešams?",
+        "a": "Pirmais efekts jūtams jau pēc viena seansa. Noturīgam rezultātam parasti ieteicams īss kurss."
       },
       {
-        "q": "Vai var apvienot ar treniņiem?",
-        "a": "Jā. Pastāstiet speciālistam par savu slodzi, un viņš pielāgos procedūras ilgumu."
+        "q": "Vai ir kontrindikācijas?",
+        "a": "Jā, ir individuāli ierobežojumi. Lūdzu, par tiem pastāstiet iepriekš — speciālists pielāgos procedūru."
       },
       {
-        "q": "Vai tas ir medicīnisks pakalpojums?",
-        "a": "Nē. Tā ir labsajūtas procedūra, kas neaizstāj ārsta konsultāciju, diagnostiku vai ārstēšanu."
-      },
-      {
-        "q": "Kā atrast kabinetu?",
-        "a": "Stirnu iela 8, 2. stāvs, 203. kabinets (ĀRC VALEO ēkā), Rīgā."
+        "q": "Vai var apvienot ar treniņiem / masāžu / terapiju?",
+        "a": "Jā. Ozona vanna labi sader ar fizisko slodzi, masāžu un atbalstošo terapiju."
       }
     ]
   },
   "booking": {
     "eyebrow": "Pieraksts",
-    "title": "Pierakstieties uz <em>pirmo procedūru</em>",
-    "lede": "Ātrāk — WhatsApp: uzrakstiet vēlamo dienu, un mēs piedāvāsim tuvākos brīvos laikus. Vai atstājiet pieteikumu, un mēs jums piezvanīsim.",
+    "title": "Vai esat gatavi sajust, kā ķermenis ieslēdz <em>atjaunošanās režīmu?</em>",
+    "lede": "Ja jums ir radušies jautājumi, aizpildiet formu un mēs ar jums sazināsimies.",
     "wa_cta": "Rakstīt WhatsApp",
     "call": "Zvanīt",
     "or": "Vai atstājiet pieteikumu",
-    "name": "Vārds",
+    "name": "Jūsu vārds",
     "phone": "Tālrunis",
     "when": "Vēlamā diena vai laiks",
     "message": "Jautājums vai komentārs",
-    "consent_pre": "Nosūtot formu, jūs piekrītat ",
+    "consent_pre": "Nosūtot šo formu, jūs piekrītat ",
     "consent_link": "Privātuma politikai",
     "consent_post": ".",
-    "submit": "Nosūtīt pieteikumu",
+    "submit": "Nosūtīt",
     "sending": "Sūta…",
-    "success": "Paldies! Sazināsimies ar jums darba laikā.",
+    "success": "Paldies — sazināsimies ar jums tuvākajā laikā.",
     "error": "Neizdevās nosūtīt. Lūdzu, uzrakstiet mums WhatsApp vai zvaniet.",
     "contacts": "Kontakti",
     "address_label": "Adrese",
     "hours_label": "Darba laiks",
-    "address": "Stirnu iela 8, 2. stāvs, 203. kab., Rīga",
+    "address": "Stirnu iela 8, Rīga · 2. stāvs, 203. kab.",
     "address_note": "ĀRC VALEO ēkā",
-    "hours": "P–Pk 10:00–19:00",
+    "hours": "P–Pk · 10:00–19:00",
     "email_subject": "Jauns pieteikums — Ozona vannas"
   },
   "footer": {
-    "tagline": "Ozona vanna — atjaunošanās procedūra Rīgā",
-    "disclaimer": "Labsajūtas procedūra, nevis medicīnisks pakalpojums. Tā nav paredzēta slimību diagnosticēšanai, ārstēšanai vai profilaksei.",
-    "rights": "© 2026 Ozona vannas",
+    "tagline": "Labsajūtas procedūras",
+    "disclaimer": "Šī ir labsajūtas procedūra, nevis medicīnisks pakalpojums, un tā nav paredzēta slimību diagnosticēšanai, ārstēšanai vai profilaksei.",
+    "rights": "Visas tiesības aizsargātas | 2026",
     "privacy": "Privātuma politika"
   },
   "privacy": {
@@ -332,5 +278,5 @@
     "note": "Datus nepārdodam un neizmantojam reklāmai.",
     "close": "Aizvērt"
   },
-  "sticky": "Pierakstīties"
+  "sticky": "Pieteikties"
 }

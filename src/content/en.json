@@ -3,302 +3,248 @@
     "lang": "en",
     "locale": "en_GB",
     "path": "/en/",
-    "title": "Ozone bath in Riga — a recovery session | Ozona vannas",
-    "description": "A warm bath with ozonated water and massage in Riga, Stirnu iela 8. A recovery session after training and long working days. From €30.",
-    "og_image_alt": "Ozone bath in Riga — the specialist checks the water"
+    "title": "Ozone Bath in Riga | Ozone baths and massage | Ozonavannas.lv",
+    "description": "Ozone baths in Riga – deep relaxation, body restoration and wellbeing. Choose an ozone bath or an ozone bath with massage. Booking in Riga.",
+    "og_image_alt": "Ozone bath in Riga"
   },
   "skip": "Skip to content",
+  "brand": {
+    "word1": "Ozone",
+    "word2": "baths"
+  },
   "nav": {
-    "procedure": "The session",
-    "course": "Course",
-    "prices": "Prices",
+    "benefits": "Who it's for",
+    "how": "How it works",
+    "services": "Pricing",
     "faq": "FAQ",
-    "contact": "Contact",
-    "book": "Book",
-    "menu": "Menu",
-    "close": "Close"
+    "about": "About the sessions",
+    "book": "Book a session",
+    "menu": "Menu"
   },
   "wa": {
     "default": "Hello! I would like to book an ozone bath.",
-    "first": "Hello! I would like to book my first session (45 min with massage).",
     "bath": "Hello! I would like to book an ozone bath (20 or 30 min).",
-    "course": "Hello! I would like to know more about the 10-session course.",
-    "gift": "Hello! I would like to order a gift card."
+    "massage": "Hello! I would like to book an ozone bath + massage with ozone oil (45 min)."
   },
   "hero": {
-    "eyebrow": "Ozone bath in Riga · Stirnu iela 8",
-    "title": "Recovery your <em>body can feel</em>",
-    "sub": "A warm bath with ozonated water and massage — 20 to 45 minutes for your body to recover after training, long working days and days on your feet.",
-    "cta_primary": "Book on WhatsApp",
-    "cta_secondary": "See prices",
-    "meta_line": "From €30 · Mon–Fri 10:00–19:00 · Stirnu iela 8, room 203",
-    "disclaimer": "A wellness procedure, not a medical service.",
-    "badge_title": "One specialist",
-    "badge_text": "A private session, no rush",
-    "img_alt": "The specialist checks the water temperature of the ozone bath"
-  },
-  "facts": [
-    {
-      "n": "20–45",
-      "l": "minutes per session"
-    },
-    {
-      "n": "1",
-      "l": "specialist — a private session"
-    },
-    {
-      "n": "10",
-      "l": "sessions in a course, 2–3 a week"
+    "eyebrow": "Wellness procedures",
+    "title": "Ozone <em>baths</em>",
+    "sub": "Restoring the nervous system and the body's inner resources through natural adaptation mechanisms. More energy, focus and resilience to everyday strain.",
+    "cta": "Book a session",
+    "cta_secondary": "View sessions",
+    "disclaimer": "A wellness procedure — not a medical service.",
+    "place": "Stirnu iela 8, Rīga · 2nd floor, office 203 · Mon–Fri 10:00–19:00",
+    "img_alt": "Ozone bath in Riga",
+    "m": {
+      "lead": "Restored energy and inner balance",
+      "procedure": "Ozone baths",
+      "desc": "Restoring the body's inner resources through natural adaptation mechanisms.",
+      "points": [
+        "More energy",
+        "Less tension",
+        "Better adaptation to strain"
+      ]
     }
-  ],
-  "situations": {
-    "eyebrow": "When people come",
-    "title": "When strain builds up <em>faster than it fades</em>",
-    "lede": "An ozone bath is not a once-a-year treat. It is a session for the recovery you need every week.",
-    "items": [
+  },
+  "audience": {
+    "eyebrow": "Who it's for",
+    "title": "Who are ozone <em>baths for?</em>",
+    "lede": "Ozone baths are recommended for increased fatigue, stress, swelling and reduced adaptive resources of the body, as well as during recovery periods after physical load.",
+    "cards": [
       {
-        "title": "After training",
-        "text": "Running, the gym or padel — you plan the load. Here you can plan the recovery too."
+        "tag": "01",
+        "title": "Chronic fatigue, a «depleted» state",
+        "text": "Ozone baths help to restore strength and energy."
       },
       {
-        "title": "After a day on your feet",
-        "text": "A shift in a shop, salon or clinic. Warmth and massage that leave the body feeling lighter."
+        "tag": "02",
+        "title": "Swelling, fluid retention",
+        "text": "Help to reduce swelling and release excess fluid."
       },
       {
-        "title": "After a week at the desk",
-        "text": "Calls, screens, tight shoulders. 30 minutes when your body has nothing to do."
+        "tag": "03",
+        "title": "Slow recovery after physical load",
+        "text": "Relieves fatigue and tension after physical activity."
       },
       {
-        "title": "In the dark months",
-        "text": "When Riga gets dark in the afternoon — warmth, light and 30 minutes for yourself twice a week."
+        "tag": "04",
+        "title": "Stress, tension, anxious background",
+        "text": "The baths help to lower the level of tension and anxiety."
+      },
+      {
+        "tag": "05",
+        "title": "Mental fog, reduced concentration",
+        "text": "Support better concentration and clarity of mind."
+      },
+      {
+        "tag": "06",
+        "title": "Urban life, toxins, overload",
+        "text": "Feel a rush of strength, clarity of mind and deep recovery."
       }
     ]
   },
-  "process": {
-    "eyebrow": "How the session goes",
-    "title": "Five steps, <em>no surprises</em>",
-    "lede": "You know what happens at every moment — and you can always say if something isn't comfortable.",
+  "how": {
+    "eyebrow": "Process",
+    "title": "How it <em>works</em>",
+    "lede": "Five phases — from a gentle initial stimulus to deep recovery.",
     "steps": [
       {
         "n": "01",
-        "title": "A short talk",
-        "text": "We ask how you feel and whether you have any health limitations. If the session isn't right for you, we will tell you honestly."
+        "title": "Gentle oxidative stimulus",
+        "text": "Ozonated water creates a brief physiological stimulus for the skin and capillaries."
       },
       {
         "n": "02",
-        "title": "Choosing the length",
-        "text": "Together we choose 20 or 30 minutes and a water temperature that feels pleasant to you."
+        "title": "Receptor and nervous system activation",
+        "text": "The peripheral nervous system and autonomic regulation engage."
       },
       {
         "n": "03",
-        "title": "The ozone bath",
-        "text": "Ozone is added to the warm water, so it fizzes like mineral water. You feel a light tingle of bubbles on your skin."
+        "title": "Eustress — beneficial stress",
+        "text": "The body receives a controlled signal toward adaptation, not toward defence or a panic response."
       },
       {
         "n": "04",
-        "title": "Massage — optional",
-        "text": "After the bath — a massage with ozonated oil. Warmth and massage help the muscles relax."
+        "title": "Brief sympathetic activation",
+        "text": "A moderate release of catecholamines (hormones and neurotransmitters) supports clarity, tone and concentration."
       },
       {
         "n": "05",
-        "title": "No rush",
-        "text": "There is no need to hurry afterwards. During a course you note how you feel on your Recovery card."
+        "title": "Recovery phase",
+        "text": "After activation, the body enters deep relaxation, restoration and a rebalancing of systems."
       }
     ],
-    "img_alt": "Ozone bath with ozonated water",
-    "caption": "The water fizzes like mineral water — this is what an ozone bath looks like."
+    "img_alt": "Ozonated water in an ozone bath"
   },
-  "feel": {
-    "eyebrow": "What you may feel",
-    "title": "Sensations, not <em>promises</em>",
-    "lede": "We don't promise miracles and we don't treat anything. Here is how you may feel during the session and after it. Everyone feels it differently.",
-    "items": [
-      {
-        "when": "During the session",
-        "text": "Warmth and a light tingle of bubbles. The body grows heavy and relaxed."
-      },
-      {
-        "when": "Right after",
-        "text": "Often — a lighter body and a calmer head."
-      },
-      {
-        "when": "During a course",
-        "text": "Recovery becomes a habit, and you see how you feel on your Recovery card."
-      }
-    ],
-    "note": "A wellness procedure, not a medical service. It does not replace a doctor's advice or treatment."
-  },
-  "course": {
-    "eyebrow": "Course",
-    "title": "10 sessions. <em>Your recovery plan.</em>",
-    "lede": "One session is an introduction. Regular recovery is a course: 2–3 times a week for 4–5 weeks, with one specialist.",
-    "points": [
-      "You get fixed days and times",
-      "The price of your first session counts towards the course if you buy it within 14 days",
-      "A Recovery card — you rate your own progress"
-    ],
-    "cta": "Ask about the course",
-    "card_title": "Recovery card",
-    "card_sub": "Before sessions 1, 5 and 10 you rate yourself from 1 to 10:",
-    "rows": [
-      "Energy",
-      "Sleep",
-      "Muscle tension",
-      "Lightness in the body",
-      "Overall wellbeing"
-    ],
-    "cols": [
-      "1st",
-      "5th",
-      "10th"
-    ],
-    "card_note": "Nobody promises you numbers — you write them in yourself."
-  },
-  "prices": {
-    "eyebrow": "Prices",
-    "title": "Clear prices, <em>no promotions</em>",
-    "lede": "For your first visit we suggest the 45-minute session with massage — it shows best how the full session feels.",
-    "per": "per session",
+  "services": {
+    "eyebrow": "Sessions & pricing",
+    "title": "Services — <em>pricing</em>",
+    "lede": "A private room, warm ozonated water and personal attention to every detail.",
     "items": [
       {
         "name": "Ozone bath",
-        "desc": "A warm bath with ozonated water. A short recovery at lunchtime or after work.",
+        "desc": "A gentle and pleasant effect on the body that helps to restore tone and reduce swelling. After the procedure you will feel improved wellbeing and support for the nervous system, which will make your day more comfortable.",
+        "features": [
+          "restoration of tone",
+          "reduction of swelling",
+          "improved wellbeing",
+          "support for the nervous system",
+          "gentle systemic effect"
+        ],
         "opts": [
           {
             "t": "20 min",
-            "p": "€30"
+            "p": "30 €"
           },
           {
             "t": "30 min",
-            "p": "€40"
+            "p": "40 €"
           }
         ],
         "cta": "Book",
-        "wa": "bath"
+        "wa": "bath",
+        "img": "bath",
+        "img_alt": "Ozone bath"
       },
       {
-        "name": "Ozone bath + massage",
-        "tag": "For your first visit",
-        "desc": "The bath and a massage with ozonated oil — the full session, for the body to relax after strain.",
+        "name": "Ozone bath + massage with ozone oil",
+        "desc": "The combination of an ozone bath and a massage with ozone oil provides deeper relaxation and accelerated recovery. The procedure helps to release physical tightness and brings a sense of renewal, so that you feel more energetic and lighter.",
+        "features": [
+          "the bath prepares the nervous system and vessels",
+          "massage enhances lymphatic drainage and relaxation",
+          "ozone oil works locally with the tissues",
+          "a pronounced «renewal» effect"
+        ],
         "opts": [
           {
             "t": "45 min",
-            "p": "€50"
+            "p": "50 €"
           }
         ],
         "cta": "Book",
-        "wa": "first"
-      },
-      {
-        "name": "Course: 10 sessions",
-        "desc": "2–3 times a week for 4–5 weeks, fixed times and a Recovery card.",
-        "opts": [
-          {
-            "t": "10 × 30 min",
-            "p": "€360"
-          },
-          {
-            "t": "10 × 45 min with massage",
-            "p": "€450"
-          }
-        ],
-        "foot": "€36 / €45 per session",
-        "cta": "Ask about the course",
-        "wa": "course"
+        "wa": "massage",
+        "img": "massage",
+        "img_alt": "Massage with ozone oil"
       }
-    ],
-    "gift_title": "Gift card",
-    "gift_text": "Give recovery: a first session (€50) or a course. A digital version within 5 minutes on WhatsApp, valid for 3 months.",
-    "gift_cta": "Order a gift card",
-    "founders_title": "For our first 50 clients",
-    "founders_text": "We opened recently. If you buy a course as one of our first 50 clients, your course price stays the same for 12 months. In return, we only ask for an honest review after the course."
+    ]
   },
   "specialist": {
     "eyebrow": "Specialist",
-    "name": "Nikolajs Jakovļevs",
+    "name": "Nikolai Jakovlev",
     "role": "Certified massage and ozone bath specialist",
-    "text": "We opened recently, so every client gets personal attention. Nikolajs runs every session himself: he talks with you first, chooses the right length and makes sure you are comfortable.",
+    "bio": "Works according to principles of physiological safety, individual calibration of intensity and attentive care for the client's state.",
     "values": [
       {
         "title": "Individual approach",
-        "text": "Length and temperature are set by how you feel."
+        "text": "Each session is adjusted to your current state."
       },
       {
-        "title": "One specialist",
-        "text": "No conveyor belt, no changing staff."
+        "title": "Physiological safety",
+        "text": "Moderate intensity, controlled effect."
       },
       {
-        "title": "Private session",
-        "text": "Just you and the specialist, with no rush."
+        "title": "Private space",
+        "text": "A quiet, calm setting without rush."
       }
     ],
-    "img_alt": "Nikolajs Jakovļevs, massage and ozone bath specialist"
-  },
-  "before": {
-    "eyebrow": "Before your first visit",
-    "title": "The session is not for everyone",
-    "text": "When booking, tell us about your health — for example pregnancy, chronic conditions, recent surgery or how you feel that day. If the session isn't right for you, we will say so. If in doubt, please talk to a doctor first."
+    "img_alt": "Nikolai Jakovlev"
   },
   "faq": {
-    "eyebrow": "FAQ",
-    "title": "Common <em>questions</em>",
+    "eyebrow": "Frequently asked questions",
+    "title": "Frequently asked <em>questions</em>",
     "items": [
       {
-        "q": "What is an ozone bath?",
-        "a": "A wellness procedure: you lie in warm water to which ozone is added, so the water fizzes like mineral water. The session is run by a certified specialist."
+        "q": "Does it stimulate or relax?",
+        "a": "First — a gentle activation, then a phase of deep recovery. The procedure works in both directions: it tones, and then it relaxes."
       },
       {
-        "q": "What should I choose for my first visit?",
-        "a": "We suggest the 45-minute session — the bath with massage. If you are short on time, start with a 20- or 30-minute bath."
+        "q": "Will the nervous system be «overloaded»?",
+        "a": "No. The stimulus is moderate and controlled — it is a eustress that fits within the body's natural adaptation response."
       },
       {
-        "q": "How often should I come?",
-        "a": "For regular recovery we suggest a course: 10 sessions, 2–3 times a week, for about 4–5 weeks."
+        "q": "How many sessions do I need?",
+        "a": "The first effect is felt after a single session. For a lasting result, a short course is usually recommended."
       },
       {
-        "q": "Can I combine it with training?",
-        "a": "Yes. Tell the specialist about your training load and he will adjust the length of the session."
+        "q": "Are there any contraindications?",
+        "a": "Yes, there are individual limits. Please share them in advance — the specialist will adapt the session."
       },
       {
-        "q": "Is it a medical service?",
-        "a": "No. It is a wellness procedure and does not replace a doctor's advice, diagnosis or treatment."
-      },
-      {
-        "q": "How do I find you?",
-        "a": "Stirnu iela 8, 2nd floor, room 203 (in the ĀRC VALEO building), Riga."
+        "q": "Can it be combined with training / massage / therapy?",
+        "a": "Yes. An ozone bath combines well with physical activity, massage and supportive therapy."
       }
     ]
   },
   "booking": {
     "eyebrow": "Booking",
-    "title": "Book your <em>first session</em>",
-    "lede": "Fastest on WhatsApp: tell us which day suits you and we will offer the nearest free times. Or leave a request and we will call you back.",
+    "title": "Ready to feel how your body switches into <em>recovery mode?</em>",
+    "lede": "If you still have questions, fill in the form and we will get in touch with you.",
     "wa_cta": "Message on WhatsApp",
     "call": "Call",
     "or": "Or leave a request",
-    "name": "Name",
+    "name": "Your name",
     "phone": "Phone",
     "when": "Preferred day or time",
     "message": "Question or comment",
-    "consent_pre": "By sending the form you agree to the ",
+    "consent_pre": "By submitting this form you agree to the ",
     "consent_link": "Privacy Policy",
     "consent_post": ".",
-    "submit": "Send request",
+    "submit": "Send",
     "sending": "Sending…",
-    "success": "Thank you! We will contact you during working hours.",
+    "success": "Thank you — we will contact you shortly.",
     "error": "Sending failed. Please message us on WhatsApp or call.",
     "contacts": "Contact",
     "address_label": "Address",
     "hours_label": "Hours",
-    "address": "Stirnu iela 8, 2nd floor, room 203, Riga",
+    "address": "Stirnu iela 8, Rīga · 2nd floor, office 203",
     "address_note": "In the ĀRC VALEO building",
-    "hours": "Mon–Fri 10:00–19:00",
+    "hours": "Mon–Fri · 10:00–19:00",
     "email_subject": "New request (EN) — Ozona vannas"
   },
   "footer": {
-    "tagline": "Ozone bath — a recovery session in Riga",
-    "disclaimer": "A wellness procedure, not a medical service. It is not intended to diagnose, treat or prevent any disease.",
-    "rights": "© 2026 Ozona vannas",
+    "tagline": "Wellness procedures",
+    "disclaimer": "This wellness procedure is not a medical service and is not intended for the diagnosis, treatment, or prevention of diseases.",
+    "rights": "All rights reserved | 2026",
     "privacy": "Privacy Policy"
   },
   "privacy": {
@@ -332,5 +278,5 @@
     "note": "We do not sell your data or use it for advertising.",
     "close": "Close"
   },
-  "sticky": "Book"
+  "sticky": "Book a session"
 }

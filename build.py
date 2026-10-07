@@ -74,7 +74,7 @@ def jsonld(t):
                 "price": "".join(ch for ch in opt["p"] if ch.isdigit()),
                 "priceCurrency": "EUR",
             }
-            for item in t["prices"]["items"] for opt in item["opts"]
+            for item in t["services"]["items"] for opt in item["opts"]
         ],
     }
     faq = {

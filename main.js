@@ -19,8 +19,29 @@
       sticky.classList.toggle("is-visible", y > window.innerHeight * 0.6 && !nearBooking);
     }
   }
-  window.addEventListener("scroll", onScroll, { passive: true });
+  // "How it works": the rail fills and steps light up as you scroll
+  var steps = document.querySelector("[data-steps]");
+  var stepItems = steps ? steps.querySelectorAll("li") : [];
+  function onSteps() {
+    if (!steps) return;
+    var vh = window.innerHeight, mark = vh * 0.6;
+    var r = steps.getBoundingClientRect();
+    var p = Math.min(1, Math.max(0, (mark - r.top) / r.height));
+    steps.style.setProperty("--p", p.toFixed(3));
+    stepItems.forEach(function (li) {
+      li.classList.toggle("is-active", li.getBoundingClientRect().top < mark);
+    });
+  }
+
+  var ticking = false;
+  window.addEventListener("scroll", function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { onScroll(); onSteps(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener("resize", onSteps);
   onScroll();
+  onSteps();
 
   // Mobile menu
   var burger = document.querySelector("[data-burger]");

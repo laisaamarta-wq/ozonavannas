@@ -35,8 +35,10 @@ def main():
         im = ImageEnhance.Contrast(im).enhance(0.95)
         return ImageEnhance.Brightness(im).enhance(1.03)
 
-    jobs = [("bath-foam.jpg", "hero-water", (1536, 900)),
+    jobs = [("hero-bath.jpg", "hero", (1023, 720)),
+            ("bath-foam.jpg", "hero-water", (1536, 900)),
             ("svc-ozone-bath.jpg", "bath", (1536, 900)),
+            ("svc-massage.jpg", "massage", (1536, 900)),
             ("nikolai.jpg", "nikolajs", (1189, 900))]
     for src, name, widths in jobs:
         p = ROOT / "orig" / src
@@ -45,9 +47,9 @@ def main():
         for w in widths:
             r = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
             r.save(ROOT / f"img/{name}-{w}.webp", "WEBP", quality=78, method=6)
-            if w == 900:
+            if w == widths[-1]:
                 r.save(ROOT / f"img/{name}-{w}.jpg", "JPEG", quality=80, optimize=True, progressive=True)
-    og = ImageOps.fit(grade(Image.open(ROOT / "orig/bath-foam.jpg").convert("RGB")), (1200, 630), centering=(0.5, 0.45))
+    og = ImageOps.fit(grade(Image.open(ROOT / "orig/hero-bath.jpg").convert("RGB")), (1200, 630), centering=(0.5, 0.42))
     og.save(ROOT / "img/og.jpg", "JPEG", quality=82, optimize=True)
 
     import build
