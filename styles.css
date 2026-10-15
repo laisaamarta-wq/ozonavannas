@@ -2102,11 +2102,6 @@ html, body { overflow-x: hidden; }
   from { background-position: 22% 140%, 52% 170%, 80% 150%; }
   to   { background-position: 26% -40%, 47% -60%, 84% -50%; }
 }
-/* hovering a service card half-fills its button — a promise of the procedure */
-.svc-card:hover .svc-opts .btn-primary { background: var(--aqua-800); border-color: var(--aqua-800); }
-.svc-card:hover .svc-opts .btn-primary::before { transform: translateY(58%); }
-.svc-card:hover .svc-opts .btn-primary:hover::before { transform: translateY(0); }
-
 /* ghost button: a pale water fill */
 .btn-ghost { position: relative; isolation: isolate; overflow: hidden; }
 .btn-ghost::before {
@@ -2119,66 +2114,6 @@ html, body { overflow-x: hidden; }
   transition: transform .55s var(--ease-soft);
 }
 .btn-ghost:hover::before { transform: translateY(0); }
-
-/* ---- "Kam piemērots": light follows the pointer, a bubble escapes ---- */
-.aud-card { position: relative; overflow: hidden; }
-.aud-card > * { position: relative; z-index: 1; }
-.aud-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0;
-  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(85,118,111,.14), rgba(85,118,111,0) 65%);
-  transition: opacity .45s ease;
-}
-.aud-card:hover::after { opacity: 1; }
-.aud-card:hover { border-color: var(--aqua-300); }
-.aud-card-top { position: relative; }
-.aud-card-top::after {
-  content: "";
-  position: absolute;
-  left: 4px; top: 0;
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  border: 1px solid var(--aqua-400);
-  background: rgba(255,255,255,.6);
-  opacity: 0;
-  pointer-events: none;
-}
-.aud-card:hover .aud-card-top::after { animation: pop-rise 1.6s var(--ease-soft) .1s both; }
-@keyframes pop-rise {
-  0%   { opacity: 0; transform: translate3d(0, 6px, 0) scale(.6); }
-  25%  { opacity: .9; }
-  100% { opacity: 0; transform: translate3d(4px, -26px, 0) scale(1); }
-}
-
-/* ---- services: the water level rises inside the card ---- */
-.svc-body { overflow: hidden; }
-.svc-body > * { position: relative; z-index: 1; }
-.svc-body::before {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 44%;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 14' preserveAspectRatio='none'%3E%3Cpath d='M0 7c22.5 0 22.5-6 45-6s22.5 6 45 6 22.5-6 45-6 22.5 6 45 6V14H0Z' fill='%2355766F' fill-opacity='.09'/%3E%3C/svg%3E") 0 0 / 180px 14px repeat-x,
-    linear-gradient(180deg, rgba(85,118,111,.09), rgba(85,118,111,.15)) 0 13px / 100% 100% no-repeat;
-  transform: translateY(102%);
-  transition: transform 1s var(--ease-soft);
-}
-.svc-card:hover .svc-body::before {
-  transform: translateY(0);
-  animation: level-wave 7s linear infinite;
-}
-@keyframes level-wave {
-  to { background-position: 180px 0, 0 13px; }
-}
-.svc-opts .price-item .p { transition: color .5s ease; }
-.svc-card:hover .svc-opts .price-item .p { color: var(--aqua-700); }
 
 /* ---- process: a glass column fills with water as you read ---- */
 .how-steps { position: relative; --tube-x: 20px; --rule-x: 66px; }
@@ -2253,22 +2188,6 @@ html, body { overflow-x: hidden; }
   pointer-events: none;
   overflow: visible;
 }
-.book-o3 circle {
-  fill: rgba(255,255,255,.35);
-  stroke: var(--aqua-500);
-  stroke-opacity: .22;
-  stroke-width: .16;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: orb-drift 14s ease-in-out infinite;
-}
-.book-o3 .b2 { animation-duration: 11s; animation-delay: -4s; }
-.book-o3 .b3 { animation-duration: 9s;  animation-delay: -7s; }
-@keyframes orb-drift {
-  0%, 100% { transform: translate(0, 0); }
-  50%      { transform: translate(.6px, -1.4px); }
-}
-
 @media (max-width: 720px) {
   .how-steps { --tube-x: 17px; --rule-x: 52px; }
   .how-tube { width: 8px; left: calc(var(--tube-x) - 4px); }
@@ -2283,3 +2202,168 @@ html, body { overflow-x: hidden; }
   filter: drop-shadow(0 1px 1.5px rgba(48, 76, 73, .18));
 }
 .mob-menu-top .logo .mark { width: 30px; height: 30px; }
+
+/* ============================================================
+   O₃ refinement
+   Deep-teal header (matches the footer) so the logo bubbles can be
+   airy glass without an outline; glass-bubble hover on the audience
+   cards; a modern tilt + glare on service cards; airy booking bubbles.
+   ============================================================ */
+
+/* ---- header in deep teal ---- */
+.site-header,
+.site-header.scrolled {
+  background: rgba(48, 76, 73, .97);
+  backdrop-filter: saturate(120%) blur(10px);
+  -webkit-backdrop-filter: saturate(120%) blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+.site-header.scrolled { box-shadow: 0 10px 30px -22px rgba(20, 35, 33, .6); }
+.site-header .logo .name { color: #FBF9F4; }
+.site-header .logo .name .rw { color: var(--aqua-200); }
+.site-header .logo .name em { color: var(--aqua-300); }
+.site-header .nav a { color: rgba(255, 255, 255, .78); }
+.site-header .nav a:hover { color: #fff; }
+.site-header .nav a::after { background: var(--aqua-200); }
+.site-header .lang {
+  background: rgba(255, 255, 255, .06);
+  border-color: rgba(255, 255, 255, .16);
+}
+.site-header .lang button { color: rgba(255, 255, 255, .72); }
+.site-header .lang button:not(.active):hover { color: #fff; background: rgba(255, 255, 255, .08); }
+.site-header .lang button.active { background: var(--paper); color: var(--aqua-800); }
+.site-header .burger {
+  background: rgba(255, 255, 255, .06);
+  border-color: rgba(255, 255, 255, .2);
+}
+.site-header .burger:hover { background: rgba(255, 255, 255, .12); border-color: rgba(255, 255, 255, .35); }
+.site-header .burger span::before,
+.site-header .burger span::after { background: #fff; }
+.site-header :focus-visible { outline-color: var(--aqua-200); }
+.site-header::after { background: linear-gradient(90deg, var(--aqua-300), #E8F1EC); }
+@media (max-width: 720px) {
+  .site-header,
+  .site-header.scrolled { background: rgba(48, 76, 73, .98); border-bottom-color: rgba(255,255,255,.06); }
+}
+
+/* logo: soft glass glow instead of a drop shadow */
+.logo .mark { filter: drop-shadow(0 1px 3px rgba(10, 30, 28, .25)); }
+
+/* ---- mobile menu matches the header ---- */
+.mob-menu {
+  background:
+    radial-gradient(120% 70% at 100% 0%, rgba(94, 138, 131, .55) 0%, rgba(94, 138, 131, 0) 60%),
+    linear-gradient(180deg, var(--aqua-800) 0%, var(--aqua-900) 100%);
+  color: #fff;
+}
+.mob-menu .logo .name { color: #FBF9F4; }
+.mob-menu .logo .name .rw { color: var(--aqua-200); }
+.mob-menu .logo .name em { color: var(--aqua-300); }
+.mob-close { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.2); }
+.mob-close:hover { border-color: rgba(255,255,255,.4); }
+.mob-close span { background: #fff; }
+.mob-nav a { color: #FBF9F4; border-bottom-color: rgba(255,255,255,.12); }
+.mob-idx { color: var(--aqua-200); }
+.mob-arrow::before { background: rgba(255,255,255,.8); }
+.mob-arrow::after { border-color: rgba(255,255,255,.8); }
+.mob-foot .btn-primary { background: var(--paper); color: var(--aqua-800); border-color: var(--paper); }
+.mob-foot .btn-primary::before { background: linear-gradient(180deg, #E4E8DF, #DCE7E1); }
+.mob-foot .btn-primary::after { display: none; }
+.mob-contact a { color: #fff; }
+.mob-contact .mob-hours { color: rgba(255,255,255,.65); }
+.mob-lang button { border-color: rgba(255,255,255,.22); color: rgba(255,255,255,.75); }
+.mob-lang button.active { background: var(--paper); border-color: var(--paper); color: var(--aqua-800); }
+.mob-menu :focus-visible { outline-color: var(--aqua-200); }
+
+/* ---- "Kam piemērots": a clear glass bubble follows the pointer ---- */
+.aud-card { position: relative; overflow: hidden; transition: transform .45s var(--ease-soft), border-color .3s ease, box-shadow .45s var(--ease-soft), background-color .4s ease; }
+.aud-card > * { position: relative; z-index: 1; }
+.aud-card:hover { background-color: #FDFCF9; border-color: var(--aqua-200); }
+.aud-card::before,
+.aud-card::after {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 200px; height: 200px;
+  margin: -100px 0 0 -100px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  scale: .75;
+  translate: var(--mx, 50%) var(--my, 50%);
+  transition: opacity .5s ease, scale .7s var(--ease-soft), translate .22s ease-out;
+}
+/* body + highlight + soft inner glow */
+.aud-card::after {
+  background:
+    radial-gradient(circle at 33% 28%, rgba(255,255,255,.95) 0 5%, rgba(255,255,255,.4) 11%, rgba(255,255,255,0) 22%),
+    radial-gradient(circle at 70% 76%, rgba(255,255,255,.55) 0 3%, rgba(255,255,255,0) 9%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0) 52%, rgba(255,255,255,.55) 67%, rgba(255,255,255,0) 71%),
+    radial-gradient(circle at 50% 55%, rgba(228,236,232,.35) 0%, rgba(255,255,255,.12) 55%, rgba(255,255,255,0) 70%);
+}
+/* thin iridescent rim — soap-film colours, very pale */
+.aud-card::before {
+  background: conic-gradient(from 210deg,
+    rgba(157,186,177,.55), rgba(214,200,226,.45), rgba(188,214,226,.5),
+    rgba(232,222,196,.45), rgba(170,206,190,.5), rgba(157,186,177,.55));
+  -webkit-mask: radial-gradient(circle, transparent 64%, #000 66.5%, #000 69%, transparent 71%);
+          mask: radial-gradient(circle, transparent 64%, #000 66.5%, #000 69%, transparent 71%);
+}
+.aud-card:hover::before,
+.aud-card:hover::after { opacity: 1; scale: 1; }
+.aud-card:hover .aud-tag { background: rgba(220, 231, 225, .8); }
+
+/* ---- services: lean toward the pointer, glass glare, photo drift ---- */
+.svc-list { perspective: 1800px; }
+.svc-card {
+  position: relative;
+  transform: translateY(0) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .7s var(--ease-soft), box-shadow .5s var(--ease-soft), border-color .3s ease;
+  will-change: transform;
+}
+.svc-card:hover {
+  transform: translateY(-4px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .2s ease-out, box-shadow .5s var(--ease-soft), border-color .3s ease;
+  box-shadow: var(--shadow-lg);
+}
+.svc-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,.2), rgba(255,255,255,0) 45%);
+  transition: opacity .5s ease;
+}
+.svc-card:hover::after { opacity: 1; }
+.svc-card:hover .svc-img {
+  transform: scale(1.06) translate(var(--ix, 0px), var(--iy, 0px));
+  transition: transform .9s var(--ease-soft);
+}
+.svc-opts .price-item .p { transition: color .5s ease; }
+.svc-card:hover .svc-opts .price-item .p { color: var(--aqua-700); }
+
+/* ---- booking: airy glass bubbles (no outline) ---- */
+.book-o3 .o3 {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: orb-drift 14s ease-in-out infinite;
+}
+.book-o3 .b2 { animation-duration: 11s; animation-delay: -4s; }
+.book-o3 .b3 { animation-duration: 9s;  animation-delay: -7s; }
+@keyframes orb-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(.6px, -1.4px); }
+}
+.book-o3 { filter: drop-shadow(0 14px 22px rgba(48, 76, 73, .08)); }
+
+@media (max-width: 720px) {
+  .aud-card::before, .aud-card::after { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .svc-card, .svc-card:hover { transform: none; }
+  .aud-card::before, .aud-card::after { transition: opacity .01ms; }
+}

@@ -109,28 +109,39 @@ const O3_BUBBLES = [
 { cls: "b3", cx: 26, cy: 4.6, r: 3.4 }];
 
 let _markSeq = 0;
+function GlassBubble({ b, fill }) {
+  // body = soft gradient that brightens toward the rim (no outline),
+  // plus a main highlight and a small reflected glint
+  return (
+    <g className={`o3 ${b.cls}`}>
+      <circle cx={b.cx} cy={b.cy} r={b.r} fill={fill}></circle>
+      <ellipse
+        cx={b.cx - b.r * 0.36} cy={b.cy - b.r * 0.4} rx={b.r * 0.32} ry={b.r * 0.19}
+        fill="#ffffff" opacity="0.95"
+        transform={`rotate(-32 ${b.cx - b.r * 0.36} ${b.cy - b.r * 0.4})`}>
+      </ellipse>
+      <ellipse
+        cx={b.cx + b.r * 0.42} cy={b.cy + b.r * 0.5} rx={b.r * 0.18} ry={b.r * 0.08}
+        fill="#ffffff" opacity="0.45"
+        transform={`rotate(-32 ${b.cx + b.r * 0.42} ${b.cy + b.r * 0.5})`}>
+      </ellipse>
+    </g>);
+
+}
 function LogoMark() {
   const id = React.useMemo(() => `om${++_markSeq}`, []);
   return (
     <span className="mark" aria-hidden="true">
       <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id={`${id}-g`} cx="38%" cy="32%" r="75%">
-            <stop offset="0%" stopColor="#FBFCF8"></stop>
-            <stop offset="45%" stopColor="#DCE6DF"></stop>
-            <stop offset="100%" stopColor="#7FA39A"></stop>
+          <radialGradient id={`${id}-g`} cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.12"></stop>
+            <stop offset="60%" stopColor="#ffffff" stopOpacity="0.22"></stop>
+            <stop offset="86%" stopColor="#E8F1EC" stopOpacity="0.6"></stop>
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0.95"></stop>
           </radialGradient>
         </defs>
-        {O3_BUBBLES.map((b) =>
-        <g key={b.cls} className={`o3 ${b.cls}`}>
-            <circle cx={b.cx} cy={b.cy} r={b.r} fill={`url(#${id}-g)`} stroke="#3E5E58" strokeWidth="1.3"></circle>
-            <ellipse
-            cx={b.cx - b.r * 0.36} cy={b.cy - b.r * 0.4} rx={b.r * 0.3} ry={b.r * 0.18}
-            fill="#ffffff" opacity="0.9"
-            transform={`rotate(-32 ${b.cx - b.r * 0.36} ${b.cy - b.r * 0.4})`}>
-          </ellipse>
-          </g>
-        )}
+        {O3_BUBBLES.map((b) => <GlassBubble key={b.cls} b={b} fill={`url(#${id}-g)`} />)}
       </svg>
     </span>);
 
@@ -561,6 +572,27 @@ function How({ t }) {
 /* ---------------- Services ---------------- */
 function Services({ t }) {
   const imgs = [IMG.svc1, IMG.svc2];
+  const calm = typeof window !== "undefined" && window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // the card leans a few degrees toward the pointer, a soft glass glare
+  // follows it and the photo drifts the other way (mouse only)
+  const tilt = (e) => {
+    if (calm || e.pointerType !== "mouse") return;
+    const el = e.currentTarget;
+    const r = el.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    el.style.setProperty("--rx", `${(-py * 3).toFixed(2)}deg`);
+    el.style.setProperty("--ry", `${(px * 4).toFixed(2)}deg`);
+    el.style.setProperty("--gx", `${((px + 0.5) * 100).toFixed(1)}%`);
+    el.style.setProperty("--gy", `${((py + 0.5) * 100).toFixed(1)}%`);
+    el.style.setProperty("--ix", `${(-px * 14).toFixed(1)}px`);
+    el.style.setProperty("--iy", `${(-py * 10).toFixed(1)}px`);
+  };
+  const untilt = (e) => {
+    const el = e.currentTarget;
+    ["--rx", "--ry", "--ix", "--iy"].forEach((k) => el.style.removeProperty(k));
+  };
   return (
     <section className="services" id="services">
       <div className="shell">
@@ -575,7 +607,11 @@ function Services({ t }) {
         </div>
         <div className="svc-list">
           {t.services.items.map((s, i) =>
-          <article key={i} className={`svc-card reveal ${i % 2 === 1 ? "reverse" : ""}`}>
+          <article
+            key={i}
+            className={`svc-card reveal ${i % 2 === 1 ? "reverse" : ""}`}
+            onPointerMove={tilt}
+            onPointerLeave={untilt}>
               <div className="svc-img" style={{ backgroundImage: `url(${imgs[i]})` }}></div>
               <div className="svc-body">
                 <div className="num">— 0{i + 1} / 0{t.services.items.length}</div>
@@ -716,7 +752,15 @@ function Booking({ t, onOpenPrivacy }) {
     <section className="booking" id="booking">
       {/* large outline O₃ — the brand mark drifting behind the final call */}
       <svg className="book-o3" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-        {O3_BUBBLES.map((b) => <circle key={b.cls} className={b.cls} cx={b.cx} cy={b.cy} r={b.r}></circle>)}
+        <defs>
+          <radialGradient id="book-o3-g" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.35"></stop>
+            <stop offset="62%" stopColor="#ffffff" stopOpacity="0.2"></stop>
+            <stop offset="88%" stopColor="#9DB6AE" stopOpacity="0.22"></stop>
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0.75"></stop>
+          </radialGradient>
+        </defs>
+        {O3_BUBBLES.map((b) => <GlassBubble key={b.cls} b={b} fill="url(#book-o3-g)" />)}
       </svg>
       <div className="shell">
         <div className="book-grid">
