@@ -128,17 +128,18 @@ function GlassBubble({ b, fill }) {
     </g>);
 
 }
-function LogoMark() {
+function LogoMark({ onDark = false }) {
   const id = React.useMemo(() => `om${++_markSeq}`, []);
+  // light surfaces: pale water-teal glass; deep-teal footer: white glass
+  const stops = onDark ?
+  [["0%", "#ffffff", 0.12], ["60%", "#ffffff", 0.22], ["86%", "#E8F1EC", 0.6], ["100%", "#ffffff", 0.95]] :
+  [["0%", "#DCE7E1", 0.35], ["58%", "#BFD3CB", 0.35], ["86%", "#7E9A92", 0.55], ["100%", "#55766F", 0.75]];
   return (
     <span className="mark" aria-hidden="true">
       <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id={`${id}-g`} cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.12"></stop>
-            <stop offset="60%" stopColor="#ffffff" stopOpacity="0.22"></stop>
-            <stop offset="86%" stopColor="#E8F1EC" stopOpacity="0.6"></stop>
-            <stop offset="100%" stopColor="#ffffff" stopOpacity="0.95"></stop>
+            {stops.map(([o, c, a]) => <stop key={o} offset={o} stopColor={c} stopOpacity={a}></stop>)}
           </radialGradient>
         </defs>
         {O3_BUBBLES.map((b) => <GlassBubble key={b.cls} b={b} fill={`url(#${id}-g)`} />)}
@@ -446,13 +447,32 @@ function Hero({ t }) {
 
 /* ---------------- Audience ---------------- */
 function Audience({ t }) {
-  // a soft light follows the pointer inside the card under it
-  const spot = (e) => {
-    const card = e.target.closest && e.target.closest(".aud-card");
-    if (!card) return;
-    const r = card.getBoundingClientRect();
-    card.style.setProperty("--mx", `${e.clientX - r.left}px`);
-    card.style.setProperty("--my", `${e.clientY - r.top}px`);
+  // moving the mouse over the cards releases a few small bubbles that drift up
+  const trailRef = useRef(null);
+  const last = useRef({ x: 0, y: 0, t: 0 });
+  const trail = (e) => {
+    if (e.pointerType !== "mouse") return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const layer = trailRef.current;
+    if (!layer) return;
+    const now = performance.now();
+    const p = last.current;
+    const moved = Math.hypot(e.clientX - p.x, e.clientY - p.y);
+    if (now - p.t < 45 || moved < 12) return;
+    last.current = { x: e.clientX, y: e.clientY, t: now };
+    if (layer.childElementCount > 28) return;
+    const r = layer.getBoundingClientRect();
+    const b = document.createElement("span");
+    const size = 6 + Math.random() * 9;
+    b.className = "trail-bubble";
+    b.style.left = `${e.clientX - r.left - size / 2}px`;
+    b.style.top = `${e.clientY - r.top - size / 2}px`;
+    b.style.width = b.style.height = `${size.toFixed(1)}px`;
+    b.style.setProperty("--dx", `${((Math.random() - 0.5) * 26).toFixed(1)}px`);
+    b.style.setProperty("--rise", `${(38 + Math.random() * 46).toFixed(0)}px`);
+    b.style.setProperty("--dur", `${(1.1 + Math.random() * 0.8).toFixed(2)}s`);
+    b.addEventListener("animationend", () => b.remove(), { once: true });
+    layer.appendChild(b);
   };
   return (
     <section className="audience" id="audience">
@@ -466,7 +486,8 @@ function Audience({ t }) {
           </div>
           <p className="section-lede reveal d1">{t.audience.lede}</p>
         </div>
-        <div className="audience-grid" onPointerMove={spot}>
+        <div className="audience-grid" onPointerMove={trail}>
+          <div className="trail-layer" ref={trailRef} aria-hidden="true"></div>
           {t.audience.cards.map((c, i) =>
           <article key={i} className={`aud-card reveal d${i % 3 + 1}`}>
               <div className="aud-card-top">
@@ -876,7 +897,7 @@ function Footer({ t }) {
         <div className="foot-grid">
           <div className="foot-col foot-brand">
             <a href="#top" className="logo">
-              <LogoMark />
+              <LogoMark onDark />
               <span className="name"><span className="lw">{t.brand.word1}</span><em>·</em><span className="rw">{t.brand.word2}</span></span>
             </a>
             <p>{t.footer.tagline}</p>
