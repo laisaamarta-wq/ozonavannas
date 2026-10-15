@@ -1987,3 +1987,299 @@ html, body { overflow-x: hidden; }
   .aud-card:hover, .svc-card:hover, .svc-card:hover .svc-img,
   .spec-grid:hover .spec-photo .frame img { transform: none; }
 }
+
+/* ============================================================
+   O₃ concept layer
+   Ozone = three oxygen atoms → three bubbles. The mark lives in the
+   logo, fills the booking buttons, runs through the process as a
+   water column and drifts behind the final call. Layout unchanged.
+   ============================================================ */
+
+/* ---- logo: three bubbles assemble on load, bob on hover ---- */
+.logo:hover .mark { transform: none; }
+.mark .o3 { transform-box: fill-box; transform-origin: center; }
+.site-header .mark .o3 { animation: o3-in .9s var(--ease-soft) both; }
+.site-header .mark .b1 { animation-delay: .1s; }
+.site-header .mark .b2 { animation-delay: .28s; }
+.site-header .mark .b3 { animation-delay: .46s; }
+@keyframes o3-in {
+  from { opacity: 0; transform: translateY(9px) scale(.55); }
+  to   { opacity: 1; transform: none; }
+}
+.logo:hover .mark .o3 { animation: o3-bob 1.4s var(--ease-soft) both; }
+.logo:hover .mark .b2 { animation-delay: .08s; }
+.logo:hover .mark .b3 { animation-delay: .16s; }
+@keyframes o3-bob {
+  0%, 100% { transform: none; }
+  40%      { transform: translateY(-2.5px); }
+}
+
+/* ---- reading progress: a thin water line under the header ---- */
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -1px;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(var(--sp, 0));
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--aqua-300), var(--aqua-600));
+  opacity: .85;
+  pointer-events: none;
+}
+
+/* ---- hero: water light on the background + floating letters ---- */
+.hero-shell { position: relative; z-index: 1; }
+.hero-water {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+.hero-water.on { opacity: 1; }
+.hero-copy h1 .word2 .fl {
+  display: inline-block;
+  animation: fl-bob 6.5s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -.6s);
+}
+@keyframes fl-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+
+/* ---- primary button: water rises inside, three bubbles float up ---- */
+.btn-primary {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.btn-primary:hover { background: var(--aqua-800); border-color: var(--aqua-800); }
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  left: -2px; right: -2px;
+  top: -10px; bottom: -2px;
+  z-index: -1;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4c7.5 0 7.5-3 15-3s7.5 3 15 3 7.5-3 15-3 7.5 3 15 3V8H0Z' fill='%235E8A83'/%3E%3C/svg%3E") 0 0 / 60px 8px repeat-x,
+    linear-gradient(180deg, #5E8A83 0%, #4C746E 100%) 0 7px / 100% 100% no-repeat;
+  transform: translateY(110%);
+  transition: transform .6s var(--ease-soft);
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  background:
+    radial-gradient(circle, rgba(255,255,255,.85) 0 1.6px, rgba(255,255,255,0) 2.4px),
+    radial-gradient(circle, rgba(255,255,255,.7) 0 1.2px, rgba(255,255,255,0) 2px),
+    radial-gradient(circle, rgba(255,255,255,.8) 0 2px, rgba(255,255,255,0) 2.9px);
+  background-size: 8px 8px, 6px 6px, 10px 10px;
+  background-repeat: no-repeat;
+  background-position: 22% 140%, 52% 170%, 80% 150%;
+  transition: opacity .3s ease;
+}
+.btn-primary:hover::before,
+.btn-primary:focus-visible::before {
+  transform: translateY(0);
+  animation: btn-wave 1.4s linear infinite;
+}
+.btn-primary:hover::after,
+.btn-primary:focus-visible::after {
+  opacity: 1;
+  animation: btn-bubbles 2.2s ease-in infinite;
+}
+@keyframes btn-wave {
+  to { background-position: 60px 0, 0 7px; }
+}
+@keyframes btn-bubbles {
+  from { background-position: 22% 140%, 52% 170%, 80% 150%; }
+  to   { background-position: 26% -40%, 47% -60%, 84% -50%; }
+}
+/* hovering a service card half-fills its button — a promise of the procedure */
+.svc-card:hover .svc-opts .btn-primary { background: var(--aqua-800); border-color: var(--aqua-800); }
+.svc-card:hover .svc-opts .btn-primary::before { transform: translateY(58%); }
+.svc-card:hover .svc-opts .btn-primary:hover::before { transform: translateY(0); }
+
+/* ghost button: a pale water fill */
+.btn-ghost { position: relative; isolation: isolate; overflow: hidden; }
+.btn-ghost::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(220,231,225,.9), rgba(194,210,203,.9));
+  transform: translateY(102%);
+  transition: transform .55s var(--ease-soft);
+}
+.btn-ghost:hover::before { transform: translateY(0); }
+
+/* ---- "Kam piemērots": light follows the pointer, a bubble escapes ---- */
+.aud-card { position: relative; overflow: hidden; }
+.aud-card > * { position: relative; z-index: 1; }
+.aud-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(85,118,111,.14), rgba(85,118,111,0) 65%);
+  transition: opacity .45s ease;
+}
+.aud-card:hover::after { opacity: 1; }
+.aud-card:hover { border-color: var(--aqua-300); }
+.aud-card-top { position: relative; }
+.aud-card-top::after {
+  content: "";
+  position: absolute;
+  left: 4px; top: 0;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--aqua-400);
+  background: rgba(255,255,255,.6);
+  opacity: 0;
+  pointer-events: none;
+}
+.aud-card:hover .aud-card-top::after { animation: pop-rise 1.6s var(--ease-soft) .1s both; }
+@keyframes pop-rise {
+  0%   { opacity: 0; transform: translate3d(0, 6px, 0) scale(.6); }
+  25%  { opacity: .9; }
+  100% { opacity: 0; transform: translate3d(4px, -26px, 0) scale(1); }
+}
+
+/* ---- services: the water level rises inside the card ---- */
+.svc-body { overflow: hidden; }
+.svc-body > * { position: relative; z-index: 1; }
+.svc-body::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 44%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 14' preserveAspectRatio='none'%3E%3Cpath d='M0 7c22.5 0 22.5-6 45-6s22.5 6 45 6 22.5-6 45-6 22.5 6 45 6V14H0Z' fill='%2355766F' fill-opacity='.09'/%3E%3C/svg%3E") 0 0 / 180px 14px repeat-x,
+    linear-gradient(180deg, rgba(85,118,111,.09), rgba(85,118,111,.15)) 0 13px / 100% 100% no-repeat;
+  transform: translateY(102%);
+  transition: transform 1s var(--ease-soft);
+}
+.svc-card:hover .svc-body::before {
+  transform: translateY(0);
+  animation: level-wave 7s linear infinite;
+}
+@keyframes level-wave {
+  to { background-position: 180px 0, 0 13px; }
+}
+.svc-opts .price-item .p { transition: color .5s ease; }
+.svc-card:hover .svc-opts .price-item .p { color: var(--aqua-700); }
+
+/* ---- process: a glass column fills with water as you read ---- */
+.how-steps { position: relative; --tube-x: 20px; --rule-x: 66px; }
+.how-tube {
+  position: absolute;
+  left: calc(var(--tube-x) - 5px);
+  top: var(--tube-top, 46px);
+  height: var(--tube-h, 0px);
+  width: 10px;
+  border-radius: 6px;
+  background: rgba(255,255,255,.55);
+  box-shadow: inset 0 0 0 1px rgba(62,94,88,.14);
+  z-index: 0;
+  pointer-events: none;
+}
+.how-fill {
+  position: absolute;
+  left: 2px; right: 2px; top: 0;
+  height: var(--fill, 0px);
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #8FAEA6 0%, #55766F 100%);
+  transition: height .3s ease-out;
+}
+.how-fill i {
+  position: absolute;
+  bottom: -4px;
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.9);
+  animation: tube-bubble 3s linear infinite;
+}
+.how-fill i:nth-child(1) { left: 0;   animation-duration: 3.2s; }
+.how-fill i:nth-child(2) { left: 3px; animation-duration: 2.6s; animation-delay: -1s; }
+.how-fill i:nth-child(3) { left: 1px; animation-duration: 3.8s; animation-delay: -2.1s; }
+.how-fill i:nth-child(4) { left: 3px; animation-duration: 2.9s; animation-delay: -.4s; }
+@keyframes tube-bubble {
+  0%   { transform: translateY(0); opacity: 0; }
+  15%  { opacity: 1; }
+  100% { transform: translateY(calc(-1 * var(--fill, 200px))); opacity: 0; }
+}
+/* hairlines start after the number column so the column reads clearly */
+.how-step {
+  border-top: none;
+  background: linear-gradient(var(--line-mist), var(--line-mist)) var(--rule-x) 0 / calc(100% - var(--rule-x)) 1px no-repeat;
+}
+.how-step:last-child {
+  border-bottom: none;
+  background:
+    linear-gradient(var(--line-mist), var(--line-mist)) var(--rule-x) 0 / calc(100% - var(--rule-x)) 1px no-repeat,
+    linear-gradient(var(--line-mist), var(--line-mist)) var(--rule-x) 100% / calc(100% - var(--rule-x)) 1px no-repeat;
+}
+.how-step .n { position: relative; z-index: 1; background: #EEF1EA; }
+.how-step[data-state="done"] .n {
+  background: var(--aqua-100);
+  border-color: var(--aqua-500);
+  color: var(--aqua-800);
+}
+.how-step[data-state="active"] .n { animation: n-pulse 1.4s var(--ease-soft) both; }
+@keyframes n-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(85,118,111,.35); }
+  100% { box-shadow: 0 0 0 7px rgba(85,118,111,.14); }
+}
+
+/* ---- booking: the O₃ mark drifts behind the final call ---- */
+.booking { overflow: hidden; }
+.book-o3 {
+  position: absolute;
+  width: 520px; height: 520px;
+  right: -150px; top: -70px;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+.book-o3 circle {
+  fill: rgba(255,255,255,.35);
+  stroke: var(--aqua-500);
+  stroke-opacity: .22;
+  stroke-width: .16;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: orb-drift 14s ease-in-out infinite;
+}
+.book-o3 .b2 { animation-duration: 11s; animation-delay: -4s; }
+.book-o3 .b3 { animation-duration: 9s;  animation-delay: -7s; }
+@keyframes orb-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(.6px, -1.4px); }
+}
+
+@media (max-width: 720px) {
+  .how-steps { --tube-x: 17px; --rule-x: 52px; }
+  .how-tube { width: 8px; left: calc(var(--tube-x) - 4px); }
+  .book-o3 { width: 300px; height: 300px; right: -120px; top: auto; bottom: -70px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-water { display: none; }
+  .btn-primary::after { display: none; }
+}
+.logo .mark {
+  width: 34px; height: 34px;
+  filter: drop-shadow(0 1px 1.5px rgba(48, 76, 73, .18));
+}
+.mob-menu-top .logo .mark { width: 30px; height: 30px; }

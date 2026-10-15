@@ -99,9 +99,15 @@ if (window.TRANSLATIONS && !window.__typoApplied) {
   window.__typoApplied = true;
 }
 
-/* ---------------- Logo mark: glass ozone orb ----------------
-   Inline SVG so we get a real radial-gradient glass sphere with a
-   specular highlight. Unique gradient ids per instance. */
+/* ---------------- Logo mark: O₃ ----------------
+   Ozone is three oxygen atoms, so the mark is three water bubbles rising
+   from large to small. The same three bubbles return across the site
+   (button fill, process column, booking). Unique gradient ids per instance. */
+const O3_BUBBLES = [
+{ cls: "b1", cx: 15, cy: 26, r: 10.5 },
+{ cls: "b2", cx: 28.5, cy: 15.5, r: 6.8 },
+{ cls: "b3", cx: 26, cy: 4.6, r: 3.4 }];
+
 let _markSeq = 0;
 function LogoMark() {
   const id = React.useMemo(() => `om${++_markSeq}`, []);
@@ -109,23 +115,22 @@ function LogoMark() {
     <span className="mark" aria-hidden="true">
       <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id={`${id}-body`} cx="34%" cy="27%" r="80%">
-            <stop offset="0%" stopColor="#ffffff"></stop>
-            <stop offset="20%" stopColor="#ecf7f6"></stop>
-            <stop offset="50%" stopColor="#c2e2e0"></stop>
-            <stop offset="80%" stopColor="#9bc3c3"></stop>
-            <stop offset="100%" stopColor="#c9cdc9"></stop>
-          </radialGradient>
-          <radialGradient id={`${id}-hl`} cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95"></stop>
-            <stop offset="60%" stopColor="#ffffff" stopOpacity="0.35"></stop>
-            <stop offset="100%" stopColor="#ffffff" stopOpacity="0"></stop>
+          <radialGradient id={`${id}-g`} cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stopColor="#FBFCF8"></stop>
+            <stop offset="45%" stopColor="#DCE6DF"></stop>
+            <stop offset="100%" stopColor="#7FA39A"></stop>
           </radialGradient>
         </defs>
-        <circle cx="20" cy="20" r="18.5" fill={`url(#${id}-body)`}></circle>
-        <circle cx="20" cy="20" r="18.5" fill="none" stroke="rgba(255,255,255,.55)" strokeWidth="0.7"></circle>
-        <circle cx="20" cy="20" r="14.5" fill="none" stroke="rgba(255,255,255,.28)" strokeWidth="0.6"></circle>
-        <ellipse cx="13.8" cy="12.6" rx="7.2" ry="4.8" fill={`url(#${id}-hl)`} transform="rotate(-26 13.8 12.6)"></ellipse>
+        {O3_BUBBLES.map((b) =>
+        <g key={b.cls} className={`o3 ${b.cls}`}>
+            <circle cx={b.cx} cy={b.cy} r={b.r} fill={`url(#${id}-g)`} stroke="#3E5E58" strokeWidth="1.3"></circle>
+            <ellipse
+            cx={b.cx - b.r * 0.36} cy={b.cy - b.r * 0.4} rx={b.r * 0.3} ry={b.r * 0.18}
+            fill="#ffffff" opacity="0.9"
+            transform={`rotate(-32 ${b.cx - b.r * 0.36} ${b.cy - b.r * 0.4})`}>
+          </ellipse>
+          </g>
+        )}
       </svg>
     </span>);
 
@@ -178,6 +183,148 @@ function WaveLine({ variant }) {
 
 }
 
+/* ---------------- Hero water light ----------------
+   A tiny hand-written WebGL shader paints soft caustic light — the moving
+   reflections water throws on a bathroom wall — on the hero BACKGROUND, never
+   on the photo. The pointer leaves a slow ripple. Rendered at half
+   resolution and ~30 fps, paused off-screen and in background tabs, skipped
+   on phones, with reduced motion or without WebGL (the CSS gradient stays). */
+const WATER_FRAG = `
+precision mediump float;
+uniform vec2 uRes;
+uniform float uT;
+uniform vec2 uM;
+uniform float uMA;
+float field(vec2 p, float t) {
+  // domain-warped sine lattice -> an organic net of thin light channels
+  p += vec2(sin(p.y * 0.9 + t * 0.40), sin(p.x * 0.8 - t * 0.35)) * 0.9;
+  p += vec2(sin(p.y * 1.7 - t * 0.30), sin(p.x * 1.5 + t * 0.45)) * 0.45;
+  return sin(p.x) * sin(p.y);
+}
+void main() {
+  vec2 uv = gl_FragCoord.xy / uRes;
+  float asp = uRes.x / uRes.y;
+  vec2 p = vec2(uv.x * asp, uv.y) * 7.0;
+  vec2 m = vec2(uM.x * asp, uM.y) * 7.0;
+  float d = distance(p, m);
+  // a slow ring ripple around the pointer
+  p += normalize(p - m + 0.0001) * sin(d * 3.2 - uT * 2.6) * exp(-d * 0.55) * uMA * 0.35;
+  float t = uT * 0.6;
+  float l1 = 1.0 - smoothstep(0.0, 0.07, abs(field(p, t)));
+  float l2 = 1.0 - smoothstep(0.0, 0.05, abs(field(p * 1.7 + 3.1, t * 1.3)));
+  float light = max(l1, l2 * 0.6);
+  float mask = 0.15 + 0.85 * smoothstep(0.15, 0.7, uv.x);
+  // faint water shade everywhere, bright channels cut through it
+  float shade = (0.065 + exp(-d * 0.5) * uMA * 0.05) * mask;
+  float a = shade * (1.0 - light * 0.95);
+  vec3 col = vec3(0.30, 0.47, 0.44);
+  gl_FragColor = vec4(col * a, a);
+}`;
+
+function HeroWater() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const canvas = ref.current;
+    if (!canvas) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(max-width: 720px)").matches) return;
+    let gl = null;
+    try { gl = canvas.getContext("webgl", { alpha: true, antialias: false, premultipliedAlpha: true }); } catch (_) {}
+    if (!gl) return;
+    const compile = (type, src) => {
+      const s = gl.createShader(type);
+      gl.shaderSource(s, src);
+      gl.compileShader(s);
+      return gl.getShaderParameter(s, gl.COMPILE_STATUS) ? s : null;
+    };
+    const vs = compile(gl.VERTEX_SHADER, "attribute vec2 a;void main(){gl_Position=vec4(a,0.,1.);}");
+    const fs = compile(gl.FRAGMENT_SHADER, WATER_FRAG);
+    if (!vs || !fs) return;
+    const prog = gl.createProgram();
+    gl.attachShader(prog, vs);
+    gl.attachShader(prog, fs);
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
+    gl.useProgram(prog);
+    gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    const loc = gl.getAttribLocation(prog, "a");
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    const uRes = gl.getUniformLocation(prog, "uRes");
+    const uT = gl.getUniformLocation(prog, "uT");
+    const uM = gl.getUniformLocation(prog, "uM");
+    const uMA = gl.getUniformLocation(prog, "uMA");
+
+    const host = canvas.parentElement;
+    let w = 1, h = 1;
+    const resize = () => {
+      const r = host.getBoundingClientRect();
+      const s = 0.5 * Math.min(window.devicePixelRatio || 1, 2);
+      w = Math.max(1, Math.round(r.width * s));
+      h = Math.max(1, Math.round(r.height * s));
+      canvas.width = w;
+      canvas.height = h;
+      gl.viewport(0, 0, w, h);
+    };
+    resize();
+    const ro = new ResizeObserver(resize);
+    ro.observe(host);
+
+    // pointer → eased position + a ripple strength that fades after you stop
+    const mouse = { x: 0.7, y: 0.5, tx: 0.7, ty: 0.5, a: 0, ta: 0 };
+    const onMove = (e) => {
+      const r = host.getBoundingClientRect();
+      mouse.tx = (e.clientX - r.left) / r.width;
+      mouse.ty = 1 - (e.clientY - r.top) / r.height;
+      mouse.ta = 1;
+    };
+    host.addEventListener("pointermove", onMove, { passive: true });
+
+    let visible = true, raf = 0, last = 0;
+    const t0 = performance.now();
+    const frame = (now) => {
+      raf = 0;
+      if (!visible || document.hidden) return;
+      raf = requestAnimationFrame(frame);
+      if (now - last < 33) return; // ~30 fps is plenty for slow water
+      last = now;
+      mouse.x += (mouse.tx - mouse.x) * 0.08;
+      mouse.y += (mouse.ty - mouse.y) * 0.08;
+      mouse.a += (mouse.ta - mouse.a) * 0.06;
+      mouse.ta *= 0.97;
+      gl.uniform2f(uRes, w, h);
+      gl.uniform1f(uT, (now - t0) / 1000);
+      gl.uniform2f(uM, mouse.x, mouse.y);
+      gl.uniform1f(uMA, mouse.a);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    };
+    const start = () => { if (!raf && visible && !document.hidden) raf = requestAnimationFrame(frame); };
+    const io = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; start(); });
+    io.observe(host);
+    document.addEventListener("visibilitychange", start);
+    canvas.classList.add("on");
+    start();
+    return () => {
+      cancelAnimationFrame(raf);
+      io.disconnect();
+      ro.disconnect();
+      host.removeEventListener("pointermove", onMove);
+      document.removeEventListener("visibilitychange", start);
+    };
+  }, []);
+  return <canvas className="hero-water" ref={ref} aria-hidden="true"></canvas>;
+}
+
+/* Letters that float like on water (decorative; the h1 keeps its aria-label). */
+function FloatWord({ text }) {
+  return (
+    <>{Array.from(text || "").map((ch, i) =>
+      <span key={i} className="fl" style={{ "--i": i }}>{ch}</span>
+      )}</>);
+
+}
+
 /* ---------------- Header ---------------- */
 function Header({ lang, setLang, t, scrolled, openMenu }) {
   return (
@@ -223,6 +370,7 @@ function Hero({ t }) {
   const m = t.hero.m || {};
   return (
     <section className="hero" id="top">
+      <HeroWater />
       {/* ---- Mobile hero: image-led, result-first, single CTA ---- */}
       <div className="hero-m">
         <div className="hero-m-photo">
@@ -253,7 +401,7 @@ function Hero({ t }) {
           <div className="eyebrow">{t.hero.eyebrow}</div>
           <h1 aria-label="Ozona vannas Rīgā — wellness procedūras nervu sistēmai">
             <span className="word1">{t.hero.title[0]}</span>
-            <span className="word2">{t.hero.title[1]}</span>
+            <span className="word2"><FloatWord text={t.hero.title[1]} /></span>
           </h1>
           <p className="hero-sub">{t.hero.sub}</p>
           <div className="hero-ctas">
@@ -287,6 +435,14 @@ function Hero({ t }) {
 
 /* ---------------- Audience ---------------- */
 function Audience({ t }) {
+  // a soft light follows the pointer inside the card under it
+  const spot = (e) => {
+    const card = e.target.closest && e.target.closest(".aud-card");
+    if (!card) return;
+    const r = card.getBoundingClientRect();
+    card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+    card.style.setProperty("--my", `${e.clientY - r.top}px`);
+  };
   return (
     <section className="audience" id="audience">
       <div className="shell">
@@ -299,7 +455,7 @@ function Audience({ t }) {
           </div>
           <p className="section-lede reveal d1">{t.audience.lede}</p>
         </div>
-        <div className="audience-grid">
+        <div className="audience-grid" onPointerMove={spot}>
           {t.audience.cards.map((c, i) =>
           <article key={i} className={`aud-card reveal d${i % 3 + 1}`}>
               <div className="aud-card-top">
@@ -323,23 +479,45 @@ function Audience({ t }) {
 
 /* ---------------- How it works ---------------- */
 function How({ t }) {
-  // The step crossing the middle of the viewport is gently highlighted.
-  const [active, setActive] = useState(-1);
+  // A glass column runs through the step numbers and fills with water as the
+  // reader scrolls; each number "fills" when the water reaches it.
+  const [reached, setReached] = useState(-1);
   const stepsRef = useRef(null);
   useEffect(() => {
     const root = stepsRef.current;
-    if (!root || !("IntersectionObserver" in window)) return;
-    const steps = Array.from(root.querySelectorAll(".how-step"));
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(steps.indexOf(e.target));
-        });
-      },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
-    );
-    steps.forEach((s) => io.observe(s));
-    return () => io.disconnect();
+    if (!root) return;
+    let raf = 0;
+    const measure = () => {
+      raf = 0;
+      const dots = Array.from(root.querySelectorAll(".how-step .n"));
+      if (!dots.length) return;
+      const rootTop = root.getBoundingClientRect().top;
+      const centers = dots.map((d) => {
+        const r = d.getBoundingClientRect();
+        return r.top - rootTop + r.height / 2;
+      });
+      const top = centers[0];
+      const len = centers[centers.length - 1] - top;
+      const anchor = window.innerHeight * 0.58 - rootTop; // water line ≈ just below mid-screen
+      const fill = Math.max(0, Math.min(len, anchor - top));
+      root.style.setProperty("--tube-top", `${top}px`);
+      root.style.setProperty("--tube-h", `${len}px`);
+      root.style.setProperty("--fill", `${fill}px`);
+      let r = -1;
+      centers.forEach((c, i) => { if (anchor >= c - 2) r = i; });
+      setReached((prev) => prev === r ? prev : r);
+    };
+    const queue = () => { if (!raf) raf = requestAnimationFrame(measure); };
+    measure();
+    const late = setTimeout(measure, 1200); // after reveal transitions settle
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", queue);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(late);
+      window.removeEventListener("scroll", queue);
+      window.removeEventListener("resize", queue);
+    };
   }, [t]);
   return (
     <section className="how" id="how">
@@ -355,13 +533,16 @@ function How({ t }) {
             <div className="visual" style={{ backgroundImage: `url(images/bath-foam.jpg)` }}></div>
           </aside>
           <div className="how-steps" ref={stepsRef}>
+            <div className="how-tube" aria-hidden="true">
+              <span className="how-fill"><i></i><i></i><i></i><i></i></span>
+            </div>
             {t.how.steps.map((s, i) =>
             <div
               key={i}
               className={`how-step reveal d${i + 1}`}
               /* state lives in a data attribute so React never rewrites the
                  className (which would drop the scroll-reveal "in" class) */
-              data-state={i === active ? "active" : "idle"}>
+              data-state={i === reached ? "active" : i < reached ? "done" : "idle"}>
                 <div className="n">{s.n}</div>
                 <div>
                   <h3>{s.title}</h3>
@@ -533,6 +714,10 @@ function Booking({ t, onOpenPrivacy }) {
   }
   return (
     <section className="booking" id="booking">
+      {/* large outline O₃ — the brand mark drifting behind the final call */}
+      <svg className="book-o3" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        {O3_BUBBLES.map((b) => <circle key={b.cls} className={b.cls} cx={b.cx} cy={b.cy} r={b.r}></circle>)}
+      </svg>
       <div className="shell">
         <div className="book-grid">
           <div className="book-copy reveal">
@@ -824,7 +1009,13 @@ function App() {
 
   // sticky header background trigger
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    const root = document.documentElement;
+    const onScroll = () => {
+      setScrolled(window.scrollY > 30);
+      // reading progress → the thin water line under the header
+      const max = root.scrollHeight - window.innerHeight;
+      root.style.setProperty("--sp", max > 0 ? (window.scrollY / max).toFixed(4) : "0");
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
