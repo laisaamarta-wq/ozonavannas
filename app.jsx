@@ -131,6 +131,86 @@ function LogoMark() {
 
 }
 
+/* ---------------- Ambient water details (decorative only) ----------------
+   Rising bubbles: each <span> rises, its inner <i> sways sideways. Pure CSS
+   animation driven by per-bubble custom properties; aria-hidden, no pointer
+   events, frozen/hidden under prefers-reduced-motion. */
+const BUBBLE_SETS = {
+  // column beside the hero photo (never on top of the real water)
+  hero: [
+  { x: 12, s: 10, d: 17, l: -2, w: 8 },
+  { x: 58, s: 18, d: 23, l: -10, w: -10 },
+  { x: 32, s: 7, d: 14, l: -6, w: 6 },
+  { x: 78, s: 12, d: 20, l: -15, w: 9 },
+  { x: 44, s: 22, d: 27, l: -19, w: -7 },
+  { x: 22, s: 8, d: 16, l: -12, w: 7 },
+  { x: 68, s: 6, d: 12, l: -4, w: -5 },
+  { x: 88, s: 14, d: 21, l: -8, w: 6 }],
+
+  // narrow strip at the edge of the mobile hero panel
+  m: [
+  { x: 20, s: 7, d: 15, l: -3, w: 5 },
+  { x: 62, s: 10, d: 19, l: -11, w: -6 },
+  { x: 40, s: 5, d: 12, l: -7, w: 4 },
+  { x: 78, s: 8, d: 17, l: -14, w: -4 }],
+
+  // final booking band — gutters only
+  book: [
+  { x: 2, s: 12, d: 22, l: -4, w: 8 },
+  { x: 5, s: 7, d: 16, l: -12, w: -6 },
+  { x: 8, s: 16, d: 26, l: -18, w: 7 },
+  { x: 49, s: 9, d: 19, l: -7, w: -6 },
+  { x: 52, s: 13, d: 24, l: -15, w: 6 },
+  { x: 95, s: 8, d: 18, l: -9, w: -5 },
+  { x: 97, s: 14, d: 25, l: -2, w: 6 }]
+
+};
+function Bubbles({ set }) {
+  return (
+    <div className={`bubbles bubbles-${set}`} aria-hidden="true">
+      {BUBBLE_SETS[set].map((b, i) =>
+      <span
+        key={i}
+        style={{ "--x": `${b.x}%`, "--s": `${b.s}px`, "--d": `${b.d}s`, "--delay": `${b.l}s`, "--sway": `${b.w}px` }}>
+          <i></i>
+        </span>
+      )}
+    </div>);
+
+}
+
+/* Soft wave edge between sections. The path repeats every 1440 units, so
+   the 2× wide SVG can drift by -50% and loop seamlessly. */
+const WAVE_D = "M0 40 C240 12 480 12 720 40 S1200 68 1440 40 S1920 12 2160 40 S2640 68 2880 40";
+function Wave({ variant }) {
+  return (
+    <div className={`wave wave-${variant}`} aria-hidden="true">
+      <svg className="wave-fill" viewBox="0 0 2880 80" preserveAspectRatio="none" focusable="false">
+        <path d={`${WAVE_D} V80 H0 Z`}></path>
+      </svg>
+      <svg className="wave-line" viewBox="0 0 2880 80" preserveAspectRatio="none" focusable="false">
+        <path d={WAVE_D}></path>
+      </svg>
+    </div>);
+
+}
+
+/* Small line icons for the "Kam piemērots" cards (order matches the cards). */
+const AUD_ICONS = [
+// 01 chronic tiredness — low battery
+<svg viewBox="0 0 24 24" key="i1"><rect x="3" y="7.5" width="15.5" height="9" rx="2.2"></rect><path d="M21 10.5v3"></path><path d="M6 10.5v3"></path></svg>,
+// 02 swelling, fluid retention — drop
+<svg viewBox="0 0 24 24" key="i2"><path d="M12 3.5c3 3.6 6 7 6 10.3a6 6 0 0 1-12 0c0-3.3 3-6.7 6-10.3Z"></path><path d="M9.3 14.6a2.8 2.8 0 0 0 2.4 2.4"></path></svg>,
+// 03 slow recovery after load — circular arrow
+<svg viewBox="0 0 24 24" key="i3"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"></path><path d="M19.6 4.2v3.6H16"></path></svg>,
+// 04 stress, tension — calm waves
+<svg viewBox="0 0 24 24" key="i4"><path d="M3 9c2 0 2-1.6 4.5-1.6S9.5 9 12 9s2-1.6 4.5-1.6S19 9 21 9"></path><path d="M3 14.5c2 0 2-1.6 4.5-1.6s2 1.6 4.5 1.6 2-1.6 4.5-1.6 2.5 1.6 4.5 1.6"></path></svg>,
+// 05 mental fog, focus — clearing circle
+<svg viewBox="0 0 24 24" key="i5"><circle cx="12" cy="12" r="7.5"></circle><circle cx="12" cy="12" r="2.4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2"></path></svg>,
+// 06 city lifestyle, overload — buildings
+<svg viewBox="0 0 24 24" key="i6"><path d="M3.5 20.5h17"></path><path d="M5.5 20.5V9.5l5-3v14"></path><path d="M10.5 20.5V4.5h8v16"></path><path d="M13.5 8.5h2M13.5 12h2M13.5 15.5h2M7.8 12.5h.4M7.8 16h.4"></path></svg>];
+
+
 /* ---------------- Header ---------------- */
 function Header({ lang, setLang, t, scrolled, openMenu }) {
   return (
@@ -183,6 +263,7 @@ function Hero({ t }) {
           <span className="hero-m-photo-fade" aria-hidden="true"></span>
         </div>
         <div className="hero-m-body reveal in">
+          <Bubbles set="m" />
           <div className="hero-m-cat">{t.hero.eyebrow}</div>
           <h1 className="hero-m-lead"><SplitLast text={m.lead} n={1} /></h1>
           <div className="hero-m-proc">{m.procedure}</div>
@@ -199,10 +280,7 @@ function Hero({ t }) {
         </div>
       </div>
 
-      {/* ---- Desktop / tablet hero (unchanged) ---- */}
-      <span className="hero-bubble b1"></span>
-      <span className="hero-bubble b2"></span>
-      <span className="hero-bubble b3"></span>
+      {/* ---- Desktop / tablet hero ---- */}
       <div className="hero-shell">
         <div className="hero-copy reveal in">
           <div className="eyebrow">{t.hero.eyebrow}</div>
@@ -222,12 +300,20 @@ function Hero({ t }) {
           </div>
           <p className="hero-disclaimer">{t.hero.disclaimer}</p>
         </div>
-        <div className="hero-art reveal d2 in">
-          <span className="hero-art-bar" aria-hidden="true"></span>
-          <img src={IMG.hero} alt="Ozona vannas Rīgā — dabiska ūdens terapija un enerģijas atjaunošana" loading="eager" fetchPriority="high" />
-          <div className="hero-tag">{t.hero.eyebrow}</div>
+        <div className="hero-visual reveal d2 in">
+          <span className="hero-glow" aria-hidden="true"></span>
+          <Bubbles set="hero" />
+          <span className="hero-bubble b1" aria-hidden="true"></span>
+          <span className="hero-bubble b2" aria-hidden="true"></span>
+          <span className="hero-bubble b3" aria-hidden="true"></span>
+          <div className="hero-art">
+            <span className="hero-art-bar" aria-hidden="true"></span>
+            <img src={IMG.hero} alt="Ozona vannas Rīgā — dabiska ūdens terapija un enerģijas atjaunošana" loading="eager" fetchPriority="high" />
+            <div className="hero-tag">{t.hero.eyebrow}</div>
+          </div>
         </div>
       </div>
+      <Wave variant="hero" />
     </section>);
 
 }
@@ -250,6 +336,7 @@ function Audience({ t }) {
           {t.audience.cards.map((c, i) =>
           <article key={i} className={`aud-card reveal d${i % 3 + 1}`}>
               <div className="aud-card-top">
+                <span className="aud-icon" aria-hidden="true">{AUD_ICONS[i]}</span>
                 <span className="aud-tag">{c.tag}</span>
                 <span className="aud-glyph" aria-hidden="true">
                   <span></span><span></span><span></span>
@@ -270,8 +357,28 @@ function Audience({ t }) {
 
 /* ---------------- How it works ---------------- */
 function How({ t }) {
+  // The step crossing the middle of the viewport is "active"; earlier steps
+  // read as done, so the vertical connector fills as the reader scrolls.
+  const [active, setActive] = useState(0);
+  const stepsRef = useRef(null);
+  useEffect(() => {
+    const root = stepsRef.current;
+    if (!root || !("IntersectionObserver" in window)) return;
+    const steps = Array.from(root.querySelectorAll(".how-step"));
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(steps.indexOf(e.target));
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+    steps.forEach((s) => io.observe(s));
+    return () => io.disconnect();
+  }, [t]);
   return (
     <section className="how" id="how">
+      <Wave variant="how" />
       <div className="shell">
         <div className="how-grid">
           <aside className="how-aside reveal">
@@ -282,9 +389,14 @@ function How({ t }) {
             <p className="section-lede" style={{ marginTop: 22 }}>{t.how.lede}</p>
             <div className="visual" style={{ backgroundImage: `url(images/bath-foam.jpg)` }}></div>
           </aside>
-          <div className="how-steps">
+          <div className="how-steps" ref={stepsRef}>
             {t.how.steps.map((s, i) =>
-            <div key={i} className={`how-step reveal d${i + 1}`}>
+            <div
+              key={i}
+              className={`how-step reveal d${i + 1}`}
+              /* state lives in a data attribute so React never rewrites the
+                 className (which would drop the scroll-reveal "in" class) */
+              data-state={i === active ? "active" : i < active ? "done" : "next"}>
                 <div className="n">{s.n}</div>
                 <div>
                   <h3>{s.title}</h3>
@@ -455,6 +567,8 @@ function Booking({ t, onOpenPrivacy }) {
   }
   return (
     <section className="booking" id="booking">
+      <Wave variant="booking" />
+      <Bubbles set="book" />
       <div className="shell">
         <div className="book-grid">
           <div className="book-copy reveal">
