@@ -2342,3 +2342,72 @@ html, body { overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .trail-layer { display: none; }
 }
+
+/* ============================================================
+   Mobile refinement: hero photo clear of the floating header,
+   "Kam piemērots" cards that respond to scrolling
+   ============================================================ */
+@media (max-width: 720px) {
+  /* the floating capsule header ends at ~66px — start the photo below it */
+  .hero-m { padding-top: 76px; }
+  .hero-m-photo {
+    height: 54svh;
+    min-height: 320px;
+    max-height: 480px;
+  }
+  .hero-m-photo img { object-position: 50% 32%; }
+  .hero-m-body { padding-top: 34px; }
+}
+
+/* scroll focus (set by script on phones / touch screens) */
+.audience-grid[data-scrolly] .aud-card {
+  transition: transform .5s var(--ease-soft), border-color .4s ease, box-shadow .5s var(--ease-soft), background-color .4s ease;
+}
+.audience-grid[data-scrolly] .aud-card::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--aqua-300), var(--aqua-600));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .9s var(--ease-soft);
+  pointer-events: none;
+}
+.audience-grid[data-scrolly] .aud-tag,
+.audience-grid[data-scrolly] .aud-card h3,
+.audience-grid[data-scrolly] .aud-card p {
+  transition: color .4s ease, opacity .4s ease, background .4s ease, padding .4s var(--ease-soft);
+}
+/* quiet cards: number fades back */
+.audience-grid[data-scrolly] .aud-card[data-focus="off"] .aud-tag { opacity: .38; }
+.audience-grid[data-scrolly] .aud-card[data-focus="off"] p { opacity: .82; }
+/* the card in focus */
+.audience-grid[data-scrolly] .aud-card[data-focus="on"] {
+  border-color: var(--aqua-300);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.audience-grid[data-scrolly] .aud-card[data-focus="on"]::after { transform: scaleX(1); }
+.audience-grid[data-scrolly] .aud-card[data-focus="on"] .aud-tag {
+  opacity: 1;
+  background: var(--aqua-100);
+  padding: 0 10px;
+  color: var(--aqua-800);
+}
+/* on touch, a tap must not leave a "stuck" hover pill behind */
+.audience-grid[data-scrolly] .aud-card:not([data-focus="on"]):hover {
+  border-color: var(--line);
+  box-shadow: none;
+}
+.audience-grid[data-scrolly] .aud-card:not([data-focus="on"]):hover .aud-tag {
+  background: transparent;
+  padding: 0;
+  color: var(--aqua-600);
+}
+@media (prefers-reduced-motion: reduce) {
+  .audience-grid[data-scrolly] .aud-card[data-focus="on"] { transform: none; }
+}
