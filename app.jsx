@@ -474,6 +474,74 @@ function Audience({ t }) {
     b.addEventListener("animationend", () => b.remove(), { once: true });
     layer.appendChild(b);
   };
+
+  // phones (no hover): the card crossing the middle of the screen comes alive —
+  // its number turns into a pill, a water line fills along its base and a few
+  // bubbles rise from the number; the other numbers stay quiet.
+  const gridRef = useRef(null);
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid || !window.matchMedia) return;
+    const touch = window.matchMedia("(max-width: 720px), (hover: none)");
+    const still = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let raf = 0, cur = -1;
+    const cards = () => Array.from(grid.querySelectorAll(".aud-card"));
+    const burst = (card) => {
+      const layer = trailRef.current, tag = card.querySelector(".aud-tag");
+      if (!layer || !tag || still.matches) return;
+      const lr = layer.getBoundingClientRect(), tr = tag.getBoundingClientRect();
+      for (let k = 0; k < 4; k++) {
+        const b = document.createElement("span");
+        const size = 5 + Math.random() * 7;
+        b.className = "trail-bubble";
+        b.style.left = `${tr.left - lr.left + tr.width * (0.2 + Math.random() * 0.6) - size / 2}px`;
+        b.style.top = `${tr.top - lr.top + tr.height / 2 - size / 2}px`;
+        b.style.width = b.style.height = `${size.toFixed(1)}px`;
+        b.style.animationDelay = `${(k * 0.12).toFixed(2)}s`;
+        b.style.setProperty("--dx", `${((Math.random() - 0.3) * 30).toFixed(1)}px`);
+        b.style.setProperty("--rise", `${(30 + Math.random() * 34).toFixed(0)}px`);
+        b.style.setProperty("--dur", `${(1.2 + Math.random() * 0.6).toFixed(2)}s`);
+        b.addEventListener("animationend", () => b.remove(), { once: true });
+        layer.appendChild(b);
+      }
+    };
+    const measure = () => {
+      raf = 0;
+      const list = cards();
+      if (!touch.matches) {
+        if (grid.dataset.scrolly) { delete grid.dataset.scrolly; list.forEach((c) => delete c.dataset.focus); cur = -1; }
+        return;
+      }
+      grid.dataset.scrolly = "on";
+      const vh = window.innerHeight, line = vh * 0.52;
+      const gr = grid.getBoundingClientRect();
+      let best = -1;
+      if (gr.top < vh * 0.75 && gr.bottom > vh * 0.25) {
+        let bd = Infinity;
+        list.forEach((c, i) => {
+          const r = c.getBoundingClientRect();
+          const d = Math.abs(r.top + r.height / 2 - line);
+          if (d < bd) { bd = d; best = i; }
+        });
+      }
+      if (best === cur) return;
+      list.forEach((c, i) => {
+        if (best === -1) delete c.dataset.focus;
+        else c.dataset.focus = i === best ? "on" : "off";
+      });
+      if (best !== -1) burst(list[best]);
+      cur = best;
+    };
+    const on = () => { if (!raf) raf = requestAnimationFrame(measure); };
+    window.addEventListener("scroll", on, { passive: true });
+    window.addEventListener("resize", on);
+    on();
+    return () => {
+      window.removeEventListener("scroll", on);
+      window.removeEventListener("resize", on);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
   return (
     <section className="audience" id="audience">
       <div className="shell">
@@ -486,7 +554,7 @@ function Audience({ t }) {
           </div>
           <p className="section-lede reveal d1">{t.audience.lede}</p>
         </div>
-        <div className="audience-grid" onPointerMove={trail}>
+        <div className="audience-grid" ref={gridRef} onPointerMove={trail}>
           <div className="trail-layer" ref={trailRef} aria-hidden="true"></div>
           {t.audience.cards.map((c, i) =>
           <article key={i} className={`aud-card reveal d${i % 3 + 1}`}>
