@@ -96,11 +96,6 @@ window.TRANSLATIONS = {
         { title: "Fizioloģiska drošība", text: "Mērena intensitāte, kontrolēta iedarbība." },
         { title: "Privāta telpa", text: "Klusa, mierīga atmosfēra bez steigas." },
       ],
-      stats: [
-        { n: "10+", label: "gadu pieredze" },
-        { n: "2 500+", label: "procedūras" },
-        { n: "100%", label: "privāts seanss" },
-      ],
     },
     booking: {
       eyebrow: "Pieraksts",
@@ -112,6 +107,7 @@ window.TRANSLATIONS = {
       consent: "Nosūtot šo formu, jūs piekrītat Privātuma politikai.",
       submit: "Nosūtīt",
       success: "Paldies — sazināsimies ar jums tuvākajā laikā.",
+      error: "Neizdevās nosūtīt pieteikumu. Lūdzu, uzrakstiet mums vai piezvaniet:",
     },
     footer: {
       tagline: "Labsajūtas procedūras",
@@ -128,11 +124,11 @@ window.TRANSLATIONS = {
       title: "Privātuma politika",
       linkPhrase: "Privātuma politikai",
       sections: [
-        { h: "Datu pārzinis", p: "Ozona vannas, ĀRC VALEO, Stirnu iela 8, 2. stāvs, 203. kab., Rīga, Latvija. E-pasts: hello@ozonavannas.lv" },
+        { h: "Datu pārzinis", p: "Ozona vannas, ĀRC VALEO, Stirnu iela 8, 2. stāvs, 203. kab., Rīga, Latvija. E-pasts: ozonavannas@gmail.com" },
         { h: "Kādi dati tiek vākti", p: "Vārds, e-pasta adrese, tālruņa numurs — tikai no kontaktformas." },
         { h: "Kāpēc", p: "Lai atbildētu uz jūsu jautājumiem un rezervētu procedūru." },
         { h: "Glabāšanas laiks", p: "Dati tiek glabāti līdz jūsu pieprasījuma izpildei vai līdz brīdim, kad lūdzat tos dzēst." },
-        { h: "Jūsu tiesības", p: "Jums ir tiesības piekļūt saviem datiem, tos labot vai dzēst. Rakstiet uz hello@ozonavannas.lv" },
+        { h: "Jūsu tiesības", p: "Jums ir tiesības piekļūt saviem datiem, tos labot vai dzēst. Rakstiet uz ozonavannas@gmail.com" },
       ],
       note: "Dati netiek nodoti trešajām pusēm.",
     },
@@ -231,11 +227,6 @@ window.TRANSLATIONS = {
         { title: "Физиологическая безопасность", text: "Умеренная интенсивность, контролируемое воздействие." },
         { title: "Приватное пространство", text: "Тихая, спокойная обстановка без спешки." },
       ],
-      stats: [
-        { n: "10+", label: "лет практики" },
-        { n: "2 500+", label: "процедур" },
-        { n: "100%", label: "приватный сеанс" },
-      ],
     },
     booking: {
       eyebrow: "Запись",
@@ -247,6 +238,7 @@ window.TRANSLATIONS = {
       consent: "Отправляя данную форму, Вы соглашаетесь с Политикой конфиденциальности.",
       submit: "Отправить",
       success: "Спасибо — свяжемся с вами в ближайшее время.",
+      error: "Не удалось отправить заявку. Пожалуйста, напишите или позвоните нам:",
     },
     footer: {
       tagline: "Оздоровительные процедуры",
@@ -263,11 +255,11 @@ window.TRANSLATIONS = {
       title: "Политика конфиденциальности",
       linkPhrase: "Политикой конфиденциальности",
       sections: [
-        { h: "Оператор данных", p: "Ozona vannas, ĀRC VALEO, Stirnu iela 8, 2. этаж, 203. каб., Рига, Латвия. E-mail: hello@ozonavannas.lv" },
+        { h: "Оператор данных", p: "Ozona vannas, ĀRC VALEO, Stirnu iela 8, 2. этаж, 203. каб., Рига, Латвия. E-mail: ozonavannas@gmail.com" },
         { h: "Какие данные собираются", p: "Имя, адрес электронной почты, номер телефона — только из контактной формы." },
         { h: "Зачем", p: "Чтобы ответить на ваши вопросы и забронировать процедуру." },
         { h: "Срок хранения", p: "Данные хранятся до выполнения вашего запроса или до момента, когда вы попросите их удалить." },
-        { h: "Ваши права", p: "Вы имеете право на доступ к своим данным, их исправление или удаление. Пишите на hello@ozonavannas.lv" },
+        { h: "Ваши права", p: "Вы имеете право на доступ к своим данным, их исправление или удаление. Пишите на ozonavannas@gmail.com" },
       ],
       note: "Данные не передаются третьим лицам.",
     },
@@ -366,11 +358,6 @@ window.TRANSLATIONS = {
         { title: "Physiological safety", text: "Moderate intensity, controlled effect." },
         { title: "Private space", text: "A quiet, calm setting without rush." },
       ],
-      stats: [
-        { n: "10+", label: "years of practice" },
-        { n: "2,500+", label: "sessions delivered" },
-        { n: "100%", label: "private session" },
-      ],
     },
     booking: {
       eyebrow: "Booking",
@@ -382,6 +369,7 @@ window.TRANSLATIONS = {
       consent: "By submitting this form you agree to the Privacy Policy.",
       submit: "Send",
       success: "Thank you — we will contact you shortly.",
+      error: "We couldn’t send your request. Please message or call us:",
     },
     footer: {
       tagline: "Wellness procedures",
@@ -398,11 +386,11 @@ window.TRANSLATIONS = {
       title: "Privacy Policy",
       linkPhrase: "Privacy Policy",
       sections: [
-        { h: "Data controller", p: "Ozona vannas, ĀRC VALEO, Stirnu iela 8, 2nd floor, office 203, Riga, Latvia. E-mail: hello@ozonavannas.lv" },
+        { h: "Data controller", p: "Ozona vannas, ĀRC VALEO, Stirnu iela 8, 2nd floor, office 203, Riga, Latvia. E-mail: ozonavannas@gmail.com" },
         { h: "What data is collected", p: "Name, e-mail address, phone number — only from the contact form." },
         { h: "Why", p: "To answer your questions and book your session." },
         { h: "Retention period", p: "Data is stored until your request is fulfilled or until you ask us to delete it." },
-        { h: "Your rights", p: "You have the right to access, correct, or delete your data. Write to hello@ozonavannas.lv" },
+        { h: "Your rights", p: "You have the right to access, correct, or delete your data. Write to ozonavannas@gmail.com" },
       ],
       note: "Data is not shared with third parties.",
     },

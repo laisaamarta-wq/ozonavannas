@@ -813,13 +813,16 @@ function Specialist({ t }) {
 
 /* ---------------- Booking ---------------- */
 function Booking({ t, onOpenPrivacy }) {
-  const [sent, setSent] = useState(false);
+  // status: "idle" | "sending" | "sent" | "error"
+  const [status, setStatus] = useState("idle");
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "", consent: false });
   async function onSubmit(e) {
     e.preventDefault();
-    if (!form.consent) return;
+    if (!form.consent || status === "sending") return;
+    setStatus("sending");
+    let ok = false;
     try {
-      await fetch("https://formsubmit.co/ajax/ozonavannas@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/ozonavannas@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
@@ -832,10 +835,20 @@ function Booking({ t, onOpenPrivacy }) {
           _captcha: "false"
         })
       });
-    } catch (_) {}
-    setSent(true);
-    setTimeout(() => setSent(false), 6000);
-    setForm({ name: "", email: "", phone: "", message: "", consent: false });
+      const data = await res.json().catch(() => ({}));
+      // FormSubmit answers 200 with { success: "true" } only when the e-mail went out.
+      ok = res.ok && String(data.success) === "true";
+    } catch (_) {
+      ok = false;
+    }
+    if (ok) {
+      setStatus("sent");
+      setForm({ name: "", email: "", phone: "", message: "", consent: false });
+      setTimeout(() => setStatus((s) => (s === "sent" ? "idle" : s)), 6000);
+    } else {
+      // Keep what the visitor typed so nothing is lost, and offer WhatsApp / phone instead.
+      setStatus("error");
+    }
   }
   return (
     <section className="booking" id="booking">
@@ -879,7 +892,15 @@ function Booking({ t, onOpenPrivacy }) {
             </div>
           </div>
           <form className="book-form reveal d2" onSubmit={onSubmit}>
-            {sent && <div className="book-success">{t.booking.success}</div>}
+            {status === "sent" && <div className="book-success" role="status">{t.booking.success}</div>}
+            {status === "error" &&
+            <div className="book-error" role="alert">
+                {t.booking.error}{" "}
+                <a href="https://wa.me/37129405327" onClick={openWhatsApp}>WhatsApp</a>
+                <span aria-hidden="true"> · </span>
+                <a href="tel:+37129405327">+371 29 405 327</a>
+              </div>
+            }
             <div className="field">
               <input
                 type="text" required placeholder=" "
@@ -946,7 +967,7 @@ function Booking({ t, onOpenPrivacy }) {
                 })()}
               </span>
             </label>
-            <button type="submit" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>
+            <button type="submit" className="btn btn-primary" disabled={status === "sending"} aria-busy={status === "sending"} style={{ width: "100%", justifyContent: "center" }}>
               {t.booking.submit}
               <span className="arrow"></span>
             </button>

@@ -1242,6 +1242,19 @@ section { padding: var(--section-pad) 0; position: relative; }
 }
 .privacy-link:hover { color: var(--aqua-900); }
 
+.book-error {
+  background: #F7EEE8;
+  border: 1px solid #E2C9BA;
+  border-radius: var(--r-md);
+  padding: 16px 20px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #6B3F2C;
+  margin-bottom: 20px;
+}
+.book-error a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.book-form .btn[disabled] { opacity: .6; cursor: progress; }
+
 .book-success {
   background: var(--aqua-50);
   border: 1px solid var(--aqua-300);
